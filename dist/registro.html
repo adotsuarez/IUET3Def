@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="output.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="js/funcionesComunes.js"></script>
+    <script type="text/javascript" src="js/funcionesFormularios.js"></script>
+    <script type="text/javascript" src="js/registro.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+
+	<script type="text/javascript" src="Locale/idioma.js"></script>
+    <script type="text/javascript" src="Locale/Lang_EN.js"></script>
+    <script type="text/javascript" src="Locale/Lang_ES.js"></script>
+    <script type="text/javascript" src="Locale/Lang_GA.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="font-light"
+	data-theme="iuui"
+	onload="setLang();">
+
+	<div class="modal" id="modal">
+		<div class="modal-box" id="modalContent">
+			<div class="flex flex-col ml-3 mr-10">
+				<img class="w-10 -ml-3 mb-2"
+					src="img/icons/clearskies/exclam.svg">
+				<p id="mensajeError"></p>
+			</div>
+			<div class="modal-action">
+				<button onclick="document.getElementById('modal').classList.remove('modal-open');" class="btn btn-primary" id="modalOkay">Okay</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="h-screen flex flex-row justify-end" id="flexLand">
+		<div class="flex min-w-[7px] max-w-[7px] h-full bg-gradient-to-t from-secondary to-primary" id="leftGradientBar"></div>
+		
+		<div class="hidden md:flex relative flex-col justify-center grow" id="leftSidePanel">
+			<div class="ml-24" id="highlights">
+				<p class="text-5xl leading-tight max-w-[70%] mb-6">Ahora mismo tienes 1.457 actividades esperando por ti.</p>
+				<p class="text-2xl leading-tight max-w-[70%] ">¡Entra y descúbrelas!</p>
+			</div>
+			<ul class="p-10 absolute bottom-0 left-0 flex flex-wrap" id="links">
+				<li>Autores</li>
+				<li class="pl-10">Legal</li>
+			</ul>
+		</div>
+
+		<div class="basis-full lg:basis-1/3 xl:basis-1/4" id="rightSidePanel">
+			<div class="p-10 h-full relative flex flex-col justify-center lg:rounded-tl-3xl bg-neutral text-neutral-content" id="contentRightSidePanel">
+				<div class="absolute top-3 right-3 dropdown dropdown-left">
+					<div tabindex="0" class="ml-2 btn btn-neutral px-2">
+						<img class="w-10"
+							src="img/icons/darknights/world.svg"
+							alt="IDIOMA">
+					</div> 
+					<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-100 text-neutral rounded-box w-36">
+						<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
+						<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
+						<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
+					</ul>
+				</div>
+				<div class="flex justify-center" id="loginArea">
+					<div class="w-5/6" id="innerLoginArea">
+						<p class="text-5xl mb-4">✌️</p>
+						<p class="text-3xl font-medium SALUDOREGISTRO" id="loginTitle"></p>
+
+						<form class="mt-10 form-control"
+							name="formularioRegistro"
+							id="formularioRegistro"
+							method="post"
+							action="javascript:registrar();"
+							onsubmit="document.getElementById('modalCredenciales').classList.remove('modal-open'); comprobarRegistro();">
+							
+							<input class="input input-bordered border-2 input-ghost rounded-full NOMBRE"
+								type="text"
+								name="nombre_persona"
+								id="txtNombrePersona"
+								onblur="return comprobarNombre();">
+							<label class="hidden" id="errorFormatoNombre"></label>
+							
+
+							<input class="mt-4 input input-bordered border-2 input-ghost rounded-full APELLIDOS"
+								type="text"
+								name="apellidos_persona"
+								id="txtApellidosPersona"
+								onblur="return comprobarApellidos();">
+							<label class="hidden" id="errorFormatoApellidos"></label>
+
+							<input class="mt-4 input input-bordered border-2 input-ghost rounded-full EMAIL"
+								type="email"
+								name="email_persona"
+								id="txtEmailPersona"
+								onblur="return comprobarEmail();">
+							<label class="hidden" id="errorFormatoEmail"></label>
+							
+							<label class="mt-4 ml-auto px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full REGISTRAR"
+								onclick="if (comprobarNombre()
+										&& comprobarApellidos()
+										&& comprobarEmail()) {
+									
+										document.getElementById('nombreInput').textContent = document.getElementById('txtNombrePersona').value;
+										document.getElementById('modalRegistro').classList.add('modal-open');
+									}"></label>
+							
+							<div class="modal" id="modalRegistro">
+								<div class="modal-box bg-neutral text-neutral-content overflow-auto max-h-[500px] lg:max-h-max" id="modalRegistroContent">
+									<div class="flex flex-col ml-3 mr-10">
+										<p class="text-3xl mb-4 font-medium"><span class="UNPLACER"></span>, <span id="nombreInput"></span>.</p>
+										<p class="mb-4"><span class="DETALLESREGISTRO"></span>.</p>
+
+										<input class="input input-bordered border-2 input-ghost rounded-full DNI_USUARIO"
+											type="text"
+											name="dni_persona"
+											id="txtDniPersona"
+											onblur="return comprobarDni();">
+										<label class="hidden" id="errorFormatoDni"></label>
+
+										<input class="mt-4 input input-bordered border-2 input-ghost rounded-full DIRECCION"
+											type="text"
+											name="direccion_persona"
+											id="txtDireccionPersona"
+											onblur="return comprobarDireccion();">
+										<label class="hidden" id="errorFormatoDireccion"></label>
+
+										<input class="mt-4 input input-bordered border-2 input-ghost rounded-full TELEFONO"
+											type="text"
+											name="telefono_persona"
+											id="txtTelefonoPersona"
+											onblur="return comprobarTelefono();">
+										<label class="hidden" id="errorFormatoTelefono"></label>
+										
+										<div class="mx-10 my-8 min-h-[2px] max-h-[2px] bg-gradient-to-r from-secondary to-primary rounded-flull"></div> 
+
+										<label class="ml-3 text-sm font-medium FECHANACIMIENTO_PERSONA"></label>
+										<input class="mt-2 w-full input input-bordered border-2 input-ghost rounded-full FECHANACIMIENTO_PERSONA"
+											type="date"
+											name="fechaNacimiento_persona"
+											id="txtFechaNacimientoPersona"
+											onblur="return comprobarFechaNacimiento();">
+										<label class="hidden" id="errorFormatoFechaNacimiento"></label>
+
+										<label class="mt-4 ml-3 text-sm font-medium FOTO"></label>
+										<label class="mt-2 btn btn-neutral border-neutral-content border-2 h-auto rounded-[22px] flex flex-col content-center">
+											<img class="my-3 w-8 rotate-90"
+												src="img/icons/darknights/exit.svg"
+												alt="FOTO">
+											<input class="mb-3 mx-auto"
+												type="file"
+												name="foto_persona"
+												id="fotoPersona"
+												accept="image/png, image/jpeg"
+												onchange="comprobarFoto();">
+										</label>
+										<label class="hidden" id="errorFormatoFoto"></label>
+
+										<div class="mx-10 my-8 min-h-[2px] max-h-[2px] bg-gradient-to-r from-secondary to-primary rounded-flull"></div> 
+
+										<input type="hidden" name="esCeliaco_persona" value=0>
+										<label class="cursor-pointer label">
+											<span class="ml-3 label-text text-neutral-content font-medium"><span class="SOYCELIACO"></span></span>
+											<input class="toggle toggle-primary"
+												type="checkbox"
+												name="esCeliaco_persona"
+												id="chkEsCeliacoPersona"
+												value=1>
+										</label>
+
+									</div>
+									<div class="modal-action mt-4 flex flex-row justify-end items-center">
+										<label class="px-2 btn btn-ghost font-light rounded-full"
+											onclick="document.getElementById('modalRegistro').classList.remove('modal-open');">
+											<img class="rotate-180 w-10"
+												src="img/icons/darknights/arrow.svg"
+												alt="ICONVOLVER">
+										</label>
+										
+										<label class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full ICONOK"
+											onclick="if (	comprobarDni()
+													&& comprobarFechaNacimiento()
+													&& comprobarDireccion()
+													&& comprobarTelefono()
+													&& comprobarFoto()) {
+													document.getElementById('modalRegistro').classList.remove('modal-open');
+													document.getElementById('modalCredenciales').classList.add('modal-open');
+												}"></label>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal" id="modalCredenciales">
+								<div class="modal-box bg-neutral text-neutral-content" id="modalCredencialesContent">
+									<div class="flex flex-col ml-3 mr-10">
+										<p class="text-3xl mb-4 font-medium"><span class="CASILISTOS"></span></p>
+										<p class="mb-4"><span class="CREDENCIALESREGISTRO"></span>.</p>
+
+										<input class="input input-bordered border-2 input-ghost rounded-full USUARIO"
+											type="text"
+											name="usuario"
+											id="txtUsuario"
+											onblur="return comprobarUser();">
+										<label class="hidden" id="errorFormatoUser"></label>
+
+										<input class="mt-4 input input-bordered border-2 input-ghost rounded-full CONTRASENA"
+											type="password"
+											name="contrasena"
+											id="txtPassword"
+											onblur="return comprobarPass();">
+										<label class="hidden" id="errorFormatoPass"></label>
+
+									</div>
+									<div class="modal-action mt-4 flex flex-row justify-end items-center">
+											<label class="px-2 btn btn-ghost font-light rounded-full"
+											onclick="document.getElementById('modalCredenciales').classList.remove('modal-open');
+												document.getElementById('modalRegistro').classList.add('modal-open');">
+												<img class="rotate-180 w-10"
+													src="img/icons/darknights/arrow.svg"
+													alt="ICONVOLVER">
+											</label>
+										
+										<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full REGISTRAR" type="submit"></button>
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<div class="absolute bottom-0 left-0 right-0 justify-center mb-16 text-center font-medium">
+					<p><a class="YACUENTA" href="login.html"></a>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
