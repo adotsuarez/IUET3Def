@@ -30,7 +30,7 @@ arrayGA={
 	'DELETEFORM' : 'Benvidos ao formulario de borrado',
 	'DETAILFORM' : 'Benvidos ao formulario de detalle',
 	'GESTUSU' : 'Xestión de Usuarios',
-	'SALUDOLOGIN': 'Ola de novo!',
+	'SALUDOLOGIN' : 'Ola de novo!',
 	'SALUDOREGISTRO' : 'Empecemos!',
 	'DATOSREGISTRO' : 'Introduza os seguintes datos',
 	'DATOSPERSONALES' : 'Datos persoais',
@@ -102,7 +102,7 @@ arrayGA={
 	//************************************************************************************************	
 	'ADD_USUARIO_YA_EXISTE' : 'O nome de usuario xa existe',	
 	'DNI_USUARIO_YA_EXISTE' : 'O DNI xa existe',	
-	'DNI_USUARIO_NO_EXISTE_EN_PERSONA': 'O DNI debería estar como persoa primeiro',	
+	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'O DNI debería estar como persoa primeiro',	
 	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'Non se podee modificar o DNI do administrador',	
 	'ADMIN_NO_SE_PUEDE_BORRAR' : 'O administrador non se puede borrar',	
 			
@@ -122,7 +122,7 @@ arrayGA={
 	// persona	
 	//************************************************************************************************	
 	//- atributos persona	
-	'DNI_PERSONA' : 'DNI de Persoa',	
+	'DNI_PERSONA' : 'DNI',	
 	'NOMBRE_PERSONA' : 'Nombre de Persoa',	
 	'APELLIDOS_PERSONA' : 'Apelidos de Persoa',	
 	'FECHANACIMIENTO_PERSONA' : 'Data de Nacemento de Persoa',	
@@ -138,26 +138,26 @@ arrayGA={
 	'BORRAR_PERSONA_EXISTE_USUARIO' : 'Non se pode borrar, existe un usuario con ese DNI',	
 	'ERROR_INSERTAR_PERSONA' : 'Erro ao insertar a persoa',	
 	'ERROR_MODIFICAR_PERSONA' : 'Erro ao modificar a persoa',	
-	'ERROR_BORRAR_PERSONA ' : 'Erro ao borrar la persoa',	
+	'ERROR_BORRAR_PERSONA' : 'Erro ao borrar la persoa',	
 		
 	//-exito	
-	'PERSONA_INSERTAR_OK' : 'Persona insertada correctamente',	
-	'PERSONA_MODIFICAR_OK' : 'Persona modificada correctamente',	
-	'PERSONA_BORRAR_OK' : 'Persona borrada correctamente',	
+	'PERSONA_INSERTAR_OK' : 'Persoa inserida correctamente',	
+	'PERSONA_MODIFICAR_OK' : 'Persoa modificada correctamente',	
+	'PERSONA_BORRAR_OK' : 'Persoa eliminada correctamente',	
 	//************************************************************************************************	
 	// grupo	
 	//************************************************************************************************	
 	// atributos	
 	'ID_GRUPO' : 'ID de grupo',	
-	'NOMBRE_GRUPO' : 'Nombre de grupo',	
-	'DESCRIPCION_GRUPO' : 'Descripción del grupo',	
+	'NOMBRE_GRUPO' : 'Nome de grupo',	
+	'DESCRIPCION_GRUPO' : 'Descripción do grupo',	
 	//errores	
-	'GRUPO_YA_EXISTE' : 'El código de grupo ya existe',	
-	'GRUPO_BORRAR_NO_EXISTE' : 'El grupo a borrar no existe',	
-	'GRUPO_BORRAR_EXISTE_EN_USUARIO' : 'No se puede borrar, hay usuarios en este grupo',	
-	'ERROR_INSERTAR_GRUPO' : 'Error al insertar el grupo',	
-	'ERROR_MODIFICAR_GRUPO' : 'Error al modificar el grupo',	
-	'ERROR_BORRAR_GRUPO ' : 'Error al borrar el grupo',	
+	'GRUPO_YA_EXISTE' : 'O código do grupo xa existe',	
+	'GRUPO_BORRAR_NO_EXISTE' : 'O grupo para eliminar non existe',	
+	'GRUPO_BORRAR_EXISTE_EN_USUARIO' : 'Non se pode eliminar, hai usuarios neste grupo',	
+	'ERROR_INSERTAR_GRUPO' : 'Erro ao inserir o grupo',	
+	'ERROR_MODIFICAR_GRUPO' : 'Erro ao modificar o grupo',	
+	'ERROR_BORRAR_GRUPO' : 'Erro ao eliminar o grupo',	
 		
 	//-exito	
 	'GRUPO_INSERTAR_OK' : 'Grupo insertado correctamente',	

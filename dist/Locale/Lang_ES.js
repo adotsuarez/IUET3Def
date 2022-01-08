@@ -30,7 +30,7 @@ arrayES={
 	'DELETEFORM' : 'Bienvenidos al formulario de borrado',
 	'DETAILFORM' : 'Bienvenidos al formulario de detalle',
 	'GESTUSU' : 'Gestión de Usuarios',
-	'SALUDOLOGIN': '¡Hola de nuevo!',
+	'SALUDOLOGIN' : '¡Hola de nuevo!',
 	'SALUDOREGISTRO' : '¡Empecemos!',
 	'DATOSREGISTRO' : 'Introduzca los siguientes datos',
 	'DATOSPERSONALES' : 'Datos personales',
@@ -102,7 +102,7 @@ arrayES={
 	//************************************************************************************************	
 	'ADD_USUARIO_YA_EXISTE' : 'El nombre de usuario ya existe',	
 	'DNI_USUARIO_YA_EXISTE' : 'El DNI de usuario ya existe',	
-	'DNI_USUARIO_NO_EXISTE_EN_PERSONA': 'El DNI debería existir como persona antes',	
+	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'El DNI debería existir como persona antes',	
 	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'No se puede modificar el DNI del administrador',	
 	'ADMIN_NO_SE_PUEDE_BORRAR' : 'El administrador no se puede borrar',	
 			

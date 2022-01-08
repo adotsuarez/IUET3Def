@@ -118,10 +118,10 @@
 										<p class="text-3xl mb-4 font-medium"><span class="UNPLACER"></span>, <span id="nombreInput"></span>.</p>
 										<p class="mb-4"><span class="DETALLESREGISTRO"></span>.</p>
 
-										<input class="input input-bordered border-2 input-ghost rounded-full DNI_USUARIO"
+										<input class="input input-bordered border-2 input-ghost rounded-full DNI_PERSONA"
 											type="text"
 											name="dni_persona"
-											id="txtDniPersona"
+											id="txtDni"
 											onblur="return comprobarDni();">
 										<label class="hidden" id="errorFormatoDni"></label>
 
@@ -177,14 +177,14 @@
 
 									</div>
 									<div class="modal-action mt-4 flex flex-row justify-end items-center">
-										<label class="px-2 btn btn-ghost font-light rounded-full"
+										<button class="px-2 btn btn-ghost font-light rounded-full"
 											onclick="document.getElementById('modalRegistro').classList.remove('modal-open');">
 											<img class="rotate-180 w-10"
 												src="img/icons/darknights/arrow.svg"
 												alt="ICONVOLVER">
-										</label>
+										</button>
 										
-										<label class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full ICONOK"
+										<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full ICONOK"
 											onclick="if (	comprobarDni()
 													&& comprobarFechaNacimiento()
 													&& comprobarDireccion()
@@ -192,7 +192,7 @@
 													&& comprobarFoto()) {
 													document.getElementById('modalRegistro').classList.remove('modal-open');
 													document.getElementById('modalCredenciales').classList.add('modal-open');
-												}"></label>
+												}"></button>
 									</div>
 								</div>
 							</div>
@@ -219,13 +219,13 @@
 
 									</div>
 									<div class="modal-action mt-4 flex flex-row justify-end items-center">
-											<label class="px-2 btn btn-ghost font-light rounded-full"
+											<button class="px-2 btn btn-ghost font-light rounded-full"
 											onclick="document.getElementById('modalCredenciales').classList.remove('modal-open');
 												document.getElementById('modalRegistro').classList.add('modal-open');">
 												<img class="rotate-180 w-10"
 													src="img/icons/darknights/arrow.svg"
 													alt="ICONVOLVER">
-											</label>
+										</button>
 										
 										<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full REGISTRAR" type="submit"></button>
 									</div>

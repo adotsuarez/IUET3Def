@@ -42,6 +42,75 @@
 		</div>
 	</div>
 
+	<button onclick="document.getElementById('formGenerico').classList.add('modal-open');" class="btn btn-primary">Abrir genérico</button>
+
+	<div class="modal" id="formGenerico">
+		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
+			<button class="btn btn-ghost font-light rounded-full max-w-max"
+					onclick="document.getElementById('formGenerico').classList.remove('modal-open');">
+					<img class="rotate-180 w-10"
+						src="img/icons/clearskies/arrow.svg"
+						alt="ICONVOLVER">
+			</button>
+
+			<form>
+				<div class="flex flex-col mt-4 ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span id="formGenericoTitle"></span></p>
+					
+					<input class="hidden"
+						type="text"
+						name="id"
+						id="txtidUsuario">
+
+					<input class="input input-bordered border-2 rounded-full USUARIO"
+						type="text"
+						name="usuario"
+						id="txtUsuario"
+						onblur="return comprobarUser();">
+					<label class="hidden" id="errorFormatoUser"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full CONTRASENA"
+						type="password"
+						name="contrasena"
+						id="txtPassword"
+						onblur="return comprobarPass();">
+					<label class="hidden" id="errorFormatoPass"></label>
+					
+					<input class="mt-4 input input-bordered border-2 rounded-full DNI_USUARIO"
+						type="text"
+						name="dni_usuario"
+						id="txtDni"
+						onblur="return comprobarDni();">
+					<label class="hidden" id="errorFormatoDni"></label>
+
+					<select class="mt-4 select select-bordered border-2 rounded-full font-medium"
+						type=""
+						name="id_grupo"
+						id="id_grupo">
+						<option disabled="" selected="" class="GRUPO">
+						</option>
+					</select>
+
+					<input type="hidden" name="borrado_usuario" value=0>
+					<label class="cursor-pointer label">
+						<span class="mt-4 ml-3 label-text font-medium"><span class="BORRADO_USUARIO"></span></span>
+						<input class="toggle toggle-primary"
+							type="checkbox"
+							name="borrado_usuario"
+							id="chkEsCeliacoPersona"
+							value=1>
+					</label>
+				</div>
+
+				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+						<span id="formGenericoTitleSubmit"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<div class="" id="flexLand">
 
 		<div class="basis-full " id="actionArea">

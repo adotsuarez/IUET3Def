@@ -68,15 +68,15 @@ function comprobarFoto() {
 /**Función que valida el DNI*/
 function comprobarDni() {
 		
-	if (   validaNoVacio("txtDniPersona", "errorFormatoDni", "dni")
-		&& comprobarLetrasNumeros("txtDniPersona", 9, 9, "errorFormatoDni", "dni")
-		&& comprobarLetraDni("txtDniPersona", "errorFormatoDni")
+	if (   validaNoVacio("txtDni", "errorFormatoDni", "dni")
+		&& comprobarLetrasNumeros("txtDni", 9, 9, "errorFormatoDni", "dni")
+		&& comprobarLetraDni("txtDni", "errorFormatoDni")
 		)
 	{
-		validacionOK("txtDniPersona", "errorFormatoDni");
+		validacionOK("txtDni", "errorFormatoDni");
 		return true;
 	} else {
-		validacionKO("txtDniPersona", "errorFormatoDni");		
+		validacionKO("txtDni", "errorFormatoDni");		
 		return false;
 	}
 
@@ -207,7 +207,7 @@ function comprobarLetraDni(idElemento, idElementoError){
 
 	var dni = document.getElementById(idElemento).value; //obtiene el valor del campo, en este caso el DNI
 
-	let numDni = dni.slice(0,7); //obtiene el número del DNi que se encuentra desde la posición 0 hasta la 7
+	let numDni = dni.slice(0,8); //obtiene el número del DNi que se encuentra desde la posición 0 hasta la 7
 	let letDni = dni.substring(8); //obtiene la letra del DNI que ocupa la posición 8 en el array
 
 	Number(numDni); //convierte el string a número
@@ -324,7 +324,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	if (campo == 'usuario' |
 		campo == 'pass' |
 		campo == 'dni') {
-		var patron = /[a-zA-Z0-9]*/;
+		var patron = /^[a-zA-Z0-9]*$/;
 			
 		if (!patron.test(valor)) { 
 			switch(campo) {
@@ -345,7 +345,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 
 	if (campo == 'nombre' |
 		campo == 'apellidos') {
-		var patron = /[a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*/;
+		var patron = /^[a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*$/;
 			
 		if (!patron.test(valor)) {
 			switch(campo) {
@@ -362,7 +362,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if (campo == 'foto') {
-		var patron = /[a-zA-Z0-9\u00f1\u00d1.]*/;
+		var patron = /^[a-zA-Z0-9\u00f1\u00d1.]*$/;
 			
 		if (!patron.test(valor)) { 
 			switch(campo) {
@@ -376,7 +376,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if(campo == "correo") {
-		var patron =  /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+		var patron =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 		if (!patron.test(valor)) {
 			switch(campo) {
@@ -390,7 +390,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if (campo == 'direccion') {
-		var patron = /[0-9a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*/;
+		var patron = /^[0-9a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*$/;
 			
 		if (!patron.test(valor)) {
 			switch(campo) {
@@ -405,7 +405,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if(campo == 'telefono') {
-		var patron = /[9,8][1-8][0-9]*|[6-7][0-9]*/;
+		var patron = /^[9,8][1-8][0-9]*|[6-7][0-9]*$/;
 
 		if(!patron.test(valor)) {
 			switch(campo) {

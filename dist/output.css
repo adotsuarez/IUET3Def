@@ -1512,6 +1512,10 @@ html {
   }
 }
 
+.select-bordered {
+  --tw-border-opacity: 0.2;
+}
+
 .select-disabled::-moz-placeholder,.select[disabled]::-moz-placeholder {
   --tw-placeholder-opacity: 0.2;
   color: hsla(var(--bc) / var(--tw-placeholder-opacity, 1));
@@ -1891,6 +1895,12 @@ html {
   max-width: 70%;
 }
 
+.max-w-max {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -2124,6 +2134,10 @@ html {
 @media (min-width: 1024px) {
   .md\:flex {
     display: flex;
+  }
+
+  .md\:max-h-\[700px\] {
+    max-height: 700px;
   }
 }
 

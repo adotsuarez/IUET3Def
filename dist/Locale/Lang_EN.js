@@ -30,7 +30,7 @@ arrayEN={
 	'DELETEFORM' : 'Welcome to the delete form',
 	'DETAILFORM' : 'Welcome to the detail form',
 	'GESTUSU' : 'Users Management',
-	'SALUDOLOGIN': 'Hi there!',
+	'SALUDOLOGIN' : 'Hi there!',
 	'SALUDOREGISTRO' : 'Let\'s get started',
 	'DATOSREGISTRO' : 'Enter the following data',
 	'DATOSPERSONALES' : 'Personal Data',
@@ -102,7 +102,7 @@ arrayEN={
 	//************************************************************************************************	
 	'ADD_USUARIO_YA_EXISTE' : 'This username is taken',	
 	'DNI_USUARIO_YA_EXISTE' : 'This ID number already exists',	
-	'DNI_USUARIO_NO_EXISTE_EN_PERSONA': 'The ID number must be first assigned to a person',	
+	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'The ID number must be first assigned to a person',	
 	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'Admin\'s ID number cannot be modified',	
 	'ADMIN_NO_SE_PUEDE_BORRAR' : 'Admin account cannot be deleted',	
 			
@@ -122,7 +122,7 @@ arrayEN={
 	// persona	
 	//************************************************************************************************	
 	//- atributos persona	
-	'DNI_PERSONA' : 'Person\'s ID',	
+	'DNI_PERSONA' : 'ID Number',	
 	'NOMBRE_PERSONA' : 'Name of Person',	
 	'APELLIDOS_PERSONA' : 'Surname of Person',	
 	'FECHANACIMIENTO_PERSONA' : 'Person\'s Date of Birth',	
@@ -138,31 +138,31 @@ arrayEN={
 	'BORRAR_PERSONA_EXISTE_USUARIO' : 'It cannot be deleted, there is a user with that ID card.',	
 	'ERROR_INSERTAR_PERSONA' : 'Error inserting the person',	
 	'ERROR_MODIFICAR_PERSONA' : 'Error when modifying the person',	
-	'ERROR_BORRAR_PERSONA ' : 'Error deleting person',	
+	'ERROR_BORRAR_PERSONA' : 'Error deleting person',	
 		
 	//-exito	
-	'PERSONA_INSERTAR_OK' : 'Persona insertada correctamente',	
-	'PERSONA_MODIFICAR_OK' : 'Persona modificada correctamente',	
-	'PERSONA_BORRAR_OK' : 'Persona borrada correctamente',	
+	'PERSONA_INSERTAR_OK' : 'Person inserted correctly',	
+	'PERSONA_MODIFICAR_OK' : 'Correctly modified person',	
+	'PERSONA_BORRAR_OK' : 'Person deleted correctly',	
 	//************************************************************************************************	
 	// grupo	
 	//************************************************************************************************	
 	// atributos	
-	'ID_GRUPO' : 'ID de grupo',	
-	'NOMBRE_GRUPO' : 'Nombre de grupo',	
-	'DESCRIPCION_GRUPO' : 'Descripción del grupo',	
+	'ID_GRUPO' : 'Group ID',	
+	'NOMBRE_GRUPO' : 'Group name',	
+	'DESCRIPCION_GRUPO' : 'Group description',	
 	//errores	
-	'GRUPO_YA_EXISTE' : 'El código de grupo ya existe',	
-	'GRUPO_BORRAR_NO_EXISTE' : 'El grupo a borrar no existe',	
-	'GRUPO_BORRAR_EXISTE_EN_USUARIO' : 'No se puede borrar, hay usuarios en este grupo',	
-	'ERROR_INSERTAR_GRUPO' : 'Error al insertar el grupo',	
-	'ERROR_MODIFICAR_GRUPO' : 'Error al modificar el grupo',	
-	'ERROR_BORRAR_GRUPO ' : 'Error al borrar el grupo',	
+	'GRUPO_YA_EXISTE' : 'The group code already exists',	
+	'GRUPO_BORRAR_NO_EXISTE' : 'The group to be deleted does not exist',	
+	'GRUPO_BORRAR_EXISTE_EN_USUARIO' : 'Cannot be deleted, there are users in this group',	
+	'ERROR_INSERTAR_GRUPO' : 'Error inserting group',	
+	'ERROR_MODIFICAR_GRUPO' : 'Error when modifying the group',	
+	'ERROR_BORRAR_GRUPO' : 'Error deleting group',	
 		
 	//-exito	
-	'GRUPO_INSERTAR_OK' : 'Grupo insertado correctamente',	
-	'GRUPO_MODIFICAR_OK' : 'Grupo modificado correctamente',	
-	'GRUPO_BORRAR_OK' : 'Grupo borrado correctamente',
+	'GRUPO_INSERTAR_OK' : 'Group inserted correctly',	
+	'GRUPO_MODIFICAR_OK' : 'Correctly modified group',	
+	'GRUPO_BORRAR_OK' : 'Group deleted correctly',
 
 	'02100' : 'Error inserting user',
 	'02101' : 'The username already exists',
