@@ -44,23 +44,27 @@
 
 	<button onclick="document.getElementById('formGenerico').classList.add('modal-open');" class="btn btn-primary">Abrir genérico</button>
 
-	<div class="modal" id="formGenerico">
+	<button onclick="showNuevoUsuario();" class="btn btn-primary">NUEVO USUARIO</button>
+
+	<div class="modal" id="formGenericoDiv">
 		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
 			<button class="btn btn-ghost font-light rounded-full max-w-max"
-					onclick="document.getElementById('formGenerico').classList.remove('modal-open');">
+					onclick="document.getElementById('formGenericoDiv').classList.remove('modal-open');">
 					<img class="rotate-180 w-10"
 						src="img/icons/clearskies/arrow.svg"
 						alt="ICONVOLVER">
 			</button>
 
-			<form>
+			<form
+				name="formGenerico"
+				id="formGenerico">
 				<div class="flex flex-col mt-4 ml-3 mr-10">
 					<p class="text-3xl mb-4 font-medium"><span id="formGenericoTitle"></span></p>
 					
 					<input class="hidden"
 						type="text"
 						name="id"
-						id="txtidUsuario">
+						id="txtIdUsuario">
 
 					<input class="input input-bordered border-2 rounded-full USUARIO"
 						type="text"
@@ -86,7 +90,7 @@
 					<select class="mt-4 select select-bordered border-2 rounded-full font-medium"
 						type=""
 						name="id_grupo"
-						id="id_grupo">
+						id="selectIdGrupo">
 						<option disabled="" selected="" class="GRUPO">
 						</option>
 					</select>
@@ -97,12 +101,12 @@
 						<input class="toggle toggle-primary"
 							type="checkbox"
 							name="borrado_usuario"
-							id="chkEsCeliacoPersona"
+							id="chkBorradoUsuario"
 							value=1>
 					</label>
 				</div>
 
-				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+				<div class="modal-action mt-4 flex flex-row justify-end items-center" id="modalActionsArea">
 					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
 						<span id="formGenericoTitleSubmit"></span>
 					</button>
@@ -165,21 +169,6 @@
 
 				<div class="mt-10 overflow-x-auto">
 					<table class="table w-full" id="datosUsuarios">
-						<thead>
-							<tr>
-								<th class="USUARIO">Nombre de usuario</th>
-								<th class="DNI_USUARIO"></th>
-								<!--
-									<th class="NOMBRE">Nombre</th>
-									<th class="APELLIDOS">Apellidos</th>
-								-->
-								<th class="GRUPO"></th>
-								<th class="BORRADO_USUARIO">Activo</th>
-								<th class="ACCIONES">
-								</th>
-							</tr>
-						</thead> 
-						<tbody></tbody>
 					</table>
 				</div>
 				  

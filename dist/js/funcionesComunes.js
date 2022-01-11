@@ -610,7 +610,7 @@ function generarSessionId() {
 	insertacampo(document.formularioLogin,'ID_SESSION', sessionId);
 }
 
- function rellenaid_grupo(id, activo) {
+function selectid_grupo(id_grupo, idElemento) {
     var idSession = getCookie("sessionId");
 
     crearformoculto("formularioobtenergrupo", "");
@@ -621,21 +621,24 @@ function generarSessionId() {
 
     var idioma = getCookie("lang");
 
-    $.ajax({
+ 	$.ajax({
         method: "POST",
         url: urlPeticionesAjax,
         data: $("#formularioobtenergrupo").serialize(),
     }).done(function (response) {
         if (response.ok == true) {
-            addOptions("id_grupo", response.resource);
-            $("#id_grupo option[value='" + id + "'").attr("selected", true);
-            $("#borrado_usuario option[value='" + activo + "'").attr("selected", true);
-        } else {
-			respuestaKOAjax("edit");
-			actualizaMensajesRespuestAjax(response.code);
-        }
+			addOptions(idElemento, response.resource);
+			if (id_grupo != '') {
+				$("#" + idElemento + " option[label='Grupo']").attr("selected", false);
+				$("#" + idElemento + " option[value='" + id_grupo + "']").attr("selected", true);
+			}
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
 
-        setLang(idioma);
         deleteActionController();
     });
 }

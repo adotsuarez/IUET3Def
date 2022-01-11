@@ -1979,10 +1979,6 @@ html {
   border-width: 0px;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-neutral-content {
   --tw-border-opacity: 1;
   border-color: hsla(var(--nc) / var(--tw-border-opacity));

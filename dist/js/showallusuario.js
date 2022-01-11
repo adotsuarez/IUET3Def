@@ -21,13 +21,20 @@ function construyeFila(fila) {
                 '<tr class="'+ own + '">' +
                 '<td>' + fila.usuario + 
                 '</td> <td>' + fila.dni_usuario + 
-                '</td> <td>' + fila.id_grupo + 
+                '</td> <td>' + 'Meow' + 
                 '</td> <td><span class="' + borrado + '")></span>' +
                 '</td> <td>' + celdaAcciones +  
                 '</td> </tr>';
 
     return filaTabla;
 }
+
+/*
+    while (id_grupo != response.resource[i]['id_grupo']) {
+        response.resource[i++];
+    }
+    tempNameGrupo = response.resource[i]['nombre_grupo'];
+*/
 
 function getLisUsers() {
 
@@ -44,8 +51,9 @@ function getLisUsers() {
             url: urlPeticionesAjax,
             data: $("#formulariolistarusuarios").serialize(),  
         }).done(function( response ) {       
-            if (response.ok == true) {                
-                for (var i = 0; i < response.resource.length; i++){
+            if (response.ok == true) {
+                $("#datosUsuarios").html("<thead> <tr> <th class=\"USUARIO\"></th> <th class=\"DNI_USUARIO\"></th> <th class=\"GRUPO\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES\"> </th> </tr> </thead> <tbody></tbody>");
+                for (var i = 0; i < response.resource.length; i++) {
                     var tr = construyeFila(response.resource[i]);
                     $("#datosUsuarios").append(tr);
                 }

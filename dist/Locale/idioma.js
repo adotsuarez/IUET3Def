@@ -1,5 +1,4 @@
 var traduccion;
-var reloadAtEnd;
 
 /** Si no se envía idioma el idioma por defecto es ES */
 function setLang(lang='') {
