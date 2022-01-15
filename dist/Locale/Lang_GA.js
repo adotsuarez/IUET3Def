@@ -71,11 +71,55 @@ arrayGA={
 	'ICONELIMINAR' : 'Eliminar',
 	'ICONADD' : 'Engadir',
 	'ICONDESCONECTAR' : 'Desconectar',
-	'ICONADDUSER' : 'Engadir Usuario',
-	'ICONSEARCHUSER' : 'Buscar Usuarios', 
-	'ICONDETAILUSER' : 'Detalle Usuario',
-	'ICONEDITUSER' : 'Editar Usuario',
-	'ICONDELETEUSER' : 'Eliminar Usuario',
+	
+	'ADDUSER' : 'Engadindo usuario',
+	'SEARCHUSER' : 'Buscando usuarios',
+	'DETAILUSER' : 'Detalle do usuario',
+	'EDITUSER' : 'Editando usuario',
+	'DELETEUSER' : 'Eliminando usuario',
+
+	'ADDPERSON' : 'Engadindo persoa',
+	'SEARCHPERSON' : 'Buscando persoas',
+	'DETAILPERSON' : 'Detalle da persoa',
+	'EDITPERSON' : 'Editando persoa',
+	'DELETEPERSON' : 'Eliminando persoa',
+
+	'ADDGROUP' : 'Engadindo grupo',
+	'SEARCHGROUP' : 'Buscando grupos',
+	'DETAILGROUP' : 'Detalle do grupo',
+	'EDITGROUP' : 'Editando grupo',
+	'DELETEGROUP' : 'Eliminando grupo',
+
+	'ADDTAG' : 'Engadindo categoría',
+	'SEARCHTAG' : 'Buscando categorías',
+	'DETAILTAG' : 'Detalle da categoría',
+	'EDITTAG' : 'Editando categoría',
+	'DELETETAG' : 'Eliminando categoría',
+
+	'ADDSPACE' : 'Engadindo espacio',
+	'SEARCHSPACE' : 'Buscando espacios',
+	'DETAILSPACE' : 'Detalle do espacio',
+	'EDITSPACE' : 'Editando espacio',
+	'DELETESPACE' : 'Eliminando espacio',
+
+	'ADDMANAGER' : 'Engadindo responsable',
+	'SEARCHMANAGER' : 'Buscando responsables',
+	'DETAILMANAGER' : 'Detalle do responsable',
+	'EDITMANAGER' : 'Editando responsable',
+	'DELETEMANAGER' : 'Eliminando responsable',
+
+	'ADDACTIVITY' : 'Engadindo actividad',
+	'SEARCHACTIVITY' : 'Buscando actividades',
+	'DETAILACTIVITY' : 'Detalle da actividad',
+	'EDITACTIVITY' : 'Editando actividad',
+	'DELETEACTIVITY' : 'Eliminando actividad',
+
+	'ADDREGISTRATION' : 'Engadindo inscripción',
+	'SEARCHREGISTRATION' : 'Buscando inscripciones',
+	'DETAILREGISTRATION' : 'Detalle da inscripción',
+	'EDITREGISTRATION' : 'Editando inscripción',
+	'DELETEREGISTRATION' : 'Eliminando inscripción',
+
 	'ICONHIDESHOW' : 'Mostrar/Ocultar Columnas',
 	'ICONREFRESH' : 'Refrescar Tabla',
 	'ICONORDENAR' : 'Ordenar',
@@ -119,9 +163,9 @@ arrayGA={
 	'USUARIO_LOGUEAR_OK' : 'Sesión iniciada correctamente',	
 		
 	//************************************************************************************************	
-	// persona	
+	// persoa	
 	//************************************************************************************************	
-	//- atributos persona	
+	//- atributos persoa	
 	'DNI_PERSONA' : 'DNI',	
 	'NOMBRE_PERSONA' : 'Nombre de Persoa',	
 	'APELLIDOS_PERSONA' : 'Apelidos de Persoa',	
@@ -132,9 +176,9 @@ arrayGA={
 	'FOTO_PERSONA' : 'Foto de Persoa',	
 	'ESCELIACO_PERSONA' : 'Persoa Celíaca',	
 	'BORRADO_PERSONA' : 'Persona Inactiva',	
-	'DNI_PERSONA_YA_EXISTE' : 'Xa hai unha persona con este DNI',	
-	'EMAIL_PERSONA_YA_EXISTE' : 'Xa hai unha persona con este email',	
-	'PERSONA_BORRAR_NO_EXISTE' : 'A persona a borrar non existe',	
+	'DNI_PERSONA_YA_EXISTE' : 'Xa hai unha persoa con este DNI',	
+	'EMAIL_PERSONA_YA_EXISTE' : 'Xa hai unha persoa con este email',	
+	'PERSONA_BORRAR_NO_EXISTE' : 'A persoa a borrar non existe',	
 	'BORRAR_PERSONA_EXISTE_USUARIO' : 'Non se pode borrar, existe un usuario con ese DNI',	
 	'ERROR_INSERTAR_PERSONA' : 'Erro ao insertar a persoa',	
 	'ERROR_MODIFICAR_PERSONA' : 'Erro ao modificar a persoa',	

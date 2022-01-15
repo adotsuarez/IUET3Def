@@ -42,8 +42,6 @@
 		</div>
 	</div>
 
-	<button onclick="document.getElementById('formGenerico').classList.add('modal-open');" class="btn btn-primary">Abrir genérico</button>
-
 	<button onclick="showNuevoUsuario();" class="btn btn-primary">NUEVO USUARIO</button>
 
 	<div class="modal" id="formGenericoDiv">
@@ -77,7 +75,8 @@
 						type="password"
 						name="contrasena"
 						id="txtPassword"
-						onblur="return comprobarPass();">
+						onblur="passShow('txtPassword','close'); return comprobarPass();"
+						onfocus="passShow('txtPassword','show')">
 					<label class="hidden" id="errorFormatoPass"></label>
 					
 					<input class="mt-4 input input-bordered border-2 rounded-full DNI_USUARIO"
@@ -95,14 +94,14 @@
 						</option>
 					</select>
 
-					<input type="hidden" name="borrado_usuario" value=0>
+					<input type="hidden" name="borrado_usuario" id="hiddenBorradoUsuario" value=1>
 					<label class="cursor-pointer label">
 						<span class="mt-4 ml-3 label-text font-medium"><span class="BORRADO_USUARIO"></span></span>
 						<input class="toggle toggle-primary"
 							type="checkbox"
 							name="borrado_usuario"
 							id="chkBorradoUsuario"
-							value=1>
+							value=0>
 					</label>
 				</div>
 

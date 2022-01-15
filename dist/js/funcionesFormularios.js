@@ -45,6 +45,16 @@ function resetearFormulario(idFormulario, idElementoList) {
 
 }
 
+function passShow(idElementoList, action) {
+
+    if (action == "show") {
+	    document.getElementById(idElementoList).type = "text";
+    } else {
+        document.getElementById(idElementoList).type = "password";
+    }
+
+}
+
 /**Función añade al formulario genérico con los campos de action y controlador*/
 function addActionControler(form, action, controller) {
 
