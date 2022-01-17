@@ -85,7 +85,7 @@
 								type="text"
 								name="nombre_persona"
 								id="txtNombrePersona"
-								onblur="return comprobarNombre();">
+								onchange="return comprobarNombre();">
 							<label class="hidden" id="errorFormatoNombre"></label>
 							
 
@@ -93,14 +93,14 @@
 								type="text"
 								name="apellidos_persona"
 								id="txtApellidosPersona"
-								onblur="return comprobarApellidos();">
+								onchange="return comprobarApellidos();">
 							<label class="hidden" id="errorFormatoApellidos"></label>
 
 							<input class="mt-4 input input-bordered border-2 input-ghost rounded-full EMAIL"
 								type="email"
 								name="email_persona"
 								id="txtEmailPersona"
-								onblur="return comprobarEmail();">
+								onchange="return comprobarEmail();">
 							<label class="hidden" id="errorFormatoEmail"></label>
 							
 							<label class="mt-4 ml-auto px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full REGISTRAR"
@@ -114,6 +114,11 @@
 							
 							<div class="modal" id="modalRegistro">
 								<div class="modal-box bg-neutral text-neutral-content overflow-auto max-h-[500px] lg:max-h-max" id="modalRegistroContent">
+									<ul class="w-full steps mb-4">
+										<li class="step step-primary"></li> 
+										<li class="step step-primary"></li> 
+										<li class="step"></li> 
+									</ul>
 									<div class="flex flex-col ml-3 mr-10">
 										<p class="text-3xl mb-4 font-medium"><span class="UNPLACER"></span>, <span id="nombreInput"></span>.</p>
 										<p class="mb-4"><span class="DETALLESREGISTRO"></span>.</p>
@@ -122,21 +127,21 @@
 											type="text"
 											name="dni_persona"
 											id="txtDni"
-											onblur="return comprobarDni();">
+											onchange="return comprobarDni();">
 										<label class="hidden" id="errorFormatoDni"></label>
 
 										<input class="mt-4 input input-bordered border-2 input-ghost rounded-full DIRECCION"
 											type="text"
 											name="direccion_persona"
 											id="txtDireccionPersona"
-											onblur="return comprobarDireccion();">
+											onchange="return comprobarDireccion();">
 										<label class="hidden" id="errorFormatoDireccion"></label>
 
 										<input class="mt-4 input input-bordered border-2 input-ghost rounded-full TELEFONO"
-											type="text"
+											type="tel"
 											name="telefono_persona"
 											id="txtTelefonoPersona"
-											onblur="return comprobarTelefono();">
+											onchange="return comprobarTelefono();">
 										<label class="hidden" id="errorFormatoTelefono"></label>
 										
 										<div class="mx-10 my-8 min-h-[2px] max-h-[2px] bg-gradient-to-r from-secondary to-primary rounded-flull"></div> 
@@ -146,7 +151,7 @@
 											type="date"
 											name="fechaNacimiento_persona"
 											id="txtFechaNacimientoPersona"
-											onblur="return comprobarFechaNacimiento();">
+											onchange="return comprobarFechaNacimiento();">
 										<label class="hidden" id="errorFormatoFechaNacimiento"></label>
 
 										<label class="mt-4 ml-3 text-sm font-medium FOTO"></label>
@@ -177,14 +182,14 @@
 
 									</div>
 									<div class="modal-action mt-4 flex flex-row justify-end items-center">
-										<button class="px-2 btn btn-ghost font-light rounded-full"
+										<label class="px-2 btn btn-ghost font-light rounded-full"
 											onclick="document.getElementById('modalRegistro').classList.remove('modal-open');">
 											<img class="rotate-180 w-10"
 												src="img/icons/darknights/arrow.svg"
 												alt="ICONVOLVER">
-										</button>
+										</label>
 										
-										<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full ICONOK"
+										<label class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full ICONOK"
 											onclick="if (	comprobarDni()
 													&& comprobarFechaNacimiento()
 													&& comprobarDireccion()
@@ -192,13 +197,18 @@
 													&& comprobarFoto()) {
 													document.getElementById('modalRegistro').classList.remove('modal-open');
 													document.getElementById('modalCredenciales').classList.add('modal-open');
-												}"></button>
+												}"></label>
 									</div>
 								</div>
 							</div>
 
 							<div class="modal" id="modalCredenciales">
 								<div class="modal-box bg-neutral text-neutral-content" id="modalCredencialesContent">
+									<ul class="w-full steps mb-4">
+										<li class="step step-primary"></li> 
+										<li class="step step-primary"></li> 
+										<li class="step step-primary"></li> 
+									</ul>
 									<div class="flex flex-col ml-3 mr-10">
 										<p class="text-3xl mb-4 font-medium"><span class="CASILISTOS"></span></p>
 										<p class="mb-4"><span class="CREDENCIALESREGISTRO"></span>.</p>
@@ -207,25 +217,25 @@
 											type="text"
 											name="usuario"
 											id="txtUsuario"
-											onblur="return comprobarUser();">
+											onchange="return comprobarUser();">
 										<label class="hidden" id="errorFormatoUser"></label>
 
 										<input class="mt-4 input input-bordered border-2 input-ghost rounded-full CONTRASENA"
 											type="password"
 											name="contrasena"
 											id="txtPassword"
-											onblur="return comprobarPass();">
+											onchange="return comprobarPass();">
 										<label class="hidden" id="errorFormatoPass"></label>
 
 									</div>
 									<div class="modal-action mt-4 flex flex-row justify-end items-center">
-											<button class="px-2 btn btn-ghost font-light rounded-full"
+											<label class="px-2 btn btn-ghost font-light rounded-full"
 											onclick="document.getElementById('modalCredenciales').classList.remove('modal-open');
 												document.getElementById('modalRegistro').classList.add('modal-open');">
 												<img class="rotate-180 w-10"
 													src="img/icons/darknights/arrow.svg"
 													alt="ICONVOLVER">
-										</button>
+										</label>
 										
 										<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full REGISTRAR" type="submit"></button>
 									</div>

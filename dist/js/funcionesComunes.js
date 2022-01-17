@@ -83,7 +83,6 @@ function comprobarDni() {
 }
 
 /** Función que valida el nombre */
-
 function comprobarNombre(){
 	if (   validaNoVacio("txtNombrePersona", "errorFormatoNombre", "nombre")
 		&& comprobarLetrasNumeros("txtNombrePersona", 45, 3, "errorFormatoNombre", "nombre")) {
@@ -96,7 +95,6 @@ function comprobarNombre(){
 }
 
 /** Función que valida los apellidos */
-
 function comprobarApellidos(){
 	if (   validaNoVacio("txtApellidosPersona", "errorFormatoApellidos", "apellidos")
 		&& comprobarLetrasNumeros("txtApellidosPersona", 45, 3, "errorFormatoApellidos", "nombre")) {
@@ -146,6 +144,31 @@ function comprobarEmail(){
 	}
 }
 
+/** Función que valida el nombre de un grupo*/
+function comprobarNombreGrupo(){
+	if (   validaNoVacio("txtNombreGrupo", "errorFormatoNombreGrupo", "nombregrupo")
+		&& comprobarLetrasNumeros("txtNombreGrupo", 45, 3, "errorFormatoNombreGrupo", "nombregrupo")) {
+		validacionOK("txtNombreGrupo", "errorFormatoNombreGrupo");
+		return true;
+	} else {
+		validacionKO("txtNombreGrupo", "errorFormatoNombreGrupo");		
+		return false;
+	}
+}
+ 
+ 
+/** Función que valida la descripción de un grupo */
+function comprobarDescripcionGrupo(){
+	if (   validaNoVacio("txtDescripcionGrupo", "errorFormatoDescripcionGrupo", "descripcion")
+		&& comprobarLetrasNumeros("txtDescripcionGrupo", 200, 20, "errorFormatoDescripcionGrupo", "descripcion")) {
+		validacionOK("txtDescripcionGrupo", "errorFormatoDescripcionGrupo");
+		return true;
+	} else {
+		validacionKO("txtDescripcionGrupo", "errorFormatoDescripcionGrupo");		
+		return false;
+	}
+}
+
 /**Función que valida si un campo está vacío*/
 function validaNoVacio(idElemento, idElementoError, campo) {
 	var codigo = "GENERICO";
@@ -188,6 +211,12 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 				break;
 			case "telefono":
 				codigo = "02148";
+				break;
+			case "nombregrupo":
+				codigo = "99999";
+				break;
+			case "descripcion":
+				codigo = "99999";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -252,8 +281,8 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 
 	var codigo = "GENERICO";
 
-	var valor = document.getElementById(idElemento).value.replace("C: \\fakepath\\", "");
-  	var longitud = document.getElementById(idElemento).value.replace("C: \\fakepath\\", "").length;
+	var valor = document.getElementById(idElemento).value.replace("C:\\fakepath\\", "");
+  	var longitud = document.getElementById(idElemento).value.replace("C:\\fakepath\\", "").length;
  
 	if (longitud > sizeMax) {    	
   		switch(campo) {
@@ -279,14 +308,21 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02120";
 				break;
 			case "direccion":
-				codigo = "01246";
+				codigo = "02146";
 				break;
 			case "telefono":
-				codigo = "01249";
+				codigo = "02149";
+				break;
+			case "nombregrupo":
+				codigo = "99999";
+				break;
+			case "descripcion":
+				codigo = "99999";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
+
 	} else if (longitud < sizeMin) {
 		switch(campo) {
 	    	case 'usuario' : 
@@ -311,18 +347,24 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02119";
 				break;
 			case "direccion" :
-				codigo = "01245";
+				codigo = "02145";
 				break;
 			case "telefono":
-				codigo = "01249";
+				codigo = "02149";
+				break;
+			case "nombregrupo":
+				codigo = "99999";
+				break;
+			case "descripcion":
+				codigo = "99999";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
 	}
 	
-	if (campo == 'usuario' |
-		campo == 'pass' |
+	if (campo == 'usuario' ||
+		campo == 'pass' ||
 		campo == 'dni') {
 		var patron = /^[a-zA-Z0-9]*$/;
 			
@@ -343,8 +385,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
-	if (campo == 'nombre' |
-		campo == 'apellidos') {
+	if (campo == 'nombre' ||
+		campo == 'apellidos' ||
+		campo == 'nombregrupo' ||
+		campo == 'descripcion') {
 		var patron = /^[a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*$/;
 			
 		if (!patron.test(valor)) {
@@ -354,6 +398,12 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 					break;
 				case 'apellidos' :
 					codigo = "02118"
+					break;
+				case "nombregrupo":
+					codigo = "99999";
+					break;
+				case "descripcion":
+					codigo = "99999";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -424,16 +474,12 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 /** Función para comprobar que la fecha es correcta */
 function comprobarFechas(idElemento, idElementoError, campo) {
 	
-	var original = new Date(document.getElementById(idElemento).value);
-
-	var dia = original.getDate().toString().padStart(2,"0");
-	var mes = (original.getMonth() + 1).toString().padStart(2,"0");
-	var ano = original.getFullYear();
-	var valor = dia + "/" + mes + "/" + ano;
-
 	var codigo = "GENERICO";
 	var patronFecha = /(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/(19[0-9]{2}|2[0-9]{3})$/;
-	if ((valor.match(patronFecha))) {
+
+	if (
+		(decodeDate(document.getElementById(idElemento).value).match(patronFecha))
+		) {
 		return true; 
 	} else {
 		switch(campo) {
@@ -444,6 +490,19 @@ function comprobarFechas(idElemento, idElementoError, campo) {
 		addCodeError(idElementoError, codigo);
     	return false;
 	}
+}
+
+function decodeDate(original) {
+	date = new Date(original);
+
+	var dia = date.getDate().toString().padStart(2,"0");
+	var mes = (date.getMonth() + 1).toString().padStart(2,"0");
+	var ano = date.getFullYear();
+	return dia + "/" + mes + "/" + ano;
+}
+
+function encodeDate(original) {
+
 }
 
 /**Función para encriptar la pass en md5*/
@@ -641,4 +700,36 @@ function selectid_grupo(id_grupo, idElemento) {
 
         deleteActionController();
     });
+}
+
+function getNames(entity) {
+    var idSession = getCookie("sessionId");
+
+    crearformoculto("formGetNames", "");
+
+    insertacampo(document.formGetNames, "ID_SESSION", idSession);
+    insertacampo(document.formGetNames, "controlador", entity);
+    insertacampo(document.formGetNames, "action", "buscar");
+
+    var idioma = getCookie("lang");
+
+ 	var toret = $.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formGetNames").serialize(),
+		async: false
+    }).done(function (response) {
+        if (response.ok == true) {
+			// 200 OK
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
+
+        deleteActionController();
+    });
+
+	return toret;
 }

@@ -45,7 +45,7 @@ function registrar() {
             } else {
                 $("#mensajeError").removeClass();
                 $("#mensajeError").addClass(response.code);
-                let idElementoList = ["txtDniPersona",
+                let idElementoList = ["txtDni",
                                       "txtNombrePersona",
                                       "txtApellidosPersona",
                                       "txtFechaNacimientoPersona",

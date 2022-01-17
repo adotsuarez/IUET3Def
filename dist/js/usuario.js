@@ -23,6 +23,7 @@ function resetearFormularioUsuario () {
 	});
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
+	document.getElementById('formGenericoTitle').removeAttribute("class");
 
 	document.getElementById('txtDni').removeAttribute("disabled");
 	document.getElementById('txtUsuario').removeAttribute("disabled");
@@ -67,7 +68,7 @@ function comprobarNuevoUsuario() {
 		&& comprobarPass()
 		&& comprobarDni()) {
 		encriptar('txtPassword');
-		// generarId('dni');
+		// generarId();
 		return true;
 	} else {
 		return false;
@@ -92,7 +93,7 @@ function nuevoUsuario() {
 			function( response ) {
 				if (response.ok == true) {
 					document.getElementById('modal').classList.remove('modal-open');
-					getLisUsers();
+					getListUsers();
 				} else {
 					$('#mensajeError').removeClass();
 					$('#mensajeError').addClass(response.code);
@@ -112,11 +113,10 @@ function showDetalleUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borr
 	document.getElementById('formGenericoTitle').classList.add('DETAILUSER');
 	document.getElementById('modalActionsArea').classList.add('hidden');
 
-	// document.getElementById('txtPassword').classList.add('hidden');
+	document.getElementById('txtPassword').classList.add('hidden');
 
 	document.getElementById('txtDni').setAttribute("disabled", true);
 	document.getElementById('txtUsuario').setAttribute("disabled", true);
-	document.getElementById('txtPassword').setAttribute("disabled", true);
 	document.getElementById('chkBorradoUsuario').setAttribute("disabled", true);
 	document.getElementById('selectIdGrupo').setAttribute("disabled", true);
 
@@ -141,12 +141,13 @@ function showEditarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borra
 
 	resetearFormularioUsuario();
 
-	var initPass = contrasena;
-
 	document.getElementById('formGenericoTitle').classList.add('EDITUSER');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
 
-	// document.getElementById('txtPassword').classList.add('hidden');
+	document.getElementById('txtPassword').classList.add('hidden');
+
+	document.getElementById('txtDni').setAttribute("readonly", true);
+
 
 	document.getElementById('txtIdUsuario').value = id;
 	document.getElementById('txtDni').value = dni_usuario;
@@ -158,7 +159,7 @@ function showEditarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borra
 	}
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarUsuario();');
-	document.getElementById('formGenerico').setAttribute('action', "javascript:editarUsuario('initPass');");
+	document.getElementById('formGenerico').setAttribute('action', "javascript:editarUsuario();");
 
 	selectid_grupo(id_grupo,'selectIdGrupo');
 
@@ -167,13 +168,9 @@ function showEditarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borra
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
 }
 
-function comprobarEditarUsuario(initPass) {
+function comprobarEditarUsuario() {
 	if(    comprobarUser()
-		&& comprobarPass()
-		&& comprobarDni()) {
-		if(document.getElementById('txtPassword').value != initPass) {
-			encriptar('txtPassword');
-		}
+		&& comprobarPass()) {
 		if (document.getElementById('chkBorradoUsuario').checked == true) {
 			document.getElementById('hiddenBorradoUsuario').value = 0;
 		}
@@ -201,7 +198,7 @@ function editarUsuario() {
 			function( response ) {
 				if (response.ok == true) {
 					document.getElementById('modal').classList.remove('modal-open');
-					getLisUsers();
+					getListUsers();
 				} else {
 					$('#mensajeError').removeClass();
 					$('#mensajeError').addClass(response.code);
@@ -214,3 +211,65 @@ function editarUsuario() {
 }
 
 // ELIMINAR
+function showEliminarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borrado_usuario) {
+
+	resetearFormularioUsuario();
+
+	document.getElementById('formGenericoTitle').classList.add('DELETEUSER');
+	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
+
+	document.getElementById('txtPassword').classList.add('hidden');
+	document.getElementById('selectIdGrupo').classList.add('hidden');
+
+	document.getElementById('txtDni').setAttribute("readonly", true);
+	
+	document.getElementById('txtUsuario').setAttribute("disabled", true);
+	document.getElementById('chkBorradoUsuario').setAttribute("disabled", true);
+	document.getElementById('selectIdGrupo').setAttribute("disabled", true);
+
+	document.getElementById('txtIdUsuario').value = id;
+	document.getElementById('txtDni').value = dni_usuario;
+	document.getElementById('txtUsuario').value = usuario;
+
+	if (borrado_usuario == 0) {
+		document.getElementById('chkBorradoUsuario').checked = true;
+	}
+
+	document.getElementById('formGenerico').setAttribute('action', "javascript:eliminarUsuario();");
+
+	selectid_grupo(id_grupo,'selectIdGrupo');
+
+	setLang(getCookie('lang'));
+	
+	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+function eliminarUsuario() {
+	var idSession = getCookie('sessionId');
+
+	insertacampo(document.formGenerico,'ID_SESSION', idSession);
+   	addActionControler(document.formGenerico, 'delete', 'usuario');
+	
+	document.getElementById('formGenericoDiv').classList.remove('modal-open');
+
+	var idioma = getCookie('lang');
+
+	$.ajax({
+			method: 'POST',
+			url: urlPeticionesAjax,
+			data: $('#formGenerico').serialize(),  
+		}).done(
+			function( response ) {
+				if (response.ok == true) {
+					document.getElementById('modal').classList.remove('modal-open');
+					getListUsers();
+				} else {
+					$('#mensajeError').removeClass();
+					$('#mensajeError').addClass(response.code);
+					setLang(idioma);
+					document.getElementById('modal').classList.add('modal-open');
+				}
+				deleteActionController();
+			}
+		);
+}
