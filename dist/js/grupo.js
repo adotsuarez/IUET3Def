@@ -45,7 +45,7 @@ function showNuevoGrupo() {
 function comprobarNuevoGrupo() {
 	if(    comprobarNombreGrupo()
 		&& comprobarDescripcionGrupo()) {
-		document.getElementById('txtIdGrupo').value = "320";
+		document.getElementById('txtIdGrupo').value = createId('grupo');
 		return true;
 	} else {
 		return false;

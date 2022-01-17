@@ -126,15 +126,15 @@ function actualizaMensajesRespuestAjax(codigo) {
 */
 
 //Función para agregar opciones a un <select>.
-function addOptions(domElement, array) {
+function addOptions(domElement, array, entidad) {
     var selector = document.getElementById(domElement);
     //Recorremos el array.
     longitud = array.length;
 
     for (var i=0; i < longitud; i++) {
         var opcion = document.createElement("option");
-        opcion.value = array[i]['id_grupo'];
-        opcion.text = array[i]['nombre_grupo'];
+        opcion.value = array[i]['id_' + entidad];
+        opcion.text = array[i]['nombre_' + entidad];
         selector.add(opcion);
     }
 }

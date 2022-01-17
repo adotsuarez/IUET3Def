@@ -686,7 +686,7 @@ function selectid_grupo(id_grupo, idElemento) {
         data: $("#formularioobtenergrupo").serialize(),
     }).done(function (response) {
         if (response.ok == true) {
-			addOptions(idElemento, response.resource);
+			addOptions(idElemento, response.resource, 'grupo');
 			if (id_grupo != '') {
 				$("#" + idElemento + " option[label='Grupo']").attr("selected", false);
 				$("#" + idElemento + " option[value='" + id_grupo + "']").attr("selected", true);
@@ -701,6 +701,73 @@ function selectid_grupo(id_grupo, idElemento) {
         deleteActionController();
     });
 }
+
+function selectid_espacio(id_espacio, idElemento) {
+    var idSession = getCookie("sessionId");
+
+    crearformoculto("formularioobtenerespacio", "");
+
+    insertacampo(document.formularioobtenerespacio, "ID_SESSION", idSession);
+    insertacampo(document.formularioobtenerespacio, "controlador", "espacio");
+    insertacampo(document.formularioobtenerespacio, "action", "buscar");
+
+    var idioma = getCookie("lang");
+
+ 	$.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formularioobtenerespacio").serialize(),
+    }).done(function (response) {
+        if (response.ok == true) {
+			addOptions(idElemento, response.resource, 'espacio');
+			if (id_espacio != '') {
+				$("#" + idElemento + " option[label='Espacio']").attr("selected", false);
+				$("#" + idElemento + " option[value='" + id_espacio + "']").attr("selected", true);
+			}
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
+
+        deleteActionController();
+    });
+}
+
+function selectid_categoria(id_categoria, idElemento) {
+    var idSession = getCookie("sessionId");
+
+    crearformoculto("formularioobtenercategoria", "");
+
+    insertacampo(document.formularioobtenercategoria, "ID_SESSION", idSession);
+    insertacampo(document.formularioobtenercategoria, "controlador", "categoria");
+    insertacampo(document.formularioobtenercategoria, "action", "buscar");
+
+    var idioma = getCookie("lang");
+
+ 	$.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formularioobtenercategoria").serialize(),
+    }).done(function (response) {
+        if (response.ok == true) {
+			addOptions(idElemento, response.resource, 'categoria');
+			if (id_categoria != '') {
+				$("#" + idElemento + " option[label='Categoria']").attr("selected", false);
+				$("#" + idElemento + " option[value='" + id_categoria + "']").attr("selected", true);
+			}
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
+
+        deleteActionController();
+    });
+}
+
 
 function getNames(entity) {
     var idSession = getCookie("sessionId");
