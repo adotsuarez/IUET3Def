@@ -234,7 +234,7 @@ arrayEN={
 	'02115' : 'The password cannot contain more than letters and numbers', 	
 	'02116' : 'The first and last name cannot be shorter than 3 characters', 	
 	'02117' : 'The first and last name cannot be longer than 60 characters', 	
-	'02118' : 'The first and last name can only contain letters', 	
+	'02118' : 'The first and last name can only contain letters and spaces', 	
 	'02119' : 'The email address cannot be shorter than 11 characters',  	
 	'02120' : 'The email address cannot be longer than 40 characters', 	
 	'02121' : 'The email cannot contain more characters than those in an email', 
@@ -266,6 +266,15 @@ arrayEN={
 	"02147" : "The address can only contain letters, digits and spaces",
 	"02148" : "The phone number cannot be empty",
 	"02149" : "The phone number must be in Spanish format and contain only 9 digits",
+	"02150" : "The group name cannot be empty.",
+	"02151" : "The group name cannot be longer than 45 characters",
+	"02152" : "The group name cannot be shorter than 3 characters",
+	"02153" : "The group name can only contain letters and spaces",
+	"02154" : "The group description cannot be empty",
+	"02155" : "The group description cannot be longer than 200 characters",
+	"02156" : "The group description cannot be shorter than 20 characters",
+	"02157" : "The group description can only contain letters and spaces",
+
 
 	//test
 	'PRUEBA' : 'Test',

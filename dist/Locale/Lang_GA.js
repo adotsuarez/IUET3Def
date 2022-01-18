@@ -234,7 +234,7 @@ arrayGA={
 	'02115' : 'O contrasinal non pode conter máis que letras e números', 	
 	'02116' : 'O nome e apelidos non pode se menor que 3 caracteres', 	
 	'02117' : 'O nome e apelidos non pode ser maior que 60 caracteres', 	
-	'02118' : 'O nome e apelidos non pode conter máis que letras', 	
+	'02118' : 'O nome e apelidos non pode conter máis que letras e espazos', 	
 	'02119' : 'O email non pode ser menor que 11 caracteres', 	
 	'02120' : 'O o email non pode ser maior que 45 caracteres', 	
 	'02121' : 'O email non pode conter máis caracteres que os dun email', 
@@ -266,7 +266,15 @@ arrayGA={
 	'02147' : "A dirección só pode conter letras, números e espacios",
 	"02148" : "O número de teléfono non pode estar baleiro",
 	"02149" : "O número de teléfono debe conter só 9 díxitos e ter formato español",
-	
+	"02150" : "O nome do grupo non pode ser vacío",
+	"02151" : "O nome do grupo non pode ser maior de 45 caracteres",
+	"02152" : "O nome do grupo non pode ser menor de 3 caracteres",
+	"02153" : "O nome do grupo non pode contener máis que letras e espazos",
+	"02154" : "A descripción do grupo non pode ser vacío",
+	"02155" : "A descripción do grupo non pode ser maior de 200 caracteres",
+	"02156" : "A descripción do grupo non pode ser menor de 20 caracteres",
+	"02157" : "A descripción do grupo non pode contener máis que letras e espazos",
+
 	//test
 	'PRUEBA' : 'Proba',
 	'VALORESPERADO' : 'Valor Esperado',

@@ -213,10 +213,10 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 				codigo = "02148";
 				break;
 			case "nombregrupo":
-				codigo = "99999";
+				codigo = "02150";
 				break;
 			case "descripcion":
-				codigo = "99999";
+				codigo = "02154";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -314,10 +314,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02149";
 				break;
 			case "nombregrupo":
-				codigo = "99999";
+				codigo = "02151";
 				break;
 			case "descripcion":
-				codigo = "99999";
+				codigo = "02155";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -353,10 +353,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02149";
 				break;
 			case "nombregrupo":
-				codigo = "99999";
+				codigo = "02152";
 				break;
 			case "descripcion":
-				codigo = "99999";
+				codigo = "02156";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -400,10 +400,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 					codigo = "02118"
 					break;
 				case "nombregrupo":
-					codigo = "99999";
+					codigo = "02153";
 					break;
 				case "descripcion":
-					codigo = "99999";
+					codigo = "02157";
 					break;
 			}
 			addCodeError(idElementoError, codigo);

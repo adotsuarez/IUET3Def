@@ -234,7 +234,7 @@ arrayES={
 	'02115' : 'La contraseña no puede contener más que letras y números', 	
 	'02116' : 'El nombre y apellidos no puede ser menor que 3 caracteres', 	
 	'02117' : 'El nombre y apellidos no puede ser mayor que 60 caracteres', 	
-	'02118' : 'El nombre y apellidos no puede contener más que letras', 	
+	'02118' : 'El nombre y apellidos no puede contener más que letras y espacios', 	
 	'02119' : 'El email no puede ser menor que 11 caracteres', 	
 	'02120' : 'El email no puede ser mayor que 45 caracteres', 	
 	'02121' : 'El email no puede contener más caracteres que los de un email', 
@@ -266,6 +266,14 @@ arrayES={
 	"02147" : "La direccion no puede contener más que letras, espacios y números",
 	"02148" : "El número de teléfono no puede estar vacío",
 	"02149" : "El número de teléfono debe contener solo 9 dígitos y estar en formato español",
+	"02150" : "El nombre del grupo no puede ser vacío",
+	"02151" : "El nombre del grupo no puede ser mayor que 45 caracteres",
+	"02152" : "El nombre del grupo no puede ser menor que 3 caracteres",
+	"02153" : "El nombre del grupo no puede contener más que letras y espacios",
+	"02154" : "La descripción del grupo no puede ser vacía",
+	"02155" : "La descripción del grupo no puede ser mayor que 200 caracteres",
+	"02156" : "La descripción del grupo no puede ser menor que 20 caracteres",
+	"02157" : "La descripción del grupo no puede contener más que letras y espacios",
 
 	//test
 	'PRUEBA' : 'Prueba',
