@@ -1,7 +1,7 @@
 /**Función que construye cada línea que se va a rellenar en la tabla*/
 function construyeFila(fila) {
 
-    let atributosFunciones = ["'" + fila.id_grupo + "'","'" + fila.nombre_grupo + "'", "'" + fila.descripcion_grupo + "'"];
+    let atributosFunciones = ["'" + fila.id_grupo + "'","'" + decodeURIComponent(fila.nombre_grupo) + "'", "'" + decodeURIComponent(fila.descripcion_grupo) + "'"];
 
     celdaAcciones = '<div class="flex flex-row"><button class="btn btn-ghost btn-sm px-0" onclick="showDetalleGrupo(' + atributosFunciones + ')"> <img class="w-8 ICONDETALLE" src="img/icons/clearskies/view.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEditarGrupo(' + atributosFunciones + ')"> <img class="w-8 ICONEDITAR" src="img/icons/clearskies/pencil.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEliminarGrupo(' + atributosFunciones + ')"> <img class="w-8 ICONELIMINAR" src="img/icons/clearskies/bin.svg"> </button> </div>'
 

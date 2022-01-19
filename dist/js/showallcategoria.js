@@ -1,7 +1,7 @@
 /**Función que construye cada línea que se va a rellenar en la tabla*/
 function construyeFila(fila) {
 
-    let atributosFunciones = ["'" + fila.id_categoria + "'","'" + fila.nombre_categoria + "'", "'" + fila.descripcion_categoria + "'"];
+    let atributosFunciones = ["'" + fila.id_categoria + "'","'" + decodeURIComponent(fila.nombre_categoria) + "'", "'" + decodeURIComponent(fila.descripcion_categoria) + "'"];
 
     celdaAcciones = '<div class="flex flex-row"><button class="btn btn-ghost btn-sm px-0" onclick="showDetalleCategoria(' + atributosFunciones + ')"> <img class="w-8 ICONDETALLE" src="img/icons/clearskies/view.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEditarCategoria(' + atributosFunciones + ')"> <img class="w-8 ICONEDITAR" src="img/icons/clearskies/pencil.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEliminarCategoria(' + atributosFunciones + ')"> <img class="w-8 ICONELIMINAR" src="img/icons/clearskies/bin.svg"> </button> </div>'
 

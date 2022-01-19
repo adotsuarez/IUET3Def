@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="output.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="js/funcionesComunes.js"></script>
+	<script type="text/javascript" src="js/funcionesFormularios.js"></script>
+	<script type="text/javascript" src="js/espacio.js"></script>
+	<script type="text/javascript" src="js/showallespacio.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+
+	<script type="text/javascript" src="Locale/idioma.js"></script>
+	<script type="text/javascript" src="Locale/Lang_EN.js"></script>
+	<script type="text/javascript" src="Locale/Lang_ES.js"></script>
+	<script type="text/javascript" src="Locale/Lang_GA.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="font-light"
+	data-theme="iuui"
+	onload="setLang(); validaAutenticado(); getListEspacios();">
+
+	<div class="modal" id="modal">
+		<div class="modal-box" id="modalContent">
+			<div class="flex flex-col ml-3 mr-10">
+				<img class="w-10 -ml-3 mb-2"
+					src="img/icons/clearskies/exclam.svg">
+				<p id="mensajeError"></p>
+			</div>
+			<div class="modal-action">
+				<button onclick="document.getElementById('modal').classList.remove('modal-open');" class="btn btn-primary" id="modalOkay">Okay</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="formGenericoDiv">
+		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
+			<button class="btn btn-ghost font-light rounded-full max-w-max"
+					onclick="document.getElementById('formGenericoDiv').classList.remove('modal-open');">
+					<img class="rotate-180 w-10"
+						src="img/icons/clearskies/arrow.svg"
+						alt="ICONVOLVER">
+			</button>
+
+			<form
+				name="formGenerico"
+				id="formGenerico">
+				<div class="flex flex-col mt-4 ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span id="formGenericoTitle"></span></p>
+					
+					<input class="hidden"
+						type="text"
+						name="id_espacio"
+						id="txtIdEspacio">
+
+                    <input class="input input-bordered border-2 rounded-full NOMBRE_ESPACIO"
+						type="text"
+						name="nombre_espacio"
+						id="txtNombreEspacio"
+						onblur="return comprobarNombreEspacio();">
+					<label class="hidden" id="errorFormatoNombreEspacio"></label>
+
+                    <input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCION_ESPACIO"
+						type="text"
+						name="descripcion_espacio"
+						id="txtDescripcionEspacio"
+						onblur="return comprobarDescripcionEspacio();">
+					<label class="hidden" id="errorFormatoDescripcionEspacio"></label>
+				</div>
+
+				<div class="modal-action mt-4 flex flex-row justify-end items-center" id="modalActionsArea">
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+						<span id="formGenericoTitleSubmit"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="" id="flexLand">
+
+		<div class="basis-full " id="actionArea">
+			<div class="navbar">
+				<div class="px-2 mx-2 navbar-start">
+					<span class="text-lg font-bold">
+						nameless
+					</span>
+				</div> 
+				<div class="hidden px-2 mx-2 navbar-center md:flex">
+				  <div class="flex items-stretch">
+					<a class="btn btn-link btn-sm text-base-content">Home</a> 
+					<a class="btn btn-link btn-sm text-base-content">Portfolio</a> 
+					<a class="btn btn-link btn-sm text-base-content">About</a> 
+					<a class="btn btn-link btn-sm text-base-content">Contact</a>
+				  </div>
+				</div> 
+				<div class="navbar-end">
+					<p class="hidden lg:flex font-light mr-4">
+						<span class="HOLA"></span>,&nbsp<span id="usuario"></span>.
+					</p>
+					<div class="dropdown dropdown-left">
+						<div tabindex="0" class="ml-2 btn btn-ghost px-2">
+							<img class="w-10"
+								src="img/icons/clearskies/world.svg"
+								alt="IDIOMA">
+						</div>
+						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-36">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
+						</ul>
+					</div>
+					<button class="ml-2 btn btn-ghost px-2"
+						onclick="desconectar();">
+						<img class="w-10"
+							src="img/icons/clearskies/exit.svg"
+							alt="ICONDESCONECTAR">
+					</button>
+				</div>
+			</div>
+
+			<div class="flex min-h-[7px] max-h-[7px] h-full bg-gradient-to-r from-secondary to-primary" id="navbarGradientBar"></div>
+
+			<div class="p-10 w-full" id="content">
+				<div class="flex justify-between w-full">
+					<div class="flex flex-row">
+						<img class="w-10"
+									src="img/icons/clearskies/space.svg"
+									alt="ESPACIOS">
+						<h1 class="text-3xl ml-4 mt-2 ESPACIOS"></h1>
+					</div>
+					<div>
+						<button class="btn btn-primary px-2"
+						onclick="showNuevoEspacio();">
+							<img class="w-10"
+								src="img/icons/clearskies/plus.svg"
+								alt="ICONADD">
+						</button>
+					</div>
+				</div>
+
+				<div class="mt-10 overflow-x-auto">
+					<table class="table w-full" id="datosEspacios">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

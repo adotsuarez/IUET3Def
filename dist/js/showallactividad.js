@@ -1,7 +1,7 @@
 /**Función que construye cada línea que se va a rellenar en la tabla*/
 function construyeFila(fila, espacioNameArray, categoriaNameArray) {
 
-    let atributosFunciones = ["'" + fila.id_actividad + "'","'" + fila.nombre_actividad + "'", "'" + fila.descripcion_actividad + "'","'" + fila.precio_actividad + "'", "'" + fila.numPlazas_actividad + "'", "'" + fila.color_actividad + "'", "'" + fila.color_nombre_actividad + "'", "'" + fila.id_espacio + "'", "'" + fila.id_categoria + "'"];
+    let atributosFunciones = ["'" + fila.id_actividad + "'","'" + decodeURIComponent(fila.nombre_actividad) + "'", "'" + decodeURIComponent(fila.descripcion_actividad) + "'","'" + fila.precio_actividad + "'", "'" + fila.numPlazas_actividad + "'", "'" + decodeURIComponent(fila.color_actividad) + "'", "'" + decodeURIComponent(fila.color_nombre_actividad) + "'", "'" + fila.id_espacio + "'", "'" + fila.id_categoria + "'"];
 
     celdaAcciones = '<div class="flex flex-row"><button class="btn btn-ghost btn-sm px-0" onclick="showDetalleActividad(' + atributosFunciones + ')"> <img class="w-8 ICONDETALLE" src="img/icons/clearskies/view.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEditarActividad(' + atributosFunciones + ')"> <img class="w-8 ICONEDITAR" src="img/icons/clearskies/pencil.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEliminarActividad(' + atributosFunciones + ')"> <img class="w-8 ICONELIMINAR" src="img/icons/clearskies/bin.svg"> </button> </div>'
 
