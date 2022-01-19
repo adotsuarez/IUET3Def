@@ -19,6 +19,10 @@ function resetearFormularioGrupo () {
 	});
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
+	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
+
+	document.getElementById('txtNombreGrupo').removeAttribute("disabled");
+	document.getElementById('txtDescripcionGrupo').removeAttribute("disabled");
 
 	document.getElementById('txtNombreGrupo').classList.remove('hidden');
 	document.getElementById('txtDescripcionGrupo').classList.remove('hidden');
@@ -35,7 +39,7 @@ function showNuevoGrupo() {
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONADD');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarNuevoGrupo();');
-	document.getElementById('formGenerico').setAttribute('action', 'javascript:nuevoGrupo();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('add','grupo', getListGroups);");
 
 	setLang(getCookie('lang'));
 	
@@ -52,36 +56,6 @@ function comprobarNuevoGrupo() {
 	}
 }
 
-function nuevoGrupo() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'add', 'grupo');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListGroups();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
-}
-
 
 // DETALLE
 function showDetalleGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
@@ -90,6 +64,9 @@ function showDetalleGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 
 	document.getElementById('formGenericoTitle').classList.add('DETAILGROUP');
 	document.getElementById('modalActionsArea').classList.add('hidden');
+
+	document.getElementById('txtDescripcionGrupo').setAttribute("disabled", true);
+	document.getElementById('txtNombreGrupo').setAttribute("disabled", true);
 
 	document.getElementById('txtDescripcionGrupo').value = descripcion_grupo;
 	document.getElementById('txtNombreGrupo').value = nombre_grupo;
@@ -114,7 +91,7 @@ function showEditarGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarGrupo();');
-	document.getElementById('formGenerico').setAttribute('action', "javascript:editarGrupo();");
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('edit','grupo', getListGroups);");
 
 	setLang(getCookie('lang'));
 	
@@ -130,36 +107,6 @@ function comprobarEditarGrupo() {
 	}
 }
 
-function editarGrupo() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'edit', 'grupo');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListGroups();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
-}
-
 // ELIMINAR
 function showEliminarGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 	resetearFormularioGrupo();
@@ -167,43 +114,16 @@ function showEliminarGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 	document.getElementById('formGenericoTitle').classList.add('DETAILGROUP');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
+	document.getElementById('txtDescripcionGrupo').setAttribute("disabled", true);
+	document.getElementById('txtNombreGrupo').setAttribute("disabled", true);
+
 	document.getElementById('txtDescripcionGrupo').value = descripcion_grupo;
 	document.getElementById('txtNombreGrupo').value = nombre_grupo;
 	document.getElementById('txtIdGrupo').value = id_grupo;
 
 	setLang(getCookie('lang'));
 	
-	document.getElementById('formGenerico').setAttribute('action', "javascript:eliminarGrupo();");
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','grupo', getListGroups);");
 
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
-}
-
-function eliminarGrupo() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'delete', 'grupo');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListGroups();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
 }

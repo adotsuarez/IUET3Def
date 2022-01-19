@@ -27,7 +27,7 @@ function construyeFila(fila) {
                 // '</td> <td>' + decodeURIComponent(fila.apellidos_persona) +
                 // '</td> <td>' + decodeURIComponent(fila.dni_persona) +
                 '</td> <td>' + decodeDate(fila.fechaNacimiento_persona) +
-                '</td> <td>' + decodeURIComponent(fila.direccion_persona) +
+                //'</td> <td>' + decodeURIComponent(fila.direccion_persona) +
                 '</td> <td>' + decodeURIComponent(fila.telefono_persona) +
                 '</td> <td>' + decodeURIComponent(fila.email_persona) +
                 '</td> <td><span class="' + celiaco + '"></span>' +
@@ -56,7 +56,7 @@ function getListPersonas() {
             if (response.ok == true) {
                 // $("#datosPersonas").html("<thead> <tr> <th class=\"FOTO\"></th> <th class=\"NOMBRE_PERSONA\"></th> <th class=\"APELLIDOS_PERSONA\"></th> <th class=\"DNI_PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> <th class=\"DIRECCION\"></th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_PERSONA\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
 
-                $("#datosPersonas").html("<thead> <tr> <th class=\"PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> <th class=\"DIRECCION\"></th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_PERSONA\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
+                $("#datosPersonas").html("<thead> <tr> <th class=\"PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> </th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_PERSONA\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
 
                 for (var i = 0; i < response.resource.length; i++) {
                     var tr = construyeFila(response.resource[i]);

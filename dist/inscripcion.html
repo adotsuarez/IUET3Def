@@ -12,8 +12,8 @@
 
 	<script type="text/javascript" src="js/funcionesComunes.js"></script>
 	<script type="text/javascript" src="js/funcionesFormularios.js"></script>
-	<script type="text/javascript" src="js/grupo.js"></script>
-	<script type="text/javascript" src="js/showallgrupo.js"></script>
+	<script type="text/javascript" src="js/inscripcion.js"></script>
+	<script type="text/javascript" src="js/showallinscripcion.js"></script>
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/config.js"></script>
 
@@ -27,7 +27,7 @@
 
 <body class="font-light"
 	data-theme="iuui"
-	onload="setLang(); validaAutenticado(); getListGroups();">
+	onload="setLang(); validaAutenticado(); getListRegistration();">
 
 	<div class="modal" id="modal">
 		<div class="modal-box" id="modalContent">
@@ -59,22 +59,65 @@
 					
 					<input class="hidden"
 						type="text"
-						name="id_grupo"
-						id="txtIdGrupo">
+						name="id_inscripcion"
+						id="txtIdInscripcion">
 
-					<input class="input input-bordered border-2 rounded-full NOMBRE_GRUPO"
-						type="text"
-						name="nombre_grupo"
-						id="txtNombreGrupo"
-						onchange="return comprobarNombreGrupo();">
-					<label class="hidden" id="errorFormatoNombreGrupo"></label>
+					<select class="select select-bordered border-2 rounded-full font-medium"
+						type=""
+						name="id_actividad"
+						id="selectIdActividad">
+						<option disabled="" selected="" class="ACTIVIDAD">
+						</option>
+					</select>
 
-					<input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCION_GRUPO"
-						type="text"
-						name="descripcion_grupo"
-						id="txtDescripcionGrupo"
-						onchange="return comprobarDescripcionGrupo();">
-					<label class="hidden" id="errorFormatoDescripcionGrupo"></label>
+                    <select class="mt-4 select select-bordered border-2 rounded-full font-medium"
+						type=""
+						name="id_usuario"
+						id="selectIdUsuario">
+						<option disabled="" selected="" class="PERSONA">
+						</option>
+					</select>
+
+					<label class="mt-4 ml-3 text-sm font-medium FECHA_SOLICITUD_INSCRIPCION"></label>
+					<input class="mt-2 input input-bordered border-2 rounded-full"
+						type="date"
+						name="fecha_solicitud_inscripcion"
+						id="dateFechaSolicitudInscripcion"
+						onblur="return comprobarFechaSolicitudInscripcion();">
+					<label class="hidden" id="errorFormatoFechaSolicitudInscripcion"></label>
+
+					<div class="mx-10 my-8 min-h-[2px] max-h-[2px] bg-gradient-to-r from-secondary to-primary rounded-flull"></div> 
+
+					<label class="ml-3 text-sm font-medium DOCUMENTO_PAGO"></label>
+					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center" id="botonArchivo">
+						<img class="my-3 w-8 rotate-90"
+							src="img/icons/clearskies/exit.svg"
+							alt="DOCUMENTO_PAGO">
+						<input class="mb-3 mx-auto"
+							type="file"
+							name="documento_pago"
+							id="fileDocumentoPago"
+							accept="application/pdf"
+							onchange="comprobarDocumentoPago();">
+					</label>
+					<label class="hidden" id="errorFormatoDocumentoPago"></label>
+					<a class="mt-2 btn btn-ghost btn-xs rounded-full font-normal mx-auto VERARCHIVO" id="abrirArchivo"></a>
+
+					<label class="mt-4 ml-3 text-sm font-medium FECHA_PAGO_INSCRIPCION"></label>
+                    <input class="mt-2 input input-bordered border-2 rounded-full"
+						type="date"
+						name="fecha_pago_inscripcion"
+						id="dateFechaPagoInscripcion"
+						onblur= "return comprobarFechaPagoInscripcion();">
+					<label class="hidden" id="errorFormatoFechaPagoInscripcion"></label>
+
+					<label class="mt-4 ml-3 text-sm font-medium FECHA_ACEPTACION_INSCRIPCION"></label>
+                    <input class="mt-2 input input-bordered border-2 rounded-full"
+						type="date"
+						name="fecha_aceptacion_inscripcion"
+						id="dateFechaAceptacionInscripcion"
+						onblur= "return comprobarFechaAceptacionInscripcion();">
+					<label class="hidden" id="errorFormatoFechaAceptacionInscripcion"></label>
 				</div>
 
 				<div class="modal-action mt-4 flex flex-row justify-end items-center" id="modalActionsArea">
@@ -134,13 +177,13 @@
 				<div class="flex justify-between w-full">
 					<div class="flex flex-row">
 						<img class="w-10"
-									src="img/icons/clearskies/group.svg"
-									alt="GRUPOS">
-						<h1 class="text-3xl ml-4 mt-2 GRUPOS"></h1>
+									src="img/icons/clearskies/registration.svg"
+									alt="INSCRIPCIONES">
+						<h1 class="text-3xl ml-4 mt-2 INSCRIPCIONES"></h1>
 					</div>
 					<div>
 						<button class="btn btn-primary px-2"
-						onclick="showNuevoGrupo();">
+						onclick="showNuevaInscripcion();">
 							<img class="w-10"
 								src="img/icons/clearskies/plus.svg"
 								alt="ICONADD">
@@ -149,7 +192,7 @@
 				</div>
 
 				<div class="mt-10 overflow-x-auto">
-					<table class="table w-full" id="datosGrupos">
+					<table class="table w-full" id="datosInscripciones">
 					</table>
 				</div>
 				  

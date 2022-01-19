@@ -18,13 +18,13 @@ function construyeFila(fila, grupoNameArray) {
         own = "active";
     }
 
-    grupoNameArray.forEach(current => fila.id_grupo === current.id_grupo ? tempNameGrupo = current.nombre_grupo : null);
+    grupoNameArray.forEach(current => fila.id_grupo == current.id_grupo ? tempNameGrupo = current.nombre_grupo : null);
 
     var filaTabla =
                 '<tr class="'+ own + '">' +
                 '<td>' + fila.usuario + 
                 '</td> <td>' + fila.dni_usuario + 
-                '</td> <td>' + tempNameGrupo + 
+                '</td> <td>' + decodeURIComponent(tempNameGrupo) + 
                 '</td> <td><span class="' + borrado + '"></span>' +
                 '</td> <td>' + celdaAcciones +  
                 '</td> </tr>';

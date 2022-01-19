@@ -5,7 +5,10 @@ function resetearFormularioActividad () {
 							'txtDescripcionActividad',
 							'numPrecioActividad',
 							'numPlazasActividad',
-							'selectIdEspacio'];
+							'txtColorActividad',
+							'txtColorNombreActividad',
+							'selectIdEspacio',
+							'selectIdCategoria'];
 	resetearFormulario('formGenerico', idElementoList);
 
 	idElementoList.forEach(function (idElemento) {
@@ -26,26 +29,21 @@ function resetearFormularioActividad () {
 	});
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
+	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
 
 	document.getElementById('txtIdActividad').removeAttribute("disabled");
 	document.getElementById('txtNombreActividad').removeAttribute("disabled");
 	document.getElementById('txtDescripcionActividad').removeAttribute("disabled");
 	document.getElementById('numPrecioActividad').removeAttribute("disabled");
 	document.getElementById('numPlazasActividad').removeAttribute("disabled");
+	document.getElementById('txtColorActividad').removeAttribute("disabled");
+	document.getElementById('txtColorNombreActividad').removeAttribute("disabled");
 	document.getElementById('selectIdEspacio').removeAttribute("disabled");
 	document.getElementById('selectIdCategoria').removeAttribute("disabled");
 
 
 	$("#selectIdEspacio").html("<option disabled=\"\" selected=\"\" class=\"ESPACIO\"> </option>");
-
 	$("#selectIdCategoria").html("<option disabled=\"\" selected=\"\" class=\"CATEGORIA\"> </option>");
-
-	document.getElementById('txtNombreActividad').classList.remove('hidden');
-	document.getElementById('txtDescripcionActividad').classList.remove('hidden');
-	document.getElementById('numPrecioActividad').classList.remove('hidden');
-	document.getElementById('numPlazasActividad').classList.remove('hidden');
-	document.getElementById('selectIdEspacio').classList.remove('hidden');
-	document.getElementById('selectIdCategoria').classList.remove('hidden');
 
 	document.getElementById('modalActionsArea').classList.remove('hidden');
 }
@@ -59,7 +57,7 @@ function showNuevaActividad() {
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONADD');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarNuevaActividad();');
-	document.getElementById('formGenerico').setAttribute('action', 'javascript:nuevaActividad();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('add','actividad', getListActivities);");
 
 	selectid_espacio('','selectIdEspacio');
 	selectid_categoria('','selectIdCategoria');
@@ -81,36 +79,6 @@ function comprobarNuevaActividad() {
 	} else {
 		return false;
 	}
-}
-
-function nuevaActividad() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'add', 'actividad');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListActividades();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
 }
 
 // DETALLE
@@ -157,7 +125,7 @@ function showEditarActividad(id_actividad, nombre_actividad, descripcion_activid
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarActividad();');
-	document.getElementById('formGenerico').setAttribute('action', 'javascript:eliminarActividad();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('edit','actividad', getListActivities);");
 
 	document.getElementById('txtIdActividad').value = id_actividad;
 	document.getElementById('txtNombreActividad').value = nombre_actividad;
@@ -176,7 +144,7 @@ function showEditarActividad(id_actividad, nombre_actividad, descripcion_activid
 }
 
 function comprobarEditarActividad() {
-	if	   (comprobarNombreActividad()
+	if (	comprobarNombreActividad()
 		&& comprobarDescripcionActividad()
 		&& comprobarPrecioActividad()
 		&& comprobarPlazasActividad()
@@ -188,36 +156,6 @@ function comprobarEditarActividad() {
 	}
 }
 
-function editarActividad() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'edit', 'actividad');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListActividades();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
-}
-
 // ELIMINAR
 function showEliminarActividad(id_actividad, nombre_actividad, descripcion_actividad, precio_actividad, numPlazas_actividad, color_actividad, color_nombre_actividad, id_espacio, id_categoria) {
 
@@ -226,7 +164,7 @@ function showEliminarActividad(id_actividad, nombre_actividad, descripcion_activ
 	document.getElementById('formGenericoTitle').classList.add('DETAILACTIVITY');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
-	document.getElementById('formGenerico').setAttribute('action', 'javascript:eliminarActividad();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','actividad', getListActivities);");
 
 	document.getElementById('txtNombreActividad').setAttribute("disabled", true);
 	document.getElementById('txtDescripcionActividad').setAttribute("disabled", true);
@@ -252,34 +190,4 @@ function showEliminarActividad(id_actividad, nombre_actividad, descripcion_activ
 	setLang(getCookie('lang'));
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
-}
-
-function eliminarActividad() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'delete', 'actividad');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListActividades();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
 }

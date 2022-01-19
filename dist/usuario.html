@@ -73,7 +73,8 @@
 						type="password"
 						name="contrasena"
 						id="txtPassword"
-						onchange="passShow('txtPassword','close'); return comprobarPass();"
+						onblur="passShow('txtPassword','close');"
+						onchange="return comprobarPass();"
 						onfocus="passShow('txtPassword','show')">
 					<label class="hidden" id="errorFormatoPass"></label>
 					
@@ -161,7 +162,7 @@
 					<div class="flex flex-row">
 						<img class="w-10"
 									src="img/icons/clearskies/user.svg"
-									alt="IDIOMA">
+									alt="USUARIOS">
 						<h1 class="text-3xl ml-4 mt-2 USUARIOS"></h1>
 					</div>
 					<div>

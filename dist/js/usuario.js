@@ -23,7 +23,7 @@ function resetearFormularioUsuario () {
 	});
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
-	document.getElementById('formGenericoTitle').removeAttribute("class");
+	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
 
 	document.getElementById('txtDni').removeAttribute("disabled");
 	document.getElementById('txtUsuario').removeAttribute("disabled");
@@ -54,7 +54,7 @@ function showNuevoUsuario() {
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONADD');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarNuevoUsuario();');
-	document.getElementById('formGenerico').setAttribute('action', 'javascript:nuevoUsuario();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('add','usuario', getListUsers);");
 
 	selectid_grupo('','selectIdGrupo');
 
@@ -68,41 +68,11 @@ function comprobarNuevoUsuario() {
 		&& comprobarPass()
 		&& comprobarDni()) {
 		encriptar('txtPassword');
-		// generarId();
+		document.getElementById('txtIdUsuario').value = createId('usuario');
 		return true;
 	} else {
 		return false;
 	}
-}
-
-function nuevoUsuario() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'add', 'usuario');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListUsers();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
 }
 
 // DETALLE
@@ -159,7 +129,7 @@ function showEditarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borra
 	}
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarUsuario();');
-	document.getElementById('formGenerico').setAttribute('action', "javascript:editarUsuario();");
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('edit','usuario', getListUsers);");
 
 	selectid_grupo(id_grupo,'selectIdGrupo');
 
@@ -178,36 +148,6 @@ function comprobarEditarUsuario() {
 	} else {
 		return false;
 	}
-}
-
-function editarUsuario() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'edit', 'usuario');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListUsers();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();				
-			}
-		);
 }
 
 // ELIMINAR
@@ -235,41 +175,11 @@ function showEliminarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, bor
 		document.getElementById('chkBorradoUsuario').checked = true;
 	}
 
-	document.getElementById('formGenerico').setAttribute('action', "javascript:eliminarUsuario();");
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','usuario', getListUsers);");
 
 	selectid_grupo(id_grupo,'selectIdGrupo');
 
 	setLang(getCookie('lang'));
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
-}
-
-function eliminarUsuario() {
-	var idSession = getCookie('sessionId');
-
-	insertacampo(document.formGenerico,'ID_SESSION', idSession);
-   	addActionControler(document.formGenerico, 'delete', 'usuario');
-	
-	document.getElementById('formGenericoDiv').classList.remove('modal-open');
-
-	var idioma = getCookie('lang');
-
-	$.ajax({
-			method: 'POST',
-			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
-		}).done(
-			function( response ) {
-				if (response.ok == true) {
-					document.getElementById('modal').classList.remove('modal-open');
-					getListUsers();
-				} else {
-					$('#mensajeError').removeClass();
-					$('#mensajeError').addClass(response.code);
-					setLang(idioma);
-					document.getElementById('modal').classList.add('modal-open');
-				}
-				deleteActionController();
-			}
-		);
 }

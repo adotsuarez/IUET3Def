@@ -39,7 +39,7 @@ function showNuevoPersona() {
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONADD');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarNuevoPersona();');
-	document.getElementById('formGenerico').setAttribute('action', 'javascript:nuevoPersona();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('add','persona', getListPersonas);");
 
 	setLang(getCookie('lang'));
 	
@@ -58,10 +58,6 @@ function comprobarNuevoPersona() {
 	} else {
 		return false;
 	}
-}
-
-function nuevoPersona() {
-	
 }
 
 // DETALLE

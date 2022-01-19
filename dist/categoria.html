@@ -12,8 +12,8 @@
 
 	<script type="text/javascript" src="js/funcionesComunes.js"></script>
 	<script type="text/javascript" src="js/funcionesFormularios.js"></script>
-	<script type="text/javascript" src="js/persona.js"></script>
-	<script type="text/javascript" src="js/showallpersona.js"></script>
+	<script type="text/javascript" src="js/categoria.js"></script>
+	<script type="text/javascript" src="js/showallcategoria.js"></script>
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/config.js"></script>
 
@@ -27,7 +27,7 @@
 
 <body class="font-light"
 	data-theme="iuui"
-	onload="setLang(); validaAutenticado(); getListPersonas();">
+	onload="setLang(); validaAutenticado(); getListCategorias();">
 
 	<div class="modal" id="modal">
 		<div class="modal-box" id="modalContent">
@@ -56,90 +56,25 @@
 				id="formGenerico">
 				<div class="flex flex-col mt-4 ml-3 mr-10">
 					<p class="text-3xl mb-4 font-medium"><span id="formGenericoTitle"></span></p>
-
-					<input class="input input-bordered border-2 rounded-full NOMBRE_PERSONA"
-						type="text"
-						name="nombre_persona"
-						id="txtNombrePersona"
-						onchange="return comprobarNombre();">
-					<label class="hidden" id="errorFormatoNombre"></label>
-
-					<input class="mt-4 input input-bordered border-2 rounded-full APELLIDOS_PERSONA"
-						type="text"
-						name="apellidos_persona"
-						id="txtApellidosPersona"
-						onchange="return comprobarApellidos();">
-					<label class="hidden" id="errorFormatoApellidos"></label>
 					
-					<input class="mt-4 input input-bordered border-2 rounded-full DNI_PERSONA"
+					<input class="hidden"
 						type="text"
-						name="dni_persona"
-						id="txtDni"
-						onchange="return comprobarDni();">
-					<label class="hidden" id="errorFormatoDni"></label>
+						name="id_categoria"
+						id="txtIdCategoria">
 
-					<input class="mt-4 input input-bordered border-2 rounded-full DIRECCION"
+                    <input class="input input-bordered border-2 rounded-full NOMBRE_CATEGORIA"
 						type="text"
-						name="direccion_persona"
-						id="txtDireccionPersona"
-						onchange="return comprobarDireccion();">
-					<label class="hidden" id="errorFormatoDireccion"></label>
+						name="nombre_categoria"
+						id="txtNombreCategoria"
+						onblur="return comprobarNombreCategoria();">
+					<label class="hidden" id="errorFormatoNombreCategoria"></label>
 
-					<input class="mt-4 input input-bordered border-2 rounded-full TELEFONO"
-						type="tel"
-						name="telefono_persona"
-						id="txtTelefonoPersona"
-						onchange="return comprobarTelefono();">
-					<label class="hidden" id="errorFormatoTelefono"></label>
-
-					<input class="mt-4 input input-bordered border-2 rounded-full EMAIL"
-						type="email"
-						name="email_persona"
-						id="txtEmailPersona"
-						onchange="return comprobarEmail();">
-					<label class="hidden" id="errorFormatoEmail"></label>
-
-					<label class="mt-4 ml-3 text-sm font-medium FECHANACIMIENTO_PERSONA"></label>
-					<input class="mt-2 input input-bordered border-2 rounded-full"
-						type="date"
-						name="fechaNacimiento_persona"
-						id="txtFechaNacimientoPersona"
-						onchange="return comprobarFechaNacimiento();">
-					<label class="hidden" id="errorFormatoFechaNacimiento"></label>
-
-					<label class="mt-4 ml-3 text-sm font-medium FOTO"></label>
-					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center">
-						<img class="my-3 w-8 rotate-90"
-							src="img/icons/clearskies/exit.svg"
-							alt="FOTO">
-						<input class="mb-3 mx-auto"
-							type="file"
-							name="foto_persona"
-							id="fotoPersona"
-							accept="image/png, image/jpeg"
-							onchange="comprobarFoto();">
-					</label>
-					<label class="hidden" id="errorFormatoFoto"></label>
-					
-					<input type="hidden" name="esCeliaco_persona" id="hiddenEsCeliaco" value=0>
-					<label class="cursor-pointer label">
-						<span class="mt-4 ml-3 label-text font-medium"><span class="ESCELIACO_PERSONA"></span></span>
-						<input class="toggle toggle-primary"
-							type="checkbox"
-							name="esCeliaco_persona"
-							id="chkEsCeliacoPersona"
-							value=1>
-					</label>
-
-					<input type="hidden" name="borrado_persona" id="hiddenBorradoPersona" value=1>
-					<label class="cursor-pointer label">
-						<span class="mt-4 ml-3 label-text font-medium"><span class="BORRADO_PERSONA"></span></span>
-						<input class="toggle toggle-primary"
-							type="checkbox"
-							name="borrado_persona"
-							id="chkBorradoPersona"
-							value=0>
-					</label>
+                    <input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCION_CATEGORIA"
+						type="text"
+						name="descripcion_categoria"
+						id="txtDescripcionCategoria"
+						onblur="return comprobarDescripcionCategoria();">
+					<label class="hidden" id="errorFormatoDescripcionCategoria"></label>
 				</div>
 
 				<div class="modal-action mt-4 flex flex-row justify-end items-center" id="modalActionsArea">
@@ -199,13 +134,13 @@
 				<div class="flex justify-between w-full">
 					<div class="flex flex-row">
 						<img class="w-10"
-									src="img/icons/clearskies/user.svg"
-									alt="PERSONAS">
-						<h1 class="text-3xl ml-4 mt-2 PERSONAS"></h1>
+									src="img/icons/clearskies/tag.svg"
+									alt="CATEGORIAS">
+						<h1 class="text-3xl ml-4 mt-2 CATEGORIAS"></h1>
 					</div>
 					<div>
 						<button class="btn btn-primary px-2"
-						onclick="showNuevoPersona();">
+						onclick="showNuevoCategoria();">
 							<img class="w-10"
 								src="img/icons/clearskies/plus.svg"
 								alt="ICONADD">
@@ -214,7 +149,7 @@
 				</div>
 
 				<div class="mt-10 overflow-x-auto">
-					<table class="table w-full" id="datosPersonas">
+					<table class="table w-full" id="datosCategorias">
 					</table>
 				</div>
 			</div>

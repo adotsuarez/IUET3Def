@@ -69,25 +69,31 @@
 						onblur="return comprobarNombreActividad();">
 					<label class="hidden" id="errorFormatoNombreActividad"></label>
 
-					<input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCIÓN_ACTIVIDAD"
+					<input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCION_ACTIVIDAD"
 						type="text"
 						name="descripcion_actividad"
 						id="txtDescripcionActividad"
 						onblur= "return comprobarDescripcionActividad();">
 					<label class="hidden" id="errorFormatoDescripcionActividad"></label>
 
-                    <input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCIÓN_ACTIVIDAD"
-						type="text"
-						name="color_actividad"
-						id="txtColorActividad"
-						onblur= "return comprobarColorActividad();">
+					<label class="label">
+						<span class="mt-4 ml-3 label-text font-medium"><span class="COLOR_ACTIVIDAD"></span></span>
+						<input class="mt-4 min-w-[100px] input input-bordered border-2 rounded-full COLOR_ACTIVIDAD"
+							type="color"
+							name="color_actividad"
+							id="txtColorActividad"
+							onblur= "return comprobarColorActividad();">
+					</label>
 					<label class="hidden" id="errorFormatoColorActividad"></label>
 
-                    <input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCIÓN_ACTIVIDAD"
-						type="text"
-						name="color_nombre_actividad"
-						id="txtColorNombreActividad"
-						onblur= "return comprobarNombreColorActividad();">
+					<label class="cursor-pointer label">
+						<span class="mt-4 ml-3 label-text font-medium"><span class="COLOR_NOMBRE_ACTIVIDAD"></span></span>
+						<input class="mt-4 min-w-[100px] input input-bordered border-2 rounded-full COLOR_NOMBRE_ACTIVIDAD"
+							type="color"
+							name="color_nombre_actividad"
+							id="txtColorNombreActividad"
+							onblur= "return comprobarNombreColorActividad();">
+					</label>
 					<label class="hidden" id="errorFormatoNombreColorActividad"></label>
 					
 					<input class="mt-4 input input-bordered border-2 rounded-full PRECIO_ACTIVIDAD"
@@ -181,8 +187,8 @@
 					<div class="flex flex-row">
 						<img class="w-10"
 									src="img/icons/clearskies/activity.svg"
-									alt="IDIOMA">
-						<h1 class="text-3xl ml-4 mt-2 ACTIVIDAD"></h1>
+									alt="ACTIVIDADES">
+						<h1 class="text-3xl ml-4 mt-2 ACTIVIDADES"></h1>
 					</div>
 					<div>
 						<button class="btn btn-primary px-2"

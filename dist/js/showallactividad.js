@@ -5,8 +5,8 @@ function construyeFila(fila, espacioNameArray, categoriaNameArray) {
 
     celdaAcciones = '<div class="flex flex-row"><button class="btn btn-ghost btn-sm px-0" onclick="showDetalleActividad(' + atributosFunciones + ')"> <img class="w-8 ICONDETALLE" src="img/icons/clearskies/view.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEditarActividad(' + atributosFunciones + ')"> <img class="w-8 ICONEDITAR" src="img/icons/clearskies/pencil.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEliminarActividad(' + atributosFunciones + ')"> <img class="w-8 ICONELIMINAR" src="img/icons/clearskies/bin.svg"> </button> </div>'
 
-    espacioNameArray.forEach(current => fila.id_espacio === current.id_espacio ? tempNameEspacio = current.nombre_espacio : null);
-    categoriaNameArray.forEach(current => fila.id_categoria === current.id_categoria ? tempNameCategoria = current.nombre_categoria : null);
+    espacioNameArray.forEach(current => fila.id_espacio == current.id_espacio ? tempNameEspacio = current.nombre_espacio : null);
+    categoriaNameArray.forEach(current => fila.id_categoria == current.id_categoria ? tempNameCategoria = current.nombre_categoria : null);
 
     var filaTabla =
                 '<tr>' +
@@ -14,8 +14,8 @@ function construyeFila(fila, espacioNameArray, categoriaNameArray) {
                 '</td> <td class="max-w-[600px] whitespace-normal">' + decodeURIComponent(fila.descripcion_actividad) +
                 '</td> <td>' + fila.precio_actividad +
                 '</td> <td>' + fila.numPlazas_actividad +
-                '</td> <td>' + tempNameEspacio +
-                '</td> <td>' + tempNameCategoria +
+                '</td> <td>' + decodeURIComponent(tempNameEspacio) +
+                '</td> <td>' + decodeURIComponent(tempNameCategoria) +
                 '</td> <td>' + celdaAcciones +
                 '</td> </tr>';
 

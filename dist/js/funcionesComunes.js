@@ -501,10 +501,6 @@ function decodeDate(original) {
 	return dia + "/" + mes + "/" + ano;
 }
 
-function encodeDate(original) {
-
-}
-
 /**Función para encriptar la pass en md5*/
 function encriptar(idElemento){
 
@@ -768,6 +764,71 @@ function selectid_categoria(id_categoria, idElemento) {
     });
 }
 
+function selectid_actividad(id_activdad, idElemento) {
+    var idSession = getCookie("sessionId");
+
+    crearformoculto("formularioobteneractividad", "");
+
+    insertacampo(document.formularioobteneractividad, "ID_SESSION", idSession);
+    insertacampo(document.formularioobteneractividad, "controlador", "actividad");
+    insertacampo(document.formularioobteneractividad, "action", "buscar");
+
+    var idioma = getCookie("lang");
+
+ 	$.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formularioobteneractividad").serialize(),
+    }).done(function (response) {
+        if (response.ok == true) {
+			addOptions(idElemento, response.resource, 'actividad');
+			if (id_activdad != '') {
+				$("#" + idElemento + " option[label='Actividad']").attr("selected", false);
+				$("#" + idElemento + " option[value='" + id_activdad + "']").attr("selected", true);
+			}
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
+
+        deleteActionController();
+    });
+}
+
+function selectid_usuario(id_usuario, idElemento) {
+    var idSession = getCookie("sessionId");
+
+    crearformoculto("formularioobtenerusuario", "");
+
+    insertacampo(document.formularioobtenerusuario, "ID_SESSION", idSession);
+    insertacampo(document.formularioobtenerusuario, "controlador", "usuario");
+    insertacampo(document.formularioobtenerusuario, "action", "buscar");
+
+    var idioma = getCookie("lang");
+
+ 	$.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formularioobtenerusuario").serialize(),
+    }).done(function (response) {
+        if (response.ok == true) {
+			addOptions(idElemento, response.resource, 'usuario');
+			if (id_usuario != '') {
+				$("#" + idElemento + " option[label='Actividad']").attr("selected", false);
+				$("#" + idElemento + " option[value='" + id_usuario + "']").attr("selected", true);
+			}
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
+
+        deleteActionController();
+    });
+}
 
 function getNames(entity) {
     var idSession = getCookie("sessionId");
@@ -799,4 +860,109 @@ function getNames(entity) {
     });
 
 	return toret;
+}
+
+function createId(entity) {
+	var idSession = getCookie("sessionId");
+
+    crearformoculto("formGetNames", "");
+
+    insertacampo(document.formGetNames, "ID_SESSION", idSession);
+    insertacampo(document.formGetNames, "controlador", entity);
+    insertacampo(document.formGetNames, "action", "buscar");
+
+    var idioma = getCookie("lang");
+
+ 	var id = 0;
+	
+	 $.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formGetNames").serialize(),
+		async: false
+    }).done(function (response) {
+        if (response.ok == true) {
+			id = response.resource.length + 1;
+		} else {
+			$('#mensajeError').removeClass();
+			$('#mensajeError').addClass(response.code);
+			setLang(idioma);
+			document.getElementById('modal').classList.add('modal-open');
+		}
+        deleteActionController();
+    });
+
+	return id;
+}
+
+function sendEntity(action, entity, okFunction) {
+	var idSession = getCookie('sessionId');
+
+	insertacampo(document.formGenerico,'ID_SESSION', idSession);
+   	addActionControler(document.formGenerico, action, entity);
+
+	document.getElementById('formGenericoDiv').classList.remove('modal-open');
+
+	var idioma = getCookie('lang');
+
+	$.ajax({
+			method: 'POST',
+			url: urlPeticionesAjax,
+			data: $('#formGenerico').serialize(),  
+		}).done(
+			function( response ) {
+				if (response.ok == true) {
+					document.getElementById('modal').classList.remove('modal-open');
+					okFunction();
+				} else {
+					$('#mensajeError').removeClass();
+					$('#mensajeError').addClass(response.code);
+					setLang(idioma);
+					document.getElementById('modal').classList.add('modal-open');
+				}
+				deleteActionController();				
+			}
+		);
+}
+
+function sendEntityWithFiles(action, entity, okFunction, formFile) {
+	var idSession = getCookie('sessionId');
+
+	insertacampo(document.formGenerico,'ID_SESSION', idSession);
+   	addActionControler(document.formGenerico, action, entity);
+
+	document.getElementById('formGenericoDiv').classList.remove('modal-open');
+
+	var idioma = getCookie('lang');
+
+	var datos = new FormData();
+
+    var formdata = $('#formGenerico').serialize();
+    var file = document.getElementById(formFile)[0].files[0];
+    
+    datos.append("upload", file);
+    datos.append("formulario", formdata);
+
+	$.ajax(
+        {
+            method: "POST",
+            url: urlPeticionesAjax,
+            data: datos,
+            contentType: false,
+            processData: false,
+	    }
+    ).done(
+			function( response ) {
+				if (response.ok == true) {
+					document.getElementById('modal').classList.remove('modal-open');
+					okFunction();
+				} else {
+					$('#mensajeError').removeClass();
+					$('#mensajeError').addClass(response.code);
+					setLang(idioma);
+					document.getElementById('modal').classList.add('modal-open');
+				}
+				deleteActionController();				
+			}
+		);
 }
