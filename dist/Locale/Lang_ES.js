@@ -176,6 +176,8 @@ arrayES={
 	'FOTO_PERSONA' : 'Foto',	
 	'ESCELIACO_PERSONA' : 'Celíaca',	
 	'BORRADO_PERSONA' : 'Activo',
+
+	//- errores
 	'DNI_PERSONA_YA_EXISTE' : 'Ya hay una persona con este DNI',	
 	'EMAIL_PERSONA_YA_EXISTE' : 'Ya hay una persona con este email',	
 	'PERSONA_BORRAR_NO_EXISTE' : 'La persona a borrar no existe',	
@@ -184,18 +186,18 @@ arrayES={
 	'ERROR_MODIFICAR_PERSONA' : 'Error al modificar la persona',	
 	'ERROR_BORRAR_PERSONA' : 'Error al borrar la persona',	
 		
-	//-exito	
+	//- exito	
 	'PERSONA_INSERTAR_OK' : 'Persona insertada correctamente',	
 	'PERSONA_MODIFICAR_OK' : 'Persona modificada correctamente',	
 	'PERSONA_BORRAR_OK' : 'Persona borrada correctamente',	
 	//************************************************************************************************	
 	// grupo	
 	//************************************************************************************************	
-	// atributos	
+	//- atributos	
 	'ID_GRUPO' : 'ID de grupo',	
 	'NOMBRE_GRUPO' : 'Nombre de grupo',	
 	'DESCRIPCION_GRUPO' : 'Descripción del grupo',	
-	//errores	
+	//- errores	
 	'GRUPO_YA_EXISTE' : 'El código de grupo ya existe',	
 	'GRUPO_BORRAR_NO_EXISTE' : 'El grupo a borrar no existe',	
 	'GRUPO_BORRAR_EXISTE_EN_USUARIO' : 'No se puede borrar, hay usuarios en este grupo',	
@@ -203,11 +205,67 @@ arrayES={
 	'ERROR_MODIFICAR_GRUPO' : 'Error al modificar el grupo',	
 	'ERROR_BORRAR_GRUPO' : 'Error al borrar el grupo',	
 		
-	//-exito	
+	//- exito	
 	'GRUPO_INSERTAR_OK' : 'Grupo insertado correctamente',	
 	'GRUPO_MODIFICAR_OK' : 'Grupo modificado correctamente',	
 	'GRUPO_BORRAR_OK' : 'Grupo borrado correctamente',
+    //************************************************************************************************	
+	// actividad	
+	//************************************************************************************************	
+	//- atributos
+	'ID_ACTIVIDAD' : 'ID de actividad',
+	'NOMBRE_ACTIVIDAD' : 'Nombre de actividad',
+	'DESCRIPCION_ACTIVIDAD' : 'Descripción de la actividad',
+	'COLOR_ACTIVIDAD' : 'Color de la actividad',
+	'COLOR_NOMBRE_ACTIVIDAD' : 'Color del nombre de la actividad',
+	'PRECIO_ACTIVIDAD' : 'Precio de la actividad',
+	'PLAZAS_ACTIVIDAD' : 'Plazas de la actividad',
+	'ID_ESPACIO' : 'ID de espacio',
+	'ID_CATEGORIA' : 'ID de categoría',
+
+	//- errores
+	'ACTIVIDAD_YA_EXISTE' : 'El código de actividad ya existe',
+	'ACTIVIDAD_BORRAR_NO_EXISTE' : 'La actividad a borrar no existe',
+	'ACTIVIDAD_BORRAR_EXISTE_EN_USUARIOS' : 'No se puede borrar, hay usuarios en esta actividad',
+	'ERROR_INSERTAR_ACTIVIDAD' : 'Error al insertar la actividad',
+	'ERROR_MODIFICAR_ACTIVIDAD' : 'Error al modificar la actividad',
+	'ERROR_BORRAR_ACTIVIDAD' : 'Error al borrar la actividad',
+
+	//- exito
+	'ACTIVIDAD_INSERTAR_OK' : 'Actividad insertada correctamente',
+	'ACTIVIDAD_MODIFICAR_OK' : 'Actividad modificada correctamente',
+	'ACTIVIDAD_BORRAR_OK' : 'Actividad borrada correctamente',
+    //************************************************************************************************	
+	// categoria	
+	//************************************************************************************************	
+	//- atributos
+	'ID_CATEGORIA' : 'ID de categoría',
+	'NOMBRE_CATEGORIA' : 'Nombre de categoría',
+	'DESCRIPCION_CATEGORIA' : 'Descripción de la categoría',
+
+	//- errores
+	'CATEGORIA_YA_EXISTE' : 'El código de categoría ya existe',
+	'CATEGORIA_BORRAR_NO_EXISTE' : 'La categoría a borrar no existe',
+	'CATEGORIA_BORRAR_EXISTE_EN_ACTIVIDAD' : 'No se puede borrar, hay actividades en esta categoría',
+	'ERROR_INSERTAR_CATEGORIA' : 'Error al insertar la categoría',
+	'ERROR_MODIFICAR_CATEGORIA' : 'Error al modificar la categoría',
+	'ERROR_BORRAR_CATEGORIA' : 'Error al borrar la categoría',
+
+	//- exito
+	'CATEGORIA_INSERTAR_OK' : 'Categoría insertada correctamente',
+	'CATEGORIA_MODIFICAR_OK' : 'Categoría modificada correctamente',
+	'CATEGORIA_BORRAR_OK' : 'Categoría borrada correctamente',
+	//************************************************************************************************	
+	// espacio	
+	//************************************************************************************************	
+	//- atributos
+	
+
+
+
+
     
+	//-error
 	'02100' : 'Error al insertar el usuario',
 	'02101' : 'El nombre de usuario ya existe',
 	'02102' : 'No existe el usuario',
