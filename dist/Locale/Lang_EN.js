@@ -175,7 +175,7 @@ arrayEN={
 	'EMAIL_PERSONA' : 'Person\'s e-mail address',	
 	'FOTO_PERSONA' : 'Person Photo',	
 	'ESCELIACO_PERSONA' : 'Celiac',	
-	'BORRADO_PERSONA' : 'Active',	
+	'BORRADO_USUARIO' : 'Active',	
 	'DNI_PERSONA_YA_EXISTE' : 'There is already one person with this ID',	
 	'EMAIL_PERSONA_YA_EXISTE' : 'There is already one person with this email',	
 	'PERSONA_BORRAR_NO_EXISTE' : 'The person to be deleted does not exist',	

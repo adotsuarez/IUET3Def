@@ -7,6 +7,8 @@ function resetearFormularioCategoria () {
 
 	idElementoList.forEach( function (idElemento) {
 		document.getElementById(idElemento).classList.remove('input-error');
+		document.getElementById(idElemento).removeAttribute("disabled");
+		document.getElementById(idElemento).removeAttribute("readonly");
 	});
 
 	idErrorList = ['errorFormatoNombreCategoria',
@@ -20,9 +22,6 @@ function resetearFormularioCategoria () {
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
 	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
-
-	document.getElementById('txtNombreCategoria').removeAttribute("disabled");
-	document.getElementById('txtDescripcionCategoria').removeAttribute("disabled");
 
 	document.getElementById('txtNombreCategoria').classList.remove('hidden');
 	document.getElementById('txtDescripcionCategoria').classList.remove('hidden');
@@ -65,8 +64,8 @@ function showDetalleCategoria(id_categoria, nombre_categoria, descripcion_catego
 	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
 	document.getElementById('modalActionsArea').classList.add('hidden');
 
-	document.getElementById('txtDescripcionCategoria').setAttribute("disabled", true);
-	document.getElementById('txtNombreCategoria').setAttribute("disabled", true);
+	document.getElementById('txtDescripcionCategoria').setAttribute("readonly", true);
+	document.getElementById('txtNombreCategoria').setAttribute("readonly", true);
 
 	document.getElementById('txtDescripcionCategoria').value = descripcion_categoria;
 	document.getElementById('txtNombreCategoria').value = nombre_categoria;
@@ -114,8 +113,8 @@ function showEliminarCategoria(id_categoria, nombre_categoria, descripcion_categ
 	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
-	document.getElementById('txtDescripcionCategoria').setAttribute("disabled", true);
-	document.getElementById('txtNombreCategoria').setAttribute("disabled", true);
+	document.getElementById('txtDescripcionCategoria').setAttribute("readonly", true);
+	document.getElementById('txtNombreCategoria').setAttribute("readonly", true);
 
 	document.getElementById('txtDescripcionCategoria').value = descripcion_categoria;
 	document.getElementById('txtNombreCategoria').value = nombre_categoria;

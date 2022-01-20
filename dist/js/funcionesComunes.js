@@ -723,7 +723,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if(campo == 'precioactividad') {
-		var decimal = /^\d{0,4}*(\.\d{1})?\d{0,1}$/;
+		var decimal = /^\d{1,4}\.\d{0,2}$/;
 
     	if (!decimal.test(valor)) {
 			switch(campo) {
@@ -736,7 +736,8 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
-	if(campo == 'coloractividad' || 'colornombreactividad') {
+	if(campo == 'coloractividad' ||
+		campo == 'colornombreactividad') {
 		var colour = /^#[0-9A-F]{6}$/;
 
     	if (!colour.test(valor)) {
@@ -1220,7 +1221,7 @@ function sendEntityWithFiles(action, entity, okFunction, formFile) {
 	var datos = new FormData();
 
     var formdata = $('#formGenerico').serialize();
-    var file = document.getElementById(formFile)[0].files[0];
+    var file = document.getElementById(formFile).files[0];
     
     datos.append("upload", file);
     datos.append("formulario", formdata);

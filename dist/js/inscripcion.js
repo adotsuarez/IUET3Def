@@ -11,6 +11,8 @@ function resetearFormularioInscripcion () {
 
     idElementoList.forEach(function (idElemento) {
         document.getElementById(idElemento).classList.remove('input-errror');
+		document.getElementById(idElemento).removeAttribute("disabled");
+		document.getElementById(idElemento).removeAttribute("readonly");
     });
 
     idErrorList = ['errorFormatoFechaSolicitudInscripcion',
@@ -26,14 +28,6 @@ function resetearFormularioInscripcion () {
 
     document.getElementById('formGenericoTitle').removeAttribute("class");
     document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
-
-    document.getElementById('txtIdInscripcion').removeAttribute("disabled");
-    document.getElementById('selectIdActividad').removeAttribute("disabled");
-    document.getElementById('selectIdUsuario').removeAttribute("disabled");
-    document.getElementById('dateFechaSolicitudInscripcion').removeAttribute("disabled");
-    document.getElementById('fileDocumentoPago').removeAttribute("disabled");
-    document.getElementById('dateFechaPagoInscripcion').removeAttribute("disabled");
-    document.getElementById('dateFechaAceptacionInscripcion').removeAttribute("disabled");
     
 
     $("#selectIdActividad").html("<option disabled=\"\" selected=\"\" class=\"ACTIVIDAD\"> </option>");
@@ -96,9 +90,9 @@ function showDetalleInscripcion(id_inscripcion, fecha_solicitud_inscripcion, doc
 	document.getElementById('fileDocumentoPago').setAttribute("disabled", true);
 	document.getElementById('botonArchivo').classList.add('hidden');
 
-	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("disabled", true);
-	document.getElementById('dateFechaPagoInscripcion').setAttribute("disabled", true);
-	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("disabled", true);
+	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("readonly", true);
+	document.getElementById('dateFechaPagoInscripcion').setAttribute("readonly", true);
+	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("readonly", true);
 	document.getElementById('selectIdActividad').setAttribute("disabled", true);
 	document.getElementById('selectIdUsuario').setAttribute("disabled", true);
 
@@ -127,9 +121,9 @@ function showEditarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, docu
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarInscripcion();');
 	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntityWithFiles('edit','inscripcion', getListRegistration,'fileDocumentoPago');");
 
-	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("disabled", true);
-	document.getElementById('dateFechaPagoInscripcion').setAttribute("disabled", true);
-	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("disabled", true);
+	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("readonly", true);
+	document.getElementById('dateFechaPagoInscripcion').setAttribute("readonly", true);
+	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("readonly", true);
 	document.getElementById('selectIdActividad').setAttribute("disabled", true);
 	document.getElementById('selectIdUsuario').setAttribute("disabled", true);
 
@@ -166,12 +160,12 @@ function showEliminarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, do
 	document.getElementById('formGenericoTitle').classList.add('DETAILREGISTRATION');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
-	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntityWithFiles('delete','inscripcion', getListRegistration);");
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','inscripcion', getListRegistration);");
 
-	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("disabled", true);
+	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("readonly", true);
 	document.getElementById('fileDocumentoPago').setAttribute("disabled", true);
-	document.getElementById('dateFechaPagoInscripcion').setAttribute("disabled", true);
-	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("disabled", true);
+	document.getElementById('dateFechaPagoInscripcion').setAttribute("readonly", true);
+	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("readonly", true);
 	document.getElementById('selectIdActividad').setAttribute("disabled", true);
 	document.getElementById('selectIdUsuario').setAttribute("disabled", true);
 
@@ -179,7 +173,7 @@ function showEliminarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, do
 
     document.getElementById('txtIdInscripcion').value = id_inscripcion;
 	document.getElementById('dateFechaSolicitudInscripcion').value = fecha_solicitud_inscripcion;
-	document.getElementById('fileDocumentoPago').value = documento_pago;
+	document.getElementById('abrirArchivo').href = urlDocumentos + '/' + documento_pago;
 	document.getElementById('dateFechaPagoInscripcion').value = fecha_pago_inscripcion;
 	document.getElementById('dateFechaAceptacionInscripcion').value = fecha_aceptacion_inscripcion;
 

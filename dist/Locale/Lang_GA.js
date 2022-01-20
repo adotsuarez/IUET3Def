@@ -175,7 +175,7 @@ arrayGA={
 	'EMAIL_PERSONA' : 'Correo electrónico de Persoa',	
 	'FOTO_PERSONA' : 'Foto de Persoa',	
 	'ESCELIACO_PERSONA' : 'Celíaco',	
-	'BORRADO_PERSONA' : 'Activo',	
+	'BORRADO_USUARIO' : 'Activo',	
 	'DNI_PERSONA_YA_EXISTE' : 'Xa hai unha persoa con este DNI',	
 	'EMAIL_PERSONA_YA_EXISTE' : 'Xa hai unha persoa con este email',	
 	'PERSONA_BORRAR_NO_EXISTE' : 'A persoa a borrar non existe',	
