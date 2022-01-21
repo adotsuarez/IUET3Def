@@ -44,6 +44,7 @@ arrayGA={
 	//- atributos
 	'USUARIO' : 'Usuario',
 	'USUARIOS' : 'Usuarios',
+	'ID' : 'ID de usuario',
 	'NOMBRE' : 'Nome',
 	'APELLIDOS' : 'Apelidos',
 	'USUARIO' : 'Nome de usuario',
@@ -170,6 +171,7 @@ arrayGA={
 	//- atributos persoa
 	'PERSONA' : 'Persoa',
 	'PERSONAS' : 'Persoas',	
+	'ID_PERSONA' : 'ID de persoa',
 	'DNI_PERSONA' : 'DNI',	
 	'NOMBRE_PERSONA' : 'Nombe',	
 	'APELLIDOS_PERSONA' : 'Apelidos',	

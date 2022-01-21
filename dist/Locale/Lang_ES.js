@@ -44,6 +44,7 @@ arrayES={
 	//- atributos
 	'USUARIO' : 'Usuario',
 	'USUARIOS' : 'Usuarios',
+	'ID' : 'ID de usuario',
 	'NOMBRE' : 'Nombre',
 	'APELLIDOS' : 'Apellidos',
 	'USUARIO' : 'Nombre de usuario',
@@ -170,6 +171,7 @@ arrayES={
 	//- atributos persona	
 	'PERSONA' : 'Persona',
 	'PERSONAS' : 'Personas',
+	'ID_PERSONA' : 'ID de persona',
 	'DNI_PERSONA' : 'DNI',	
 	'NOMBRE_PERSONA' : 'Nombre',	
 	'APELLIDOS_PERSONA' : 'Apellidos',	

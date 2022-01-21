@@ -44,6 +44,7 @@ arrayEN={
 	//- atributos
 	'USUARIO' : 'User',
 	'USUARIOS' : 'Users',
+	'ID' : 'User ID',
 	'NOMBRE' : 'Name',
 	'APELLIDOS' : 'Last Name',
 	'USUARIO' : 'Username',
@@ -170,6 +171,7 @@ arrayEN={
 	//- atributos persona	
 	'PERSONA' : 'Person',
 	'PERSONAS' : 'People',
+	'ID_PERSONA' : 'Person ID',
 	'DNI_PERSONA' : 'ID Number',	
 	'NOMBRE_PERSONA' : 'Name',	
 	'APELLIDOS_PERSONA' : 'Last Name',	
