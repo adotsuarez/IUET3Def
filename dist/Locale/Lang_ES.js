@@ -445,6 +445,14 @@ arrayES={
 	'02199' : 'El precio de la actividad solo puede contener 2 cifras decimales',
 	'02200' : 'El color de la actividad solo puede contener números del 0 al 9 y letras mayúsculas de la A a la F',
 	'02201' : 'El color del nombre de la actividad solo puede contener números del 0 al 9 y letras mayúsculas de la A a la F',
+	'02202' : 'El documento de pago no puede ser vacío',
+	'02203' : 'El curriculum del responsable no puede ser vacío',
+	'02204' : 'El número de cuenta del responsable no puede ser vacío',
+	'02205' : 'El currículum del responsable no puede tener más de 200 caracteres',
+	'02206' : 'El número de cuenta del responsable no puede tener más de 24 caracteres',
+	'02207' : 'El currículum del responsable no puede tener menos de 5 caracteres',
+	'02208' : 'El número de cuenta del responsable no puede tener menos de 24 caracteres',
+	'02209' : 'El número de cuenta debe de seguir el formato IBAN de 2 letras seguidas de 22 números',
 	
 
 	//test

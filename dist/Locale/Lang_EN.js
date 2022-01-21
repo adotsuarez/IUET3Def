@@ -445,6 +445,14 @@ arrayEN={
 	'02199' : 'The activity price can only have 2 decimal numbers',
 	'02200' : 'The activity color can only contain numbers from 0 to 9 and capital letters from A to F',
 	'02201' : 'The activity name color can only contain numbers from 0 to 9 and capital letters from A to F',
+	'02202' : 'The payment file cannot be empty',
+	'02203' : 'The manager\'s curriculum cannot be empty',
+	'02204' : 'The manager\'s bank account number cannot be empty',
+	'02205' : 'The manager\'s curriculum cannot have more than 200 characters',
+	'02206' : 'The manager\'s bank account number cannot have more than 24 characters',
+	'02207' : 'The manager\'s curriculum cannot have less than 5 characters',
+	'02208' : 'The manager\'s bank account number cannot have less than 24 characters',
+	'02209' : 'The bank account number must follow the IBAN format of 2 letters followed by 22 numbers',
 
 	//test
 	'PRUEBA' : 'Test',
