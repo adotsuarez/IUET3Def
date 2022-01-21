@@ -108,7 +108,7 @@
 					<label class="hidden" id="errorFormatoFechaNacimiento"></label>
 
 					<label class="mt-4 ml-3 text-sm font-medium FOTO"></label>
-					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center">
+					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center" id="botonArchivo">
 						<img class="my-3 w-8 rotate-90"
 							src="img/icons/clearskies/exit.svg"
 							alt="FOTO">
@@ -120,10 +120,11 @@
 							onchange="comprobarFoto();">
 					</label>
 					<label class="hidden" id="errorFormatoFoto"></label>
+					<a class="mt-2 btn btn-ghost btn-xs rounded-full font-normal mx-auto VERARCHIVO" id="abrirArchivo"></a>
 					
 					<input type="hidden" name="esCeliaco_persona" id="hiddenEsCeliaco" value=0>
-					<label class="cursor-pointer label">
-						<span class="mt-4 ml-3 label-text font-medium"><span class="ESCELIACO_PERSONA"></span></span>
+					<label class="mt-4 cursor-pointer label">
+						<span class="ml-3 label-text font-medium"><span class="ESCELIACO_PERSONA"></span></span>
 						<input class="toggle toggle-primary"
 							type="checkbox"
 							name="esCeliaco_persona"
@@ -132,8 +133,8 @@
 					</label>
 
 					<input type="hidden" name="borrado_persona" id="hiddenBorradoPersona" value=1>
-					<label class="cursor-pointer label">
-						<span class="mt-4 ml-3 label-text font-medium"><span class="BORRADO_PERSONA"></span></span>
+					<label class="mt-4 cursor-pointer label">
+						<span class="ml-3 label-text font-medium"><span class="BORRADO_USUARIO"></span></span>
 						<input class="toggle toggle-primary"
 							type="checkbox"
 							name="borrado_persona"

@@ -169,6 +169,139 @@ function comprobarDescripcionGrupo(){
 	}
 }
 
+/** Función que valida el nombre de un espacio*/
+function comprobarNombreEspacio(){
+	if (   validaNoVacio("txtNombreEspacio", "errorFormatoNombreEspacio", "nombreespacio")
+		&& comprobarLetrasNumeros("txtNombreEspacio", 45, 3, "errorFormatoNombreEspacio", "nombreespacio")) {
+		validacionOK("txtNombreEspacio", "errorFormatoNombreEspacio");
+		return true;
+	} else {
+		validacionKO("txtNombreEspacio", "errorFormatoNombreEspacio");		
+		return false;
+	}
+}
+ 
+/** Función que valida la descripción de un espacio */
+function comprobarDescripcionEspacio(){
+	if (   validaNoVacio("txtDescripcionEspacio", "errorFormatoDescripcionEspacio", "descripcionespacio")
+		&& comprobarLetrasNumeros("txtDescripcionEspacio", 200, 20, "errorFormatoDescripcionEspacio", "descripcionespacio")) {
+		validacionOK("txtDescripcionEspacio", "errorFormatoDescripcionEspacio");
+		return true;
+	} else {
+		validacionKO("txtDescripcionEspacio", "errorFormatoDescripcionEspacio");		
+		return false;
+	}
+}
+
+/** Función que valida el nombre de una categoria*/
+function comprobarNombreCategoria(){
+	if (   validaNoVacio("txtNombreCategoria", "errorFormatoNombreCategoria", "nombrecategoria")
+		&& comprobarLetrasNumeros("txtNombreCategoria", 45, 3, "errorFormatoNombreCategoria", "nombrecategoria")) {
+		validacionOK("txtNombreCategoria", "errorFormatoNombreCategoria");
+		return true;
+	} else {
+		validacionKO("txtNombreCategoria", "errorFormatoNombreCategoria");		
+		return false;
+	}
+}
+ 
+/** Función que valida la descripción de una categoria */
+function comprobarDescripcionCategoria(){
+	if (   validaNoVacio("txtDescripcionCategoria", "errorFormatoDescripcionCategoria", "descripcioncategoria")
+		&& comprobarLetrasNumeros("txtDescripcionCategoria", 200, 20, "errorFormatoDescripcionCategoria", "descripcioncategoria")) {
+		validacionOK("txtDescripcionCategoria", "errorFormatoDescripcionCategoria");
+		return true;
+	} else {
+		validacionKO("txtDescripcionCategoria", "errorFormatoDescripcionCategoria");		
+		return false;
+	}
+}
+
+/** Función que valida el nombre de una actividad*/
+function comprobarNombreActividad(){
+	if (   validaNoVacio("txtNombreActividad", "errorFormatoNombreActividad", "nombreactividad")
+		&& comprobarLetrasNumeros("txtNombreActividad", 45, 3, "errorFormatoNombreActividad", "nombreactividad")) {
+		validacionOK("txtNombreActividad", "errorFormatoNombreActividad");
+		return true;
+	} else {
+		validacionKO("txtNombreActividad", "errorFormatoNombreActividad");		
+		return false;
+	}
+}
+ 
+/** Función que valida la descripción de una actividad */
+function comprobarDescripcionActividad(){
+	if (   validaNoVacio("txtDescripcionActividad", "errorFormatoDescripcionActividad", "descripcionactividad")
+		&& comprobarLetrasNumeros("txtDescripcionActividad", 200, 20, "errorFormatoDescripcionActividad", "descripcionactividad")) {
+		validacionOK("txtDescripcionActividad", "errorFormatoDescripcionActividad");
+		return true;
+	} else {
+		validacionKO("txtDescripcionActividad", "errorFormatoDescripcionActividad");		
+		return false;
+	}
+}
+
+/** Función que valida el precio de una actividad */
+function comprobarPrecioActividad(){
+    	if (   validaNoVacio("numPrecioActividad", "errorFormatoPrecioActividad", "precioactividad")
+		&& comprobarLetrasNumeros ("numPrecioActividad", 6, 1, "errorFormatoPrecioActividad", "precioactividad")) {
+			validacionOK("numPrecioActividad", "errorFormatoPrecioActividad");
+        	return true;
+    	} else {
+			validacionKO("numPrecioActividad", "errorFormatoPrecioActividad");
+        	return false;
+    	}
+}
+
+/** Función que valida las plazas de una actividad */
+function comprobarPlazasActividad(){
+	if (   validaNoVacio("numPlazasActividad", "errorFormatoPlazasActividad", "plazasactividad")
+		&& comprobarLetrasNumeros("numPlazasActividad", 40, 1, "errorFormatoPlazasActividad", "plazasactividad")) {
+		validacionOK("numPlazasActividad", "errorFormatoPlazasActividad");
+		return true;
+	} else {
+		validacionKO("numPlazasActividad", "errorFormatoPlazasActividad");
+		return false;
+	}
+}
+
+/** Función que valida el color de una actividad */
+function comprobarColorActividad(){
+	if (   validaNoVacio("txtColorActividad", "errorFormatoColorActividad", "coloractividad")
+		&& comprobarLetrasNumeros("txtColorActividad", 7, 7, "errorFormatoColorActividad", "coloractividad")) {
+		validacionOK("txtColorActividad", "errorFormatoColorActividad");
+		return true;
+	} else {
+		validacionKO("txtColorActividad", "errorFormatoColorActividad");
+		return false;
+	}
+}
+
+/** Función que valida el color del nombre de una actividad */
+function comprobarNombreColorActividad(){
+	if (   validaNoVacio("txtColorNombreActividad", "errorFormatoNombreColorActividad", "colornombreactividad")
+		&& comprobarLetrasNumeros("txtColorNombreActividad", 7, 7, "errorFormatoNombreColorActividad", "colornombreactividad")) {
+		validacionOK("txtColorNombreActividad", "errorFormatoNombreColorActividad");
+		return true;
+	} else {
+		validacionKO("txtColorNombreActividad", "errorFormatoNombreColorActividad");
+		return false;
+	}
+}
+
+/** Función que valida el nombre y tipo de archivo del documento de pago */
+function comprobarDocumentoPago(){
+	if (   validaNoVacio("fileDocumentoPago", "errorFormatoDocumentoPago", "documento_pago")
+		&& comprobarLetrasNumeros("fileDocumentoPago", 100, 5, "errorFormatoDocumentoPago", "documento_pago"
+		&& comprobarExtDocumentoPago("fileDocumentoPago","errorFormatoDocumentoPago"))) {
+		validacionOK("fileDocumentoPago", "errorFormatoDocumentoPago");
+		return true;
+	} else {
+		validacionKO("fileDocumentoPago", "errorFormatoDocumentoPago");
+		return false;
+	}
+} 
+
 /**Función que valida si un campo está vacío*/
 function validaNoVacio(idElemento, idElementoError, campo) {
 	var codigo = "GENERICO";
@@ -217,6 +350,30 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 				break;
 			case "descripcion":
 				codigo = "02154";
+				break;
+			case "nombreespacio":
+				codigo = "99999";
+				break;
+			case "descripcionespacio":
+				codigo = "99999";
+				break;
+			case "nombrecategoria":
+				codigo = "99999";
+				break;
+			case "descripcioncategoria":
+				codigo = "99999";
+				break;
+			case "plazasactividad":
+				codigo = "99999";
+				break;
+			case "precioactividad":
+				codigo = "99999";
+				break;
+			case "coloractividad":
+				codigo = "99999";
+				break;
+			case "colornombreactividad":
+				codigo = "99999";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -277,6 +434,29 @@ function comprobarExtFoto(idElemento, idElementoError){
 
 }
 
+/** Función que valida la extensión del documento .pdf subido */
+function comprobarExtDocumentoPago(idElemento, idElementoError){
+	
+	var codigo = "GENERICO"; //se define la variable codigo en la que se guardara el codigo del error
+
+	let extPdf = ".pdf"; //variable de text con el string de la extensión .pdf
+
+	var nombreArchivo = document.getElementById(idElemento).value.replace("C: \\fakepath\\", ""); //obtiene el nombre del archivo
+	
+	tamNombreArchivo = nombreArchivo.length; //guarda en una variable el tamaño del spring del archivo 
+
+	let extArchivo = nombreArchivo.slice(tamNombreArchivo-4, tamNombreArchivo); //almacena en una variable de la extensión del archivo
+
+	if(extArchivo != extPdf) {
+		codigo = "99999"; //código de error de que el archivo no corresponde al tipo de archivo permitido
+		addCodeError(idElementoError, codigo); //añade el código para mostrarse por consola???
+		return false; //devuelve un false en el comprobarDocumentoPago	
+	} else {
+		return true;
+	}
+
+}
+
 function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, campo) {
 
 	var codigo = "GENERICO";
@@ -319,6 +499,33 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "descripcion":
 				codigo = "02155";
 				break;
+			case "nombreespacio":
+				codigo = "99999";
+				break;
+			case "descripcionespacio":
+				codigo = "99999";
+				break;
+			case "nombrecategoria":
+				codigo = "99999";
+				break;
+			case "descripcioncategoria":
+				codigo = "99999";
+				break;
+			case "plazasactividad":
+				codigo = "99999";
+				break;
+			case "precioactividad":
+				codigo = "99999";
+				break;
+			case "coloractividad":
+				codigo = "99999";
+				break;
+			case "colornombreactividad":
+				codigo = "99999";
+				break;
+			case "documento_pago":
+				codigo = "99999"
+				break;
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
@@ -358,6 +565,33 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "descripcion":
 				codigo = "02156";
 				break;
+			case "nombreespacio":
+				codigo = "99999";
+				break;
+			case "descripcionespacio":
+				codigo = "99999";
+				break;
+			case "nombrecategoria":
+				codigo = "99999";
+				break;
+			case "descripcioncategoria":
+				codigo = "99999";
+				break;
+			case "plazasactividad":
+				codigo = "99999";
+				break;
+			case "precioactividad":
+				codigo = "99999";
+				break;
+			case "coloractividad":
+				codigo = "99999";
+				break;
+			case "colornombreactividad":
+				codigo = "99999";
+				break;
+			case "documento_pago":
+				codigo = "99999"
+				break;
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
@@ -388,7 +622,11 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	if (campo == 'nombre' ||
 		campo == 'apellidos' ||
 		campo == 'nombregrupo' ||
-		campo == 'descripcion') {
+		campo == 'descripcion' ||
+		campo == 'nombreespacio' ||
+		campo == 'descripcionespacio' ||
+		campo == 'nombrecategoria' ||
+		campo == 'descripcioncategoria') {
 		var patron = /^[a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*$/;
 			
 		if (!patron.test(valor)) {
@@ -405,19 +643,35 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				case "descripcion":
 					codigo = "02157";
 					break;
+				case "nombreespacio":
+					codigo = "99999";
+					break;
+				case "descripcionespacio":
+					codigo = "99999";
+					break;
+				case "nombrecategoria":
+					codigo = "99999";
+					break;
+				case "descripcioncategoria":
+					codigo = "99999";
+					break;
 			}
 			addCodeError(idElementoError, codigo);
 			return false;
 		}
 	}
 
-	if (campo == 'foto') {
+	if (campo == 'foto'
+		&& campo == 'documento_pago') {
 		var patron = /^[a-zA-Z0-9\u00f1\u00d1.]*$/;
 			
 		if (!patron.test(valor)) { 
 			switch(campo) {
 				case 'foto' : 
 					codigo = "02139";
+					break;
+				case 'documento_pago' :
+					codigo = "99999";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -461,6 +715,35 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			switch(campo) {
 				case 'telefono' :
 					codigo = "02149";
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
+	if(campo == 'precioactividad') {
+		var decimal = /^\d{1,4}\.\d{0,2}$/;
+
+    	if (!decimal.test(valor)) {
+			switch(campo) {
+				case 'precioactividad' :
+					codigo = "99999";
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
+	if(campo == 'coloractividad' ||
+		campo == 'colornombreactividad') {
+		var colour = /^#[0-9A-F]{6}$/;
+
+    	if (!colour.test(valor)) {
+			switch(campo) {
+				case 'coloractividad' :
+					codigo = "99999";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -938,7 +1221,7 @@ function sendEntityWithFiles(action, entity, okFunction, formFile) {
 	var datos = new FormData();
 
     var formdata = $('#formGenerico').serialize();
-    var file = document.getElementById(formFile)[0].files[0];
+    var file = document.getElementById(formFile).files[0];
     
     datos.append("upload", file);
     datos.append("formulario", formdata);

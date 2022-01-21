@@ -7,6 +7,8 @@ function resetearFormularioGrupo () {
 
 	idElementoList.forEach( function (idElemento) {
 		document.getElementById(idElemento).classList.remove('input-error');
+		document.getElementById(idElemento).removeAttribute("disabled");
+		document.getElementById(idElemento).removeAttribute("readonly");
 	});
 
 	idErrorList = ['errorFormatoNombreGrupo',
@@ -20,9 +22,6 @@ function resetearFormularioGrupo () {
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
 	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
-
-	document.getElementById('txtNombreGrupo').removeAttribute("disabled");
-	document.getElementById('txtDescripcionGrupo').removeAttribute("disabled");
 
 	document.getElementById('txtNombreGrupo').classList.remove('hidden');
 	document.getElementById('txtDescripcionGrupo').classList.remove('hidden');
@@ -65,8 +64,8 @@ function showDetalleGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 	document.getElementById('formGenericoTitle').classList.add('DETAILGROUP');
 	document.getElementById('modalActionsArea').classList.add('hidden');
 
-	document.getElementById('txtDescripcionGrupo').setAttribute("disabled", true);
-	document.getElementById('txtNombreGrupo').setAttribute("disabled", true);
+	document.getElementById('txtDescripcionGrupo').setAttribute("readonly", true);
+	document.getElementById('txtNombreGrupo').setAttribute("readonly", true);
 
 	document.getElementById('txtDescripcionGrupo').value = descripcion_grupo;
 	document.getElementById('txtNombreGrupo').value = nombre_grupo;
@@ -114,8 +113,8 @@ function showEliminarGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 	document.getElementById('formGenericoTitle').classList.add('DETAILGROUP');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
-	document.getElementById('txtDescripcionGrupo').setAttribute("disabled", true);
-	document.getElementById('txtNombreGrupo').setAttribute("disabled", true);
+	document.getElementById('txtDescripcionGrupo').setAttribute("readonly", true);
+	document.getElementById('txtNombreGrupo').setAttribute("readonly", true);
 
 	document.getElementById('txtDescripcionGrupo').value = descripcion_grupo;
 	document.getElementById('txtNombreGrupo').value = nombre_grupo;

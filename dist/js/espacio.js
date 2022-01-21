@@ -7,6 +7,8 @@ function resetearFormularioEspacio () {
 
 	idElementoList.forEach( function (idElemento) {
 		document.getElementById(idElemento).classList.remove('input-error');
+		document.getElementById(idElemento).removeAttribute("disabled");
+		document.getElementById(idElemento).removeAttribute("readonly");
 	});
 
 	idErrorList = ['errorFormatoNombreEspacio',
@@ -20,9 +22,6 @@ function resetearFormularioEspacio () {
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
 	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
-
-	document.getElementById('txtNombreEspacio').removeAttribute("disabled");
-	document.getElementById('txtDescripcionEspacio').removeAttribute("disabled");
 
 	document.getElementById('txtNombreEspacio').classList.remove('hidden');
 	document.getElementById('txtDescripcionEspacio').classList.remove('hidden');
@@ -65,8 +64,8 @@ function showDetalleEspacio(id_espacio, nombre_espacio, descripcion_espacio) {
 	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
 	document.getElementById('modalActionsArea').classList.add('hidden');
 
-	document.getElementById('txtDescripcionEspacio').setAttribute("disabled", true);
-	document.getElementById('txtNombreEspacio').setAttribute("disabled", true);
+	document.getElementById('txtDescripcionEspacio').setAttribute("readonly", true);
+	document.getElementById('txtNombreEspacio').setAttribute("readonly", true);
 
 	document.getElementById('txtDescripcionEspacio').value = descripcion_espacio;
 	document.getElementById('txtNombreEspacio').value = nombre_espacio;
@@ -114,8 +113,8 @@ function showEliminarEspacio(id_espacio, nombre_espacio, descripcion_espacio) {
 	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
-	document.getElementById('txtDescripcionEspacio').setAttribute("disabled", true);
-	document.getElementById('txtNombreEspacio').setAttribute("disabled", true);
+	document.getElementById('txtDescripcionEspacio').setAttribute("readonly", true);
+	document.getElementById('txtNombreEspacio').setAttribute("readonly", true);
 
 	document.getElementById('txtDescripcionEspacio').value = descripcion_espacio;
 	document.getElementById('txtNombreEspacio').value = nombre_espacio;

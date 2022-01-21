@@ -14,7 +14,7 @@ function construyeFila(fila) {
         celiaco = "SI";
     }
 
-    if (fila.borrado_usuario == 0) {
+    if (fila.borrado_persona == 0) {
         borrado = "SI";
     } else {
         borrado = "NO text-error italic";
@@ -54,9 +54,9 @@ function getListPersonas() {
             data: $("#formulariolistarpersonas").serialize(),  
         }).done(function( response ) {       
             if (response.ok == true) {
-                // $("#datosPersonas").html("<thead> <tr> <th class=\"FOTO\"></th> <th class=\"NOMBRE_PERSONA\"></th> <th class=\"APELLIDOS_PERSONA\"></th> <th class=\"DNI_PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> <th class=\"DIRECCION\"></th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_PERSONA\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
+                // $("#datosPersonas").html("<thead> <tr> <th class=\"FOTO\"></th> <th class=\"NOMBRE_PERSONA\"></th> <th class=\"APELLIDOS_PERSONA\"></th> <th class=\"DNI_PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> <th class=\"DIRECCION\"></th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
 
-                $("#datosPersonas").html("<thead> <tr> <th class=\"PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> </th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_PERSONA\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
+                $("#datosPersonas").html("<thead> <tr> <th class=\"PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> </th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
 
                 for (var i = 0; i < response.resource.length; i++) {
                     var tr = construyeFila(response.resource[i]);

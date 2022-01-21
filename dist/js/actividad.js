@@ -13,6 +13,8 @@ function resetearFormularioActividad () {
 
 	idElementoList.forEach(function (idElemento) {
 		document.getElementById(idElemento).classList.remove('input-error');
+		document.getElementById(idElemento).removeAttribute("disabled");
+		document.getElementById(idElemento).removeAttribute("readonly");
 	});
 
 	idErrorList = ['errorFormatoNombreActividad',
@@ -30,16 +32,6 @@ function resetearFormularioActividad () {
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
 	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
-
-	document.getElementById('txtIdActividad').removeAttribute("disabled");
-	document.getElementById('txtNombreActividad').removeAttribute("disabled");
-	document.getElementById('txtDescripcionActividad').removeAttribute("disabled");
-	document.getElementById('numPrecioActividad').removeAttribute("disabled");
-	document.getElementById('numPlazasActividad').removeAttribute("disabled");
-	document.getElementById('txtColorActividad').removeAttribute("disabled");
-	document.getElementById('txtColorNombreActividad').removeAttribute("disabled");
-	document.getElementById('selectIdEspacio').removeAttribute("disabled");
-	document.getElementById('selectIdCategoria').removeAttribute("disabled");
 
 
 	$("#selectIdEspacio").html("<option disabled=\"\" selected=\"\" class=\"ESPACIO\"> </option>");
@@ -89,11 +81,11 @@ function showDetalleActividad(id_actividad, nombre_actividad, descripcion_activi
 	document.getElementById('formGenericoTitle').classList.add('DETAILACTIVITY');
 	document.getElementById('modalActionsArea').classList.add('hidden');
 
-	document.getElementById('txtIdActividad').setAttribute("disabled", true);
-	document.getElementById('txtNombreActividad').setAttribute("disabled", true);
-	document.getElementById('txtDescripcionActividad').setAttribute("disabled", true);
-	document.getElementById('numPrecioActividad').setAttribute("disabled", true);
-	document.getElementById('numPlazasActividad').setAttribute("disabled", true);
+	document.getElementById('txtIdActividad').setAttribute("readonly", true);
+	document.getElementById('txtNombreActividad').setAttribute("readonly", true);
+	document.getElementById('txtDescripcionActividad').setAttribute("readonly", true);
+	document.getElementById('numPrecioActividad').setAttribute("readonly", true);
+	document.getElementById('numPlazasActividad').setAttribute("readonly", true);
 	document.getElementById('txtColorActividad').setAttribute("disabled", true);
 	document.getElementById('txtColorNombreActividad').setAttribute("disabled", true);
 	document.getElementById('selectIdEspacio').setAttribute("disabled", true);
@@ -166,10 +158,10 @@ function showEliminarActividad(id_actividad, nombre_actividad, descripcion_activ
 
 	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','actividad', getListActivities);");
 
-	document.getElementById('txtNombreActividad').setAttribute("disabled", true);
-	document.getElementById('txtDescripcionActividad').setAttribute("disabled", true);
-	document.getElementById('numPrecioActividad').setAttribute("disabled", true);
-	document.getElementById('numPlazasActividad').setAttribute("disabled", true);
+	document.getElementById('txtNombreActividad').setAttribute("readonly", true);
+	document.getElementById('txtDescripcionActividad').setAttribute("readonly", true);
+	document.getElementById('numPrecioActividad').setAttribute("readonly", true);
+	document.getElementById('numPlazasActividad').setAttribute("readonly", true);
 	document.getElementById('txtColorActividad').setAttribute("disabled", true);
 	document.getElementById('txtColorNombreActividad').setAttribute("disabled", true);
 	document.getElementById('selectIdEspacio').setAttribute("disabled", true);

@@ -10,6 +10,8 @@ function resetearFormularioUsuario () {
 
 	idElementoList.forEach( function (idElemento) {
 		document.getElementById(idElemento).classList.remove('input-error');
+		document.getElementById(idElemento).removeAttribute("disabled");
+		document.getElementById(idElemento).removeAttribute("readonly");
 	});
 
 	idErrorList = ['errorFormatoUser',
@@ -24,11 +26,6 @@ function resetearFormularioUsuario () {
 
 	document.getElementById('formGenericoTitle').removeAttribute("class");
 	document.getElementById('formGenericoTitleSubmit').removeAttribute("class");
-
-	document.getElementById('txtDni').removeAttribute("disabled");
-	document.getElementById('txtUsuario').removeAttribute("disabled");
-	document.getElementById('chkBorradoUsuario').removeAttribute("disabled");
-	document.getElementById('selectIdGrupo').removeAttribute("disabled");
 
 	$("#selectIdGrupo").html("<option disabled=\"\" selected=\"\" class=\"GRUPO\"> </option>");
 
@@ -69,6 +66,9 @@ function comprobarNuevoUsuario() {
 		&& comprobarDni()) {
 		encriptar('txtPassword');
 		document.getElementById('txtIdUsuario').value = createId('usuario');
+		if (document.getElementById('chkBorradoUsuario').checked == true) {
+			document.getElementById('hiddenBorradoUsuario').value = 0;
+		}
 		return true;
 	} else {
 		return false;
@@ -85,8 +85,8 @@ function showDetalleUsuario(id, dni_usuario, usuario, contrasena, id_grupo, borr
 
 	document.getElementById('txtPassword').classList.add('hidden');
 
-	document.getElementById('txtDni').setAttribute("disabled", true);
-	document.getElementById('txtUsuario').setAttribute("disabled", true);
+	document.getElementById('txtDni').setAttribute("readonly", true);
+	document.getElementById('txtUsuario').setAttribute("readonly", true);
 	document.getElementById('chkBorradoUsuario').setAttribute("disabled", true);
 	document.getElementById('selectIdGrupo').setAttribute("disabled", true);
 
@@ -163,7 +163,7 @@ function showEliminarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, bor
 
 	document.getElementById('txtDni').setAttribute("readonly", true);
 	
-	document.getElementById('txtUsuario').setAttribute("disabled", true);
+	document.getElementById('txtUsuario').setAttribute("readonly", true);
 	document.getElementById('chkBorradoUsuario').setAttribute("disabled", true);
 	document.getElementById('selectIdGrupo').setAttribute("disabled", true);
 

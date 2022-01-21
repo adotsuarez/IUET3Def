@@ -12,8 +12,8 @@
 
 	<script type="text/javascript" src="js/funcionesComunes.js"></script>
 	<script type="text/javascript" src="js/funcionesFormularios.js"></script>
-	<script type="text/javascript" src="js/categoria.js"></script>
-	<script type="text/javascript" src="js/showallcategoria.js"></script>
+	<script type="text/javascript" src="js/responsable.js"></script>
+	<script type="text/javascript" src="js/showallresponsable.js"></script>
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/config.js"></script>
 
@@ -27,7 +27,7 @@
 
 <body class="font-light"
 	data-theme="iuui"
-	onload="setLang(); validaAutenticado(); getListCategorias();">
+	onload="setLang(); validaAutenticado(); getListResponsables();">
 
 	<div class="modal" id="modal">
 		<div class="modal-box" id="modalContent">
@@ -57,24 +57,44 @@
 				<div class="flex flex-col mt-4 ml-3 mr-10">
 					<p class="text-3xl mb-4 font-medium"><span id="formGenericoTitle"></span></p>
 					
-					<input class="hidden"
+					<input class="mt-4 input input-bordered border-2 rounded-full DNI_RESPONSABLE"
 						type="text"
-						name="id_categoria"
-						id="txtIdCategoria">
+						name="dni_responsable"
+						id="txtDni"
+						onchange="return comprobarDni();">
+					<label class="hidden" id="errorFormatoDni"></label>
 
-                    <input class="input input-bordered border-2 rounded-full NOMBRE_CATEGORIA"
+					<input class="mt-4 input input-bordered border-2 rounded-full NUMCUENTA_RESPONSABLE"
 						type="text"
-						name="nombre_categoria"
-						id="txtNombreCategoria"
-						onchange="return comprobarNombreCategoria();">
-					<label class="hidden" id="errorFormatoNombreCategoria"></label>
+						name="numCuenta_responsable"
+						id="txtNumCuentaResponsable"
+						onchange="return comprobarNumCuenta();">
+					<label class="hidden" id="errorFormatoNumCuenta"></label>
 
-                    <input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCION_CATEGORIA"
-						type="text"
-						name="descripcion_categoria"
-						id="txtDescripcionCategoria"
-						onchange="return comprobarDescripcionCategoria();">
-					<label class="hidden" id="errorFormatoDescripcionCategoria"></label>
+					<label class="mt-4 ml-3 text-sm font-medium CURRICULUM"></label>
+					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center" id="botonArchivo">
+						<img class="my-3 w-8 rotate-90"
+							src="img/icons/clearskies/exit.svg"
+							alt="CURRICULUM">
+						<input class="mb-3 mx-auto"
+							type="file"
+							name="curriculum_responsable"
+							id="curriculumResponsable"
+							accept="application/pdf"
+							onchange="comprobarCurriculum();">
+					</label>
+					<label class="hidden" id="errorFormatoCurriculum"></label>
+                    <a class="mt-2 btn btn-ghost btn-xs rounded-full font-normal mx-auto VERARCHIVO" id="abrirArchivo"></a>
+
+					<input type="hidden" name="borrado_responsable" id="hiddenBorradoResponsable" value=1>
+					<label class="mt-4 cursor-pointer label">
+						<span class="ml-3 label-text font-medium"><span class="BORRADO_USUARIO"></span></span>
+						<input class="toggle toggle-primary"
+							type="checkbox"
+							name="borrado_responsable"
+							id="chkBorradoResponsable"
+							value=0>
+					</label>
 				</div>
 
 				<div class="modal-action mt-4 flex flex-row justify-end items-center" id="modalActionsArea">
@@ -134,13 +154,13 @@
 				<div class="flex justify-between w-full">
 					<div class="flex flex-row">
 						<img class="w-10"
-									src="img/icons/clearskies/tag.svg"
-									alt="CATEGORIAS">
-						<h1 class="text-3xl ml-4 mt-2 CATEGORIAS"></h1>
+									src="img/icons/clearskies/manager.svg"
+									alt="RESPONSABLES">
+						<h1 class="text-3xl ml-4 mt-2 RESPONSABLES"></h1>
 					</div>
 					<div>
 						<button class="btn btn-primary px-2"
-						onclick="showNuevoCategoria();">
+						onclick="showNuevoResponsable();">
 							<img class="w-10"
 								src="img/icons/clearskies/plus.svg"
 								alt="ICONADD">
@@ -149,7 +169,7 @@
 				</div>
 
 				<div class="mt-10 overflow-x-auto">
-					<table class="table w-full" id="datosCategorias">
+					<table class="table w-full" id="datosResponsables">
 					</table>
 				</div>
 			</div>
