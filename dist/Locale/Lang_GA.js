@@ -42,7 +42,9 @@ arrayGA={
 	'REGISTRAR' : 'Rexistrarme',
 	'IDIOMA' : 'Idioma',
 	//- atributos
-	'NOMBRE' : 'Nombre',
+	'USUARIO' : 'Usuario',
+	'USUARIOS' : 'Usuarios',
+	'NOMBRE' : 'Nome',
 	'APELLIDOS' : 'Apelidos',
 	'USUARIO' : 'Nome de usuario',
 	'CONTRASENA' : 'Contrasinal',
@@ -148,7 +150,7 @@ arrayGA={
 	'DNI_USUARIO_YA_EXISTE' : 'O DNI xa existe',	
 	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'O DNI debería estar como persoa primeiro',	
 	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'Non se podee modificar o DNI do administrador',	
-	'ADMIN_NO_SE_PUEDE_BORRAR' : 'O administrador non se puede borrar',	
+	'ADMIN_NO_SE_PUEDE_BORRAR' : 'O administrador non se pode borrar',	
 			
 	'ERROR_INSERTAR_USUARIO' : 'Erro ao insertar o usuario',	
 	'ERROR_MODIFICAR_USUARIO' : 'Erro ao modificar o usuario',	
@@ -165,7 +167,9 @@ arrayGA={
 	//************************************************************************************************	
 	// persoa	
 	//************************************************************************************************	
-	//- atributos persoa	
+	//- atributos persoa
+	'PERSONA' : 'Persoa',
+	'PERSONAS' : 'Persoas',	
 	'DNI_PERSONA' : 'DNI',	
 	'NOMBRE_PERSONA' : 'Nombe',	
 	'APELLIDOS_PERSONA' : 'Apelidos',	
@@ -176,6 +180,8 @@ arrayGA={
 	'FOTO_PERSONA' : 'Foto de Persoa',	
 	'ESCELIACO_PERSONA' : 'Celíaco',	
 	'BORRADO_PERSONA' : 'Activo',	
+	
+	//- errores
 	'DNI_PERSONA_YA_EXISTE' : 'Xa hai unha persoa con este DNI',	
 	'EMAIL_PERSONA_YA_EXISTE' : 'Xa hai unha persoa con este email',	
 	'PERSONA_BORRAR_NO_EXISTE' : 'A persoa a borrar non existe',	
@@ -191,10 +197,12 @@ arrayGA={
 	//************************************************************************************************	
 	// grupo	
 	//************************************************************************************************	
-	// atributos	
+	// atributos
+	'GRUPO' : 'Grupo',
+	'GRUPOS' : 'Grupos',	
 	'ID_GRUPO' : 'ID de grupo',	
 	'NOMBRE_GRUPO' : 'Nome de grupo',	
-	'DESCRIPCION_GRUPO' : 'Descripción do grupo',	
+	'DESCRIPCION_GRUPO' : 'Descrición do grupo',	
 	//errores	
 	'GRUPO_YA_EXISTE' : 'O código do grupo xa existe',	
 	'GRUPO_BORRAR_NO_EXISTE' : 'O grupo para eliminar non existe',	
@@ -207,7 +215,124 @@ arrayGA={
 	'GRUPO_INSERTAR_OK' : 'Grupo insertado correctamente',	
 	'GRUPO_MODIFICAR_OK' : 'Grupo modificado correctamente',	
 	'GRUPO_BORRAR_OK' : 'Grupo borrado correctamente',
+    //************************************************************************************************	
+	// actividades	
+	//************************************************************************************************	
+	//- atributos
+	'ACTIVIDAD' : 'Actividade',
+	'ACTIVIDADES' : 'Actividades',
+	'ID_ACTIVIDAD' : 'ID de actividade',
+	'NOMBRE_ACTIVIDAD' : 'Nome de actividade',
+	'DESCRIPCION_ACTIVIDAD' : 'Descrición da actividade',
+	'COLOR_ACTIVIDAD' : 'Color da actividade',
+	'COLOR_NOMBRE_ACTIVIDAD' : 'Color do nome da actividade',
+	'PRECIO_ACTIVIDAD' : 'Prezo da actividade',
+	'PLAZAS_ACTIVIDAD' : 'Plazas da actividade',
 
+	//- errores
+	'ACTIVIDAD_YA_EXISTE' : 'O código da actividade xa existe',
+	'ACTIVIDAD_BORRAR_NO_EXISTE' : 'A actividade a borrar non existe',
+	'ACTIVIDAD_BORRAR_EXISTE_EN_INSCRIPCION' : 'Non se pode borrar, hay usuarios inscritos nesta actividade',
+	'ERROR_INSERTAR_ACTIVIDAD' : 'Erro ao insertar a actividade',
+	'ERROR_MODIFICAR_ACTIVIDAD' : 'Erro ao modificar a actividade',
+	'ERROR_BORRAR_ACTIVIDAD' : 'Erro ao borrar a actividade',
+
+	//- exito
+	'ACTIVIDAD_INSERTAR_OK' : 'Actividade insertada correctamente',
+	'ACTIVIDAD_MODIFICAR_OK' : 'Actividade modificada correctamente',
+	'ACTIVIDAD_BORRAR_OK' : 'Actividade borrada correctamente',
+    //************************************************************************************************	
+	// categorias	
+	//************************************************************************************************	
+	//- atributos
+	'CATEGORIA' : 'Categoría',
+	'CATEGORIAS' : 'Categorías',
+	'ID_CATEGORIA' : 'ID da categoría',
+	'NOMBRE_CATEGORIA' : 'Nome da categoría',
+	'DESCRIPCION_CATEGORIA' : 'Descrición da categoría',
+
+	//- errores
+	'CATEGORIA_YA_EXISTE' : 'O código da categoría xa existe',
+	'CATEGORIA_BORRAR_NO_EXISTE' : 'A categoría a borrar non existe',
+	'ERROR_INSERTAR_CATEGORIA' : 'Erro ao insertar a categoría',
+	'ERROR_MODIFICAR_CATEGORIA' : 'Erro ao modificar a categoría',
+	'ERROR_BORRAR_CATEGORIA' : 'Erro ao borrar a categoría',
+
+	//- exito
+	'CATEGORIA_INSERTAR_OK' : 'Categoría insertada correctamente',
+	'CATEGORIA_MODIFICAR_OK' : 'Categoría modificada correctamente',
+	'CATEGORIA_BORRAR_OK' : 'Categoría borrada correctamente',
+	//************************************************************************************************	
+	// espacios	
+	//************************************************************************************************	
+	//- atributos
+	'ESPACIO' : 'Espazo',
+	'ESPACIOS' : 'Espazos',
+	'ID_ESPACIO' : 'ID de espazo',
+	'NOMBRE_ESPACIO' : 'Nome de espazo',
+	'DESCRIPCION_ESPACIO' : 'Descripcion de espazo',
+
+	//- errores
+	'ESPACIO_YA_EXISTE' : 'O código de espazo xa existe',
+	'ESPACIO_BORRAR_NO_EXISTE' : 'O espazo a borrar non existe',
+	'ERROR_INSERTAR_ESPACIO' : 'Erro ao insertar o espazo',
+	'ERROR_MODIFICAR_ESPACIO' : 'Erro ao modificar o espazo',
+	'ERROR_BORRAR_ESPACIO' : 'Erro ao borrar o espazo',
+
+	//- exito
+	'ESPACIO_INSERTAR_OK' : 'Espazo insertado correctamente',
+	'ESPACIO_MODIFICAR_OK' : 'Espazo modificado correctamente',
+	'ESPACIO_BORRAR_OK' : 'Espazo borrado correctamente',
+    //************************************************************************************************	
+	// inscripciones	
+	//************************************************************************************************	
+	//- atributos
+	'INSCRIPCION' : 'Inscrición',
+	'INSCRIPCIONES' : 'Inscricións',
+	'ID_INSCRIPCION' : 'ID da inscrición',
+	'FECHA_SOLICITUD_INSCRIPCION' : 'Fecha de solicitud da inscrición',
+	'DOCUMENTO_PAGO' : 'Documento de pago',
+	'FECHA_PAGO_INSCRIPCION' : 'Fecha de pago da inscricion',
+	'FECHA_ACEPTACION_INSCRIPCION' : 'Fecha de aceptacion da inscricion',
+
+	// - errores
+	'INSCRIPCION_YA_EXISTE' : 'O código da inscrición xa existe',
+	'INSCRIPCION_BORRAR_NO_EXISTE' : 'A inscrición a borrar non existe',
+	'ERROR_INSERTAR_INSCRIPCION' : 'Error ao insertar a inscrición',
+	'ERROR_MODIFICAR_INSCRIPCION' : 'Error ao modificar a inscrición',
+	'ERROR_BORRAR_INSCRIPCION' : 'Error ao borrar a inscricion',
+
+	//- exito
+	'INSCRIPCION_INSERTAR_OK' : 'Inscrición insertada correctamente',
+	'INSCRIPCION_MODIFICAR_OK' : 'Inscrición modificada correctamente',
+	'INSCRIPCION_BORRAR_OK' : 'Inscrición borrada correctamente',
+
+	//************************************************************************************************	
+	// responsables	
+	//************************************************************************************************	
+	//- atributos
+	'RESPONSABLE' : 'Responsable',
+	'RESPONSABLES' : 'Responsable',
+	'ID_RESPONSABLE' : 'ID do responsable',
+	'CURRICULUM_RESPONSABLE' : 'Curriculum do responsable',
+	'NUMCUENTA_RESPONSABLE' : 'Número de conta do responsable',
+	'BORRADO_RESPONSABLE' : 'Activo',
+
+	//- errores
+	'RESPONSABLE_YA_EXISTE' : 'Xa existe un responsable con este DNI',
+	'RESPONSABLE_BORRAR_NO_EXISTE' : 'O responsable a borrar non existe',
+	'ERROR_INSERTAR_RESPONSABLE' : 'Error ao insertar o responsable',
+	'ERROR_MODIFICAR_RESPONSABLE' : 'Error ao modificar o responsable',
+	'ERROR_BORRAR_RESPONSABLE' : 'Error ao borrar o responsable',
+
+	//-exito
+	'RESPONSABLE_INSERTAR_OK' : 'Responsable insertado correctamente',
+	'RESPONSABLE_MODIFICAR_OK' : 'Responsable modificado correctamente',
+	'RESPONSABLE_BORRAR_OK' : 'Responsable borrado correctamente',
+
+
+
+	//-error
 	'02100' : 'Erro ao inserir o usuario',
 	'02101' : 'O nome de usuario xa existe',
 	'02102' : 'Non existe o usuario',
@@ -228,13 +353,13 @@ arrayGA={
 	// errores de formato	
 	'02110' : 'O tamaño do nome de usuario non pode ser menor que 3 caracteres',
 	'02111' : 'O tamaño do nome de usuario non pode ser maior que 45 caracteres',
-	'02112' : 'O nome de usuario non pode conter máis que letras (sen acentos) e números',
+	'02112' : 'O nome de usuario non pode conter máis ca letras (sen acentos) e números',
 	'02113' : 'O tamaño do contrasinal non pode ser menor que 3 caracteres',
 	'02114' : 'O tamaño do contrasinal non pode ser maior que 45 caracteres',
-	'02115' : 'O contrasinal non pode conter máis que letras e números', 	
+	'02115' : 'O contrasinal non pode conter máis ca letras e números', 	
 	'02116' : 'O nome e apelidos non pode se menor que 3 caracteres', 	
 	'02117' : 'O nome e apelidos non pode ser maior que 60 caracteres', 	
-	'02118' : 'O nome e apelidos non pode conter máis que letras e espazos', 	
+	'02118' : 'O nome e apelidos non pode conter máis ca letras e espazos', 	
 	'02119' : 'O email non pode ser menor que 11 caracteres', 	
 	'02120' : 'O o email non pode ser maior que 45 caracteres', 	
 	'02121' : 'O email non pode conter máis caracteres que os dun email', 
@@ -254,7 +379,7 @@ arrayGA={
 	'02135' : 'O tamaño do DNI debe ser de 9 caracteres',
 	'02136' : 'O nome do arquivo non pode ser menor que 5 caracteres',
 	'02137' : 'O nome do arquivo non pode ser maior que 100 caracteres',
-	'02138' : 'O DNI non pode conter máis que 8 números e unha letra',
+	'02138' : 'O DNI non pode conter máis ca 8 números e unha letra',
 	'02139' : 'O nome do arquivo só pode conter letras (sen acentos), números e o punto da extensión',
 	'02140' : 'O usuario non debe ser vacío',
 	'02141' : 'O contrasinal non debe ser vacío',
@@ -269,11 +394,55 @@ arrayGA={
 	"02150" : "O nome do grupo non pode ser vacío",
 	"02151" : "O nome do grupo non pode ser maior de 45 caracteres",
 	"02152" : "O nome do grupo non pode ser menor de 3 caracteres",
-	"02153" : "O nome do grupo non pode contener máis que letras e espazos",
-	"02154" : "A descripción do grupo non pode ser vacío",
-	"02155" : "A descripción do grupo non pode ser maior de 200 caracteres",
-	"02156" : "A descripción do grupo non pode ser menor de 20 caracteres",
-	"02157" : "A descripción do grupo non pode contener máis que letras e espazos",
+	"02153" : "O nome do grupo non pode conter máis ca letras e espazos",
+	"02154" : "A descrición do grupo non pode ser vacía",
+	"02155" : "A descrición do grupo non pode ser maior de 200 caracteres",
+	"02156" : "A descrición do grupo non pode ser menor de 20 caracteres",
+	"02157" : "A descrición do grupo non pode conter máis ca letras e espazos",
+	'02158' : 'O nome da actividad non pode ser vacío',
+    '02159' : 'O nome da actividad non pode ser menor de 3 caracteres',
+    '02160' : 'O nome da actividad non pode ser maior de 45 caracteres',
+    '02161' : 'A descrición da actividade non pode ser vacía',
+    '02162' : 'A descrición da actividade non pode ser menor de 20 caracteres',
+    '02163' : 'A descrición da actividade non pode ser maior de 200 caracteres',
+    '02164' : 'O nome da actividade non pode conter máis ca letras e espazos',
+    '02165' : 'A descrición da actividade non pode conter máis ca letras e espazos',
+    '02166' : 'O prezo da actividade non pode conter máis ca números',
+    '02167' : 'O prezo da actividade non pode ser maior de 6 díxitos',
+    '02168' : 'O prezo da actividade non pode ser menor de 3 díxitos',
+    '02169' : 'O prezo da actividade non pode ser vacío',
+    '02170' : 'As prazas da actividade non poden conter máis ca números',
+    '02171' : 'As prazas da actividade non poden ser maior de 6 díxitos',
+    '02172' : 'As prazas da actividade non poden ser menor de 3 díxitos',
+    '02173' : 'As prazas da actividade non poden ser vacías',
+    '02174' : 'O nome do espazo non pode ser vacío',
+    '02175' : 'O nome do espazo non pode ser menor de 3 caracteres',
+    '02176' : 'O nome do espazo non pode ser maior de 45 caracteres',
+    '02177' : 'A descrición do espazo non pode ser vacía',
+    '02178' : 'A descrición do espazo non pode ser menor de 20 caracteres',
+    '02179' : 'A descrición do espazo non pode ser maior de 200 caracteres',
+    '02180' : 'O nome do espazo non pode conter máis ca letras e espazos',
+    '02181' : 'A descrición do espazo non pode conter máis ca letras e espazos',
+	'02182' : 'O nome da categoría non pode ser vacío',
+    '02183' : 'O nome da categoría non pode ser menor de 3 caracteres',
+    '02184' : 'O nome da categoría non pode ser maior de 45 caracteres',
+    '02185' : 'A descrición da categoría non pode ser vacía',
+    '02186' : 'A descrición da categoría non pode ser menor de 20 caracteres',
+    '02187' : 'A descrición da categoría non pode ser maior de 200 caracteres',
+    '02188' : 'O nome da categoría non pode conter máis ca letras e espazos',
+    '02189' : 'A descrición da categoría non pode conter máis ca letras e espazos',
+	'02190' : 'A cor da actividade non pode ser vacía',
+	'02191' : 'A cor do nome da actividade non pode ser vacía',
+	'02192' : 'O archivo subido só pode ser do formato pdf',
+	'02193' : 'A cor da actividade non pode conter máis de 7 caracteres',
+	'02194' : 'A cor do nome da actividade non pode conter máis de 7 caracteres',
+	'02195' : 'O documento de pago non pode conter máis de 100 caracteres',
+	'02196' : 'A cor da actividade non pode conter menos de 7 caracteres',
+	'02197' : 'A cor do nome da actividade non pode conter menos de 7 caracteres',
+	'02198' : 'O documento de pago non pode conter menos de 5 caracteres',
+	'02199' : 'O prezo da actividade só pode conter 2 cifras decimales',
+	'02200' : 'A cor da actividade só pode conter números do 0 ao 9 e letras maiúsculas da A á F',
+	'02201' : 'A cor do nome da actividade só pode conter números do 0 ao 9 e letras maiúsculas da A á F',
 
 	//test
 	'PRUEBA' : 'Proba',

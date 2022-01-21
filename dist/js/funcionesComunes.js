@@ -352,28 +352,28 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 				codigo = "02154";
 				break;
 			case "nombreespacio":
-				codigo = "99999";
+				codigo = "02174";
 				break;
 			case "descripcionespacio":
-				codigo = "99999";
+				codigo = "02177";
 				break;
 			case "nombrecategoria":
-				codigo = "99999";
+				codigo = "02182";
 				break;
 			case "descripcioncategoria":
-				codigo = "99999";
+				codigo = "02185";
 				break;
 			case "plazasactividad":
-				codigo = "99999";
+				codigo = "02173";
 				break;
 			case "precioactividad":
-				codigo = "99999";
+				codigo = "02169";
 				break;
 			case "coloractividad":
-				codigo = "99999";
+				codigo = "02190";
 				break;
 			case "colornombreactividad":
-				codigo = "99999";
+				codigo = "02191";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -448,7 +448,7 @@ function comprobarExtDocumentoPago(idElemento, idElementoError){
 	let extArchivo = nombreArchivo.slice(tamNombreArchivo-4, tamNombreArchivo); //almacena en una variable de la extensión del archivo
 
 	if(extArchivo != extPdf) {
-		codigo = "99999"; //código de error de que el archivo no corresponde al tipo de archivo permitido
+		codigo = "02192"; //código de error de que el archivo no corresponde al tipo de archivo permitido
 		addCodeError(idElementoError, codigo); //añade el código para mostrarse por consola???
 		return false; //devuelve un false en el comprobarDocumentoPago	
 	} else {
@@ -500,31 +500,31 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02155";
 				break;
 			case "nombreespacio":
-				codigo = "99999";
+				codigo = "02176";
 				break;
 			case "descripcionespacio":
-				codigo = "99999";
+				codigo = "02179";
 				break;
 			case "nombrecategoria":
-				codigo = "99999";
+				codigo = "02184";
 				break;
 			case "descripcioncategoria":
-				codigo = "99999";
+				codigo = "02187";
 				break;
 			case "plazasactividad":
-				codigo = "99999";
+				codigo = "02171";
 				break;
 			case "precioactividad":
-				codigo = "99999";
+				codigo = "02167";
 				break;
 			case "coloractividad":
-				codigo = "99999";
+				codigo = "02193";
 				break;
 			case "colornombreactividad":
-				codigo = "99999";
+				codigo = "02194";
 				break;
 			case "documento_pago":
-				codigo = "99999"
+				codigo = "02195"
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -566,31 +566,31 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02156";
 				break;
 			case "nombreespacio":
-				codigo = "99999";
+				codigo = "02175";
 				break;
 			case "descripcionespacio":
-				codigo = "99999";
+				codigo = "02178";
 				break;
 			case "nombrecategoria":
-				codigo = "99999";
+				codigo = "02183";
 				break;
 			case "descripcioncategoria":
-				codigo = "99999";
+				codigo = "02186";
 				break;
 			case "plazasactividad":
-				codigo = "99999";
+				codigo = "02172";
 				break;
 			case "precioactividad":
-				codigo = "99999";
+				codigo = "02168";
 				break;
 			case "coloractividad":
-				codigo = "99999";
+				codigo = "02196";
 				break;
 			case "colornombreactividad":
-				codigo = "99999";
+				codigo = "02197";
 				break;
 			case "documento_pago":
-				codigo = "99999"
+				codigo = "02198"
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -644,16 +644,16 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 					codigo = "02157";
 					break;
 				case "nombreespacio":
-					codigo = "99999";
+					codigo = "02180";
 					break;
 				case "descripcionespacio":
-					codigo = "99999";
+					codigo = "02181";
 					break;
 				case "nombrecategoria":
-					codigo = "99999";
+					codigo = "02188";
 					break;
 				case "descripcioncategoria":
-					codigo = "99999";
+					codigo = "02189";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -671,7 +671,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 					codigo = "02139";
 					break;
 				case 'documento_pago' :
-					codigo = "99999";
+					codigo = "02139";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -728,7 +728,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
     	if (!decimal.test(valor)) {
 			switch(campo) {
 				case 'precioactividad' :
-					codigo = "99999";
+					codigo = "02199";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -743,7 +743,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
     	if (!colour.test(valor)) {
 			switch(campo) {
 				case 'coloractividad' :
-					codigo = "99999";
+					codigo = "02200";
+					break;
+				case 'colornombreactividad' :
+					codigo = '02201';
 					break;
 			}
 			addCodeError(idElementoError, codigo);

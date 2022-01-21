@@ -42,8 +42,10 @@ arrayEN={
 	'REGISTRAR' : 'Sign-up',
 	'IDIOMA' : 'Language',
 	//- atributos
+	'USUARIO' : 'User',
+	'USUARIOS' : 'Users',
 	'NOMBRE' : 'Name',
-	'APELLIDOS' : 'Surname',
+	'APELLIDOS' : 'Last Name',
 	'USUARIO' : 'Username',
 	'CONTRASENA' : 'Password',
 	'DNI_USUARIO' : 'ID Number',
@@ -102,11 +104,11 @@ arrayEN={
 	'EDITSPACE' : 'Editing space',
 	'DELETESPACE' : 'Deleting space',
 
-	'ADDMANAGER' : 'Adding responsable',
-	'SEARCHMANAGER' : 'Searching for responsables',
-	'DETAILMANAGER' : 'Responsable details',
-	'EDITMANAGER' : 'Editing responsable',
-	'DELETEMANAGER' : 'Deleting responsable',
+	'ADDMANAGER' : 'Adding manager',
+	'SEARCHMANAGER' : 'Searching for managers',
+	'DETAILMANAGER' : 'Manager details',
+	'EDITMANAGER' : 'Editing manager',
+	'DELETEMANAGER' : 'Deleting manager',
 
 	'ADDACTIVITY' : 'Adding activity',
 	'SEARCHACTIVITY' : 'Searching for activities',
@@ -130,13 +132,13 @@ arrayEN={
 	'CASILISTOS' : 'Almost there!',
 	'CREDENCIALESREGISTRO' : 'Let\'s setup your username and password',
 	//- errores
-	'USUARIO_NO_AUTENTICADO' : 'Access denied. You\'ll need to login again first.',
+	'USUARIO_NO_AUTENTICADO' : 'Access denied. You\'ll need to log in again first.',
 	'LOGIN_USUARIO_INCORRECTO' : 'This user is not registered',
 	'LOGIN_CONTRASENA_INCORRECTO' : 'Wrong password',
 	'LOGIN_USU_CORRECTO' : 'Successfully logged in',
 	'SESSION_STORED_OK' : 'Session stored on the DB',	
 	'SESSION_STORED_FAIL' : 'No existe la sesión en la DB',	
-	'USER_IN_SESSION' : 'User already in session',	
+	'USER_IN_SESSION' : 'User is already in session',	
 	'SESSION_DISCONNECT_OK' : 'Session removed from DB and user disconnected',	
 	'REGISTRO_USUARIO_YA_EXISTE' : 'Cannot register because this username is taken',	
 	'REGISTRO_EMAIL_PERSONA_YA_EXISTE' : 'Cannot register because there is an existing user with this email',	
@@ -166,16 +168,20 @@ arrayEN={
 	// persona	
 	//************************************************************************************************	
 	//- atributos persona	
+	'PERSONA' : 'Person',
+	'PERSONAS' : 'People',
 	'DNI_PERSONA' : 'ID Number',	
 	'NOMBRE_PERSONA' : 'Name',	
-	'APELLIDOS_PERSONA' : 'Surname',	
+	'APELLIDOS_PERSONA' : 'Last Name',	
 	'FECHANACIMIENTO_PERSONA' : 'Date of Birth',	
 	'DIRECCION_PERSONA' : 'Address of Person',	
 	'TELEFONO_PERSONA' : 'Person Phone',	
 	'EMAIL_PERSONA' : 'Person\'s e-mail address',	
 	'FOTO_PERSONA' : 'Person Photo',	
 	'ESCELIACO_PERSONA' : 'Celiac',	
-	'BORRADO_PERSONA' : 'Active',	
+	'BORRADO_PERSONA' : 'Active',
+	
+	//- errores
 	'DNI_PERSONA_YA_EXISTE' : 'There is already one person with this ID',	
 	'EMAIL_PERSONA_YA_EXISTE' : 'There is already one person with this email',	
 	'PERSONA_BORRAR_NO_EXISTE' : 'The person to be deleted does not exist',	
@@ -186,12 +192,14 @@ arrayEN={
 		
 	//-exito	
 	'PERSONA_INSERTAR_OK' : 'Person inserted correctly',	
-	'PERSONA_MODIFICAR_OK' : 'Correctly modified person',	
+	'PERSONA_MODIFICAR_OK' : 'Person modified correctly',	
 	'PERSONA_BORRAR_OK' : 'Person deleted correctly',	
 	//************************************************************************************************	
 	// grupo	
 	//************************************************************************************************	
-	// atributos	
+	// atributos
+	'GRUPO' : 'Group',
+	'GRUPOS' : 'Groups',	
 	'ID_GRUPO' : 'Group ID',	
 	'NOMBRE_GRUPO' : 'Group name',	
 	'DESCRIPCION_GRUPO' : 'Group description',	
@@ -205,9 +213,126 @@ arrayEN={
 		
 	//-exito	
 	'GRUPO_INSERTAR_OK' : 'Group inserted correctly',	
-	'GRUPO_MODIFICAR_OK' : 'Correctly modified group',	
+	'GRUPO_MODIFICAR_OK' : 'Group modified correctly',	
 	'GRUPO_BORRAR_OK' : 'Group deleted correctly',
+    //************************************************************************************************	
+	// actividades	
+	//************************************************************************************************	
+	//- atributos
+	'ACTIVIDAD' : 'Activity',
+	'ACTIVIDADES' : 'Activities',
+	'ID_ACTIVIDAD' : 'Activity ID',
+	'NOMBRE_ACTIVIDAD' : 'Activity name',
+	'DESCRIPCION_ACTIVIDAD' : 'Activity description',
+	'COLOR_ACTIVIDAD' : 'Activity color',
+	'COLOR_NOMBRE_ACTIVIDAD' : 'Activity name color',
+	'PRECIO_ACTIVIDAD' : 'Activity price',
+	'PLAZAS_ACTIVIDAD' : 'Activity spots',
 
+	//- errores
+	'ACTIVIDAD_YA_EXISTE' : 'The activity code already exists',
+	'ACTIVIDAD_BORRAR_NO_EXISTE' : 'The activity to be deleted does not exist',
+	'ACTIVIDAD_BORRAR_EXISTE_EN_INSCRIPCION' : 'Cannot be deleted, there are users in this activity',
+	'ERROR_INSERTAR_ACTIVIDAD' : 'Error inserting group',
+	'ERROR_MODIFICAR_ACTIVIDAD' : 'Error when modifying the group',
+	'ERROR_BORRAR_ACTIVIDAD' : 'Error deleting group',
+
+	//- exito
+	'ACTIVIDAD_INSERTAR_OK' : 'Activity inserted correctly',
+	'ACTIVIDAD_MODIFICAR_OK' : 'Activity modified correctly',
+	'ACTIVIDAD_BORRAR_OK' : 'Activity deleted correctly',
+    //************************************************************************************************	
+	// categorias	
+	//************************************************************************************************	
+	//- atributos
+	'CATEGORIA' : 'Category',
+	'CATEGORIAS' : 'Categories',
+	'ID_CATEGORIA' : 'Category ID',
+	'NOMBRE_CATEGORIA' : 'Category name',
+	'DESCRIPCION_CATEGORIA' : 'Category description',
+
+	//- errores
+	'CATEGORIA_YA_EXISTE' : 'The category code already exists',
+	'CATEGORIA_BORRAR_NO_EXISTE' : 'The category to be deleted does not exist',
+	'ERROR_INSERTAR_CATEGORIA' : 'Error inserting category',
+	'ERROR_MODIFICAR_CATEGORIA' : 'Error modifying category',
+	'ERROR_BORRAR_CATEGORIA' : 'Error deleting category',
+
+	//- exito
+	'CATEGORIA_INSERTAR_OK' : 'Category inserted correctly',
+	'CATEGORIA_MODIFICAR_OK' : 'Category modified correctly',
+	'CATEGORIA_BORRAR_OK' : 'Category deleted correctly',
+	//************************************************************************************************	
+	// espacios	
+	//************************************************************************************************	
+	//- atributos
+	'ESPACIO' : 'Space',
+	'ESPACIOS' : 'Spaces',
+	'ID_ESPACIO' : 'Space ID',
+	'NOMBRE_ESPACIO' : 'Space name',
+	'DESCRIPCION_ESPACIO' : 'Space description',
+
+	//- errores
+	'ESPACIO_YA_EXISTE' : 'The space code already exists',
+	'ESPACIO_BORRAR_NO_EXISTE' : 'The space to be deleted does not exist',
+	'ERROR_INSERTAR_ESPACIO' : 'Error inserting space',
+	'ERROR_MODIFICAR_ESPACIO' : 'Error modifying space',
+	'ERROR_BORRAR_ESPACIO' : 'Error deleting space',
+
+	//- exito
+	'ESPACIO_INSERTAR_OK' : 'Space inserted correctly',
+	'ESPACIO_MODIFICAR_OK' : 'Space modified correctly',
+	'ESPACIO_BORRAR_OK' : 'Space deleted correctly',
+    //************************************************************************************************	
+	// inscripciones	
+	//************************************************************************************************	
+	//- atributos
+	'INSCRIPCION' : 'Inscription',
+	'INSCRIPCIONES' : 'Inscriptions',
+	'ID_INSCRIPCION' : 'Inscription ID',
+	'FECHA_SOLICITUD_INSCRIPCION' : 'Inscription request date',
+	'DOCUMENTO_PAGO' : 'Payment document',
+	'FECHA_PAGO_INSCRIPCION' : 'Inscription payment date',
+	'FECHA_ACEPTACION_INSCRIPCION' : 'Inscription acceptance date',
+
+	// - errores
+	'INSCRIPCION_YA_EXISTE' : 'The inscription code already exists',
+	'INSCRIPCION_BORRAR_NO_EXISTE' : 'The inscription to be deleted does not exist',
+	'ERROR_INSERTAR_INSCRIPCION' : 'Error inserting inscription',
+	'ERROR_MODIFICAR_INSCRIPCION' : 'Error modifying inscription',
+	'ERROR_BORRAR_INSCRIPCION' : 'Error erasing inscription',
+
+	//- exito
+	'INSCRIPCION_INSERTAR_OK' : 'Inscription inserted correctly',
+	'INSCRIPCION_MODIFICAR_OK' : 'Inscription modified correctly',
+	'INSCRIPCION_BORRAR_OK' : 'Inscription deleted correctly',
+
+	//************************************************************************************************	
+	// responsables	
+	//************************************************************************************************	
+	//- atributos
+	'RESPONSABLE' : 'Manager',
+	'RESPONSABLES' : 'Managers',
+	'ID_RESPONSABLE' : 'Manager ID',
+	'CURRICULUM_RESPONSABLE' : 'Manager curriculum',
+	'NUMCUENTA_RESPONSABLE' : 'Manager bank account number',
+	'BORRADO_RESPONSABLE' : 'Active',
+
+	//- errores
+	'RESPONSABLE_YA_EXISTE' : 'There is already a manager with this DNI',
+	'RESPONSABLE_BORRAR_NO_EXISTE' : 'The manager to be deleted does not exist',
+	'ERROR_INSERTAR_RESPONSABLE' : 'Error inserting manager',
+	'ERROR_MODIFICAR_RESPONSABLE' : 'Error modifying manager',
+	'ERROR_BORRAR_RESPONSABLE' : 'Error deleting manager',
+
+	//-exito
+	'RESPONSABLE_INSERTAR_OK' : 'Manager inserted correctly',
+	'RESPONSABLE_MODIFICAR_OK' : 'Manager modified correctly',
+	'RESPONSABLE_BORRAR_OK' : 'Manager deleted correctly',
+
+
+
+	//-error
 	'02100' : 'Error inserting user',
 	'02101' : 'The username already exists',
 	'02102' : 'The user does not exist',
@@ -274,7 +399,50 @@ arrayEN={
 	"02155" : "The group description cannot be longer than 200 characters",
 	"02156" : "The group description cannot be shorter than 20 characters",
 	"02157" : "The group description can only contain letters and spaces",
-
+	'02158' : 'The activity name cannot be empty',
+    '02159' : 'The activity name cannot be shorter than 3 characters',
+    '02160' : 'The activity name cannot be longer than 45 characters',
+    '02161' : 'The activity description cannot be empty',
+    '02162' : 'The activity description cannot be shorter than 20 characters',
+    '02163' : 'The activity description cannot be longer than 200 characters',
+    '02164' : 'The activity name can only contain letters and spaces',
+    '02165' : 'The activity description can only contain letters and spaces',
+    '02166' : 'The activity price can only contain numbers',
+    '02167' : 'The activity price cannot have more than 6 digits',
+    '02168' : 'The activity price cannot have less than 3 digits',
+    '02169' : 'The activity price cannot be empty',
+    '02170' : 'The activity spots can only contain numbers',
+    '02171' : 'The activity spots cannot have more than 6 digits',
+    '02172' : 'The activity spots cannot have less than 3 digits',
+    '02173' : 'The activity spots cannot be empty',
+    '02174' : 'The space name cannot be empty',
+    '02175' : 'The space name cannot be shorter than 3 characters',
+    '02176' : 'The space name cannot be longer than 45 characters',
+    '02177' : 'The space description cannot be empty',
+    '02178' : 'The space description cannot be shorter than 20 characters',
+    '02179' : 'The space description cannot be longer than 200 characters',
+    '02180' : 'The space name can only contain letters and spaces',
+    '02181' : 'The space description can only contain letters and spaces',
+	'02182' : 'The category name cannot be empty',
+    '02183' : 'The category name cannot be shorter than 3 characters',
+    '02184' : 'The category name cannot be longer than 45 characters',
+    '02185' : 'The category description cannot be empty',
+    '02186' : 'The category description cannot be shorter than 20 characters',
+    '02187' : 'The category description cannot be longer than 200 characters',
+    '02188' : 'The category name can only contain letters and spaces',
+    '02189' : 'The category description can only contain letters and spaces',
+	'02190' : 'The activity color cannot be empty',
+	'02191' : 'The activity name color cannot be empty',
+	'02192' : 'The uploaded file can only be in pdf format',
+	'02193' : 'The activity color cannot have more than 7 characters',
+	'02194' : 'The activity name color cannot have more than 7 characters',
+	'02195' : 'The payment file cannot have more than 100 characters',
+	'02196' : 'The activity color cannot have less than 7 characters',
+	'02197' : 'The activity name color cannot have less than 7 characters',
+	'02198' : 'The payment file cannot have less than 5 characters',
+	'02199' : 'The activity price can only have 2 decimal numbers',
+	'02200' : 'The activity color can only contain numbers from 0 to 9 and capital letters from A to F',
+	'02201' : 'The activity name color can only contain numbers from 0 to 9 and capital letters from A to F',
 
 	//test
 	'PRUEBA' : 'Test',
