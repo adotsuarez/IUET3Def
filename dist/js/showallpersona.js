@@ -74,3 +74,39 @@ function getListPersonas() {
             deleteActionController();
         });
 }
+
+function getListPersonasBuscar() {
+
+    var idioma = getCookie('lang');
+    var idSession = getCookie('sessionId');
+
+
+    addActionControler(document.getElementById('formBuscar'), 'search', 'persona');
+    insertacampo(document.getElementById('formBuscar'),'ID_SESSION', idSession);
+
+    $.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formBuscar").serialize(),  
+    }).done(function( response ) {       
+        if (response.ok == true) {
+            // $("#datosPersonas").html("<thead> <tr> <th class=\"FOTO\"></th> <th class=\"NOMBRE_PERSONA\"></th> <th class=\"APELLIDOS_PERSONA\"></th> <th class=\"DNI_PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> <th class=\"DIRECCION\"></th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
+
+            $("#datosPersonas").html("<thead> <tr> <th class=\"PERSONA\"></th> <th class=\"FECHANACIMIENTO_PERSONA\"></th> </th> <th class=\"TELEFONO\"></th> <th class=\"EMAIL\"></th> <th class=\"ESCELIACO_PERSONA\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES min-w-[150px] \"></th> </tr> </thead> <tbody></tbody>");
+
+            for (var i = 0; i < response.resource.length; i++) {
+                var tr = construyeFila(response.resource[i]);
+                $("#datosPersonas").append(tr);
+            }
+            
+            setLang(idioma);
+        } else { 
+            $("#mensajeError").removeClass();
+            $("#mensajeError").addClass(response.code);
+            setLang(idioma);
+            document.getElementById("modal").classList.add('modal-open');
+        }              
+        
+        deleteActionController();
+    });
+}

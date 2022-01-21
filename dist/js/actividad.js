@@ -187,7 +187,6 @@ function showEliminarActividad(id_actividad, nombre_actividad, descripcion_activ
 // BUSCAR
 function comprobarBuscar() {
 	if (	buscarId()
-		&& buscarId()
 		&& buscarNombreActividad()
 		&& buscarDescripcionActividad()
 		&& buscarColorActividad()

@@ -141,6 +141,7 @@ function showEditarPersona(dni_persona, nombre_persona, apellidos_persona, fecha
 	document.getElementById('txtEmailPersona').setAttribute("readonly", true);
 	
     document.getElementById('txtDni').value = dni_persona;
+	console.log(dni_persona);
     document.getElementById('txtNombrePersona').value = nombre_persona;
     document.getElementById('txtApellidosPersona').value = apellidos_persona;
     document.getElementById('txtFechaNacimientoPersona').value = fechaNacimiento_persona;
@@ -224,4 +225,25 @@ function showEliminarPersona(dni_persona, nombre_persona, apellidos_persona, fec
 	setLang(getCookie('lang'));
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarNombre()
+		&& buscarApellidos()
+		&& buscarDni()
+		&& buscarDireccion()
+		&& buscarTelefono()
+		&& buscarEmail()
+		&& buscarFechaNacimiento()
+		&& buscarFoto()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListPersonasBuscar();
 }

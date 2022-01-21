@@ -183,3 +183,21 @@ function showEliminarUsuario(id, dni_usuario, usuario, contrasena, id_grupo, bor
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
 }
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarId()
+		&& buscarUser()
+		&& buscarPass()
+		&& buscarDni()
+		&& buscarIdGrupo()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListUsersBuscar();
+}

@@ -42,6 +42,89 @@
 		</div>
 	</div>
 
+	<div class="modal" id="formBuscarDiv">
+		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
+			<button class="btn btn-ghost font-light rounded-full max-w-max"
+					onclick="document.getElementById('formBuscarDiv').classList.remove('modal-open');">
+					<img class="rotate-180 w-10"
+						src="img/icons/clearskies/arrow.svg"
+						alt="ICONVOLVER">
+			</button>
+
+			<form
+				name="formBuscar"
+				id="formBuscar"
+				onSubmit="return comprobarBuscar();"
+				action="javascript:buscar();">
+				<div class="flex flex-col mt-4 ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span class="SEARCHPERSON"></span></p>
+
+					<input class="input input-bordered border-2 rounded-full NOMBRE_PERSONA"
+						type="text"
+						name="nombre_persona"
+						id="txtNombrePersonaBuscar"
+						onchange="return buscarNombre();">
+					<label class="hidden" id="errorFormatoNombreBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full APELLIDOS_PERSONA"
+						type="text"
+						name="apellidos_persona"
+						id="txtApellidosPersonaBuscar"
+						onchange="return buscarApellidos();">
+					<label class="hidden" id="errorFormatoApellidosBuscar"></label>
+					
+					<input class="mt-4 input input-bordered border-2 rounded-full DNI_PERSONA"
+						type="text"
+						name="dni_persona"
+						id="txtDniBuscar"
+						onchange="return buscarDni();">
+					<label class="hidden" id="errorFormatoDni"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full DIRECCION"
+						type="text"
+						name="direccion_persona"
+						id="txtDireccionPersonaBuscar"
+						onchange="return buscarDireccion();">
+					<label class="hidden" id="errorFormatoDireccionBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full TELEFONO"
+						type="text"
+						name="telefono_persona"
+						id="txtTelefonoPersonaBuscar"
+						onchange="return buscarTelefono();">
+					<label class="hidden" id="errorFormatoTelefonoBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full EMAIL"
+						type="text"
+						name="email_persona"
+						id="txtEmailPersonaBuscar"
+						onchange="return buscarEmail();">
+					<label class="hidden" id="errorFormatoEmailBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full FECHANACIMIENTO_PERSONA"
+						type="text"
+						name="fechaNacimiento_persona"
+						id="txtFechaNacimientoPersonaBuscar"
+						onchange="return buscarFechaNacimiento();">
+					<label class="hidden" id="errorFormatoFechaNacimientoBuscar"></label>
+					
+					<input class="mt-4 input input-bordered border-2 rounded-full FOTO"
+						type="text"
+						name="foto_persona"
+						id="fotoPersonaBuscar"
+						onchange="return buscarFoto();">
+					<label class="hidden" id="errorFormatoFotoBuscar"></label>
+				</div>
+
+				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+						<span class="ICONBUSCAR"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<div class="modal" id="formGenericoDiv">
 		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
 			<button class="btn btn-ghost font-light rounded-full max-w-max"
@@ -204,7 +287,18 @@
 									alt="PERSONAS">
 						<h1 class="text-3xl ml-4 mt-2 PERSONAS"></h1>
 					</div>
-					<div>
+					<div class="flex flex-row space-x-4">
+						<button class="btn btn-ghost px-2"
+						onclick="getListPersonas()">
+							<img class="w-10 rotate-45"
+								src="img/icons/clearskies/plus.svg">
+						</button>
+						<button class="btn btn-ghost px-2"
+						onclick="document.getElementById('formBuscarDiv').classList.add('modal-open');">
+							<img class="w-10"
+								src="img/icons/clearskies/search.svg"
+								alt="ICONBUSCAR">
+						</button>
 						<button class="btn btn-primary px-2"
 						onclick="showNuevoPersona();">
 							<img class="w-10"

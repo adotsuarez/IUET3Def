@@ -38,7 +38,7 @@ function getListActivities() {
             data: $("#formulariolistaractivades").serialize(),  
         }).done(function( response ) {       
             if (response.ok == true) {
-                $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"NUMPLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
+                $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"PLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
 
                 let espacioNameArray = getNames("espacio").responseJSON.resource;
                 let categoriaNameArray = getNames("categoria").responseJSON.resource;
@@ -74,7 +74,7 @@ function getListActivitiesBuscar() {
         data: $("#formBuscar").serialize(),  
     }).done(function( response ) {       
         if (response.ok == true) {
-            $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"NUMPLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
+            $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"PLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
 
             let espacioNameArray = getNames("espacio").responseJSON.resource;
             let categoriaNameArray = getNames("categoria").responseJSON.resource;

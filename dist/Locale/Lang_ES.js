@@ -180,7 +180,7 @@ arrayES={
 	'TELEFONO_PERSONA' : 'Teléfono',	
 	'EMAIL_PERSONA' : 'Correo electrónico',	
 	'FOTO_PERSONA' : 'Foto',	
-	'ESCELIACO_PERSONA' : 'Celíaca',	
+	'ESCELIACO_PERSONA' : 'Celíaco',	
 	'BORRADO_PERSONA' : 'Activo',
 
 	//- errores
