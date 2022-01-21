@@ -34,7 +34,7 @@ function showNuevoEspacio() {
 
 	resetearFormularioEspacio();
 
-	document.getElementById('formGenericoTitle').classList.add('ADDTAG');
+	document.getElementById('formGenericoTitle').classList.add('ADDSPACE');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONADD');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarNuevoEspacio();');
@@ -61,7 +61,7 @@ function showDetalleEspacio(id_espacio, nombre_espacio, descripcion_espacio) {
 
 	resetearFormularioEspacio();
 
-	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
+	document.getElementById('formGenericoTitle').classList.add('DETAILSPACE');
 	document.getElementById('modalActionsArea').classList.add('hidden');
 
 	document.getElementById('txtDescripcionEspacio').setAttribute("readonly", true);
@@ -81,7 +81,7 @@ function showEditarEspacio(id_espacio, nombre_espacio, descripcion_espacio) {
 
 	resetearFormularioEspacio();
 
-	document.getElementById('formGenericoTitle').classList.add('EDITTAG');
+	document.getElementById('formGenericoTitle').classList.add('EDITSPACE');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
 
 	document.getElementById('txtDescripcionEspacio').value = descripcion_espacio;
@@ -110,7 +110,7 @@ function comprobarEditarEspacio() {
 function showEliminarEspacio(id_espacio, nombre_espacio, descripcion_espacio) {
 	resetearFormularioEspacio();
 
-	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
+	document.getElementById('formGenericoTitle').classList.add('DELETESPACE');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
 	document.getElementById('txtDescripcionEspacio').setAttribute("readonly", true);
@@ -125,4 +125,20 @@ function showEliminarEspacio(id_espacio, nombre_espacio, descripcion_espacio) {
 	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','espacio', getListEspacios);");
 
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarId()
+		&& buscarNombreEspacio()
+		&& buscarDescripcionEspacio()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListEspaciosBuscar();
 }

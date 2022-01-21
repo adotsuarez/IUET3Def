@@ -110,7 +110,7 @@ function comprobarEditarCategoria() {
 function showEliminarCategoria(id_categoria, nombre_categoria, descripcion_categoria) {
 	resetearFormularioCategoria();
 
-	document.getElementById('formGenericoTitle').classList.add('DETAILTAG');
+	document.getElementById('formGenericoTitle').classList.add('DELETETAG');
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONELIMINAR');
 
 	document.getElementById('txtDescripcionCategoria').setAttribute("readonly", true);
@@ -125,4 +125,20 @@ function showEliminarCategoria(id_categoria, nombre_categoria, descripcion_categ
 	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('delete','categoria', getListCategorias);");
 
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarId()
+		&& buscarNombreCategoria()
+		&& buscarDescripcionCategoria()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListCategoriasBuscar();
 }

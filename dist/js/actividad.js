@@ -183,3 +183,26 @@ function showEliminarActividad(id_actividad, nombre_actividad, descripcion_activ
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
 }
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarId()
+		&& buscarId()
+		&& buscarNombreActividad()
+		&& buscarDescripcionActividad()
+		&& buscarColorActividad()
+		&& buscarColorNombreActividad()
+		&& buscarPrecioActividad()
+		&& buscarPlazasActividad()
+		&& buscarIdEspacio()
+		&& buscarIdCategoria()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListActivitiesBuscar();
+}

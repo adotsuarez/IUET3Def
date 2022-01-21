@@ -126,3 +126,19 @@ function showEliminarGrupo(id_grupo, nombre_grupo, descripcion_grupo) {
 
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
 }
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarId()
+		&& buscarNombreGrupo()
+		&& buscarDescripcionGrupo()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListGroupsBuscar();
+}

@@ -48,3 +48,35 @@ function getListEspacios() {
             deleteActionController();
         });
 }
+
+function getListEspaciosBuscar() {
+
+    var idioma = getCookie('lang');
+    var idSession = getCookie('sessionId');
+
+    addActionControler(document.getElementById("formBuscar"), 'search', 'espacio');
+    insertacampo(document.getElementById("formBuscar"),'ID_SESSION', idSession);
+
+    $.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formBuscar").serialize(),  
+    }).done(function( response ) {       
+        if (response.ok == true) {
+            $("#datosEspacios").html("<thead> <tr> <th class=\"NOMBRE_ESPACIO\"></th> <th class=\"DESCRIPCION_ESPACIO\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
+            for (var i = 0; i < response.resource.length; i++) {
+                var tr = construyeFila(response.resource[i]);
+                $("#datosEspacios").append(tr);
+            }
+            
+            setLang(idioma);
+        } else { 
+            $("#mensajeError").removeClass();
+            $("#mensajeError").addClass(response.code);
+            setLang(idioma);
+            document.getElementById("modal").classList.add('modal-open');
+        }              
+        
+        deleteActionController();
+    });
+}

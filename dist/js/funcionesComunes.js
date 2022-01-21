@@ -116,8 +116,6 @@ function comprobarFechaNacimiento(){
 		validacionKO("txtFechaNacimientoPersona", "errorFormatoFechaNacimiento");
 		return false;
 	}
-
-
 }
 
 /**Función que valida el número de teléfono */

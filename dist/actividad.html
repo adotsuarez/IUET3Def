@@ -42,6 +42,96 @@
 		</div>
 	</div>
 
+	<div class="modal" id="formBuscarDiv">
+		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
+			<button class="btn btn-ghost font-light rounded-full max-w-max"
+					onclick="document.getElementById('formBuscarDiv').classList.remove('modal-open');">
+					<img class="rotate-180 w-10"
+						src="img/icons/clearskies/arrow.svg"
+						alt="ICONVOLVER">
+			</button>
+
+			<form
+				name="formBuscar"
+				id="formBuscar"
+				onSubmit="return comprobarBuscar();"
+				action="javascript:buscar();">
+				<div class="flex flex-col mt-4 ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span class="SEARCHACTIVITY"></span></p>
+					
+					<input class="input input-bordered border-2 rounded-full ID_ACTIVIDAD"
+						type="text"
+						name="id_actividad"
+						id="txtIdBuscar"
+						onchange="return buscarId();">
+					<label class="hidden" id="errorFormatoIdBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full NOMBRE_ACTIVIDAD"
+						type="text"
+						name="nombre_actividad"
+						id="txtNombreActividadBuscar"
+						onchange="return buscarNombreActividad();">
+					<label class="hidden" id="errorFormatoNombreActividadBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full DESCRIPCION_ACTIVIDAD"
+						type="text"
+						name="descripcion_grupo"
+						id="txtDescripcionActividadBuscar"
+						onchange="return buscarDescripcionActividad();">
+					<label class="hidden" id="errorFormatoDescripcionActividadBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full COLOR_ACTIVIDAD"
+						type="text"
+						name="color_actividad"
+						id="txtColorActividadBuscar"
+						onchange="return buscarColorActividad();">
+					<label class="hidden" id="errorFormatoColorActividadBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full COLOR_NOMBRE_ACTIVIDAD"
+						type="text"
+						name="color_nombre_actividad"
+						id="txtColorNombreActividadBuscar"
+						onchange="return buscarColorNombreActividad();">
+					<label class="hidden" id="errorFormatoColorNombreActividadBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full PRECIO_ACTIVIDAD"
+						type="text"
+						name="precio_actividad"
+						id="numPrecioActividadBuscar"
+						onchange="return buscarPrecioActividad();">
+					<label class="hidden" id="errorFormatoPrecioActividadBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full PLAZAS_ACTIVIDAD"
+						type="text"
+						name="plazas_actividad"
+						id="numPlazasActividadBuscar"
+						onchange="return buscarPlazasActividad();">
+					<label class="hidden" id="errorFormatoPlazasActividadBuscar"></label>
+					
+					<input class="mt-4 input input-bordered border-2 rounded-full ID_ESPACIO"
+						type="text"
+						name="id_espacio"
+						id="txtIdEspacioBuscar"
+						onchange="return buscarIdEspacio();">
+					<label class="hidden" id="errorFormatoIdEspacioBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full ID_CATEGORIA"
+						type="text"
+						name="id_categoria"
+						id="txtIdCategoriaBuscar"
+						onchange="return buscarIdCategoria();">
+					<label class="hidden" id="errorFormatoIdCategoriaBuscar"></label>
+				</div>
+
+				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+						<span class="ICONBUSCAR"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<div class="modal" id="formGenericoDiv">
 		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
 			<button class="btn btn-ghost font-light rounded-full max-w-max"
@@ -190,7 +280,18 @@
 									alt="ACTIVIDADES">
 						<h1 class="text-3xl ml-4 mt-2 ACTIVIDADES"></h1>
 					</div>
-					<div>
+					<div class="flex flex-row space-x-4">
+						<button class="btn btn-ghost px-2"
+						onclick="getListActivities()">
+							<img class="w-10 rotate-45"
+								src="img/icons/clearskies/plus.svg">
+						</button>
+						<button class="btn btn-ghost px-2"
+						onclick="document.getElementById('formBuscarDiv').classList.add('modal-open');">
+							<img class="w-10"
+								src="img/icons/clearskies/search.svg"
+								alt="ICONBUSCAR">
+						</button>
 						<button class="btn btn-primary px-2"
 						onclick="showNuevaActividad();">
 							<img class="w-10"

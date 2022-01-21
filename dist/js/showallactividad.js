@@ -59,3 +59,39 @@ function getListActivities() {
             deleteActionController();
         });
 }
+
+function getListActivitiesBuscar() {
+
+    var idioma = getCookie('lang');
+    var idSession = getCookie('sessionId');
+
+    addActionControler(document.getElementById('formBuscar'), 'search', 'actividad');
+    insertacampo(document.getElementById('formBuscar'),'ID_SESSION', idSession);
+
+    $.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formBuscar").serialize(),  
+    }).done(function( response ) {       
+        if (response.ok == true) {
+            $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"NUMPLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
+
+            let espacioNameArray = getNames("espacio").responseJSON.resource;
+            let categoriaNameArray = getNames("categoria").responseJSON.resource;
+
+            for (var i = 0; i < response.resource.length; i++) {
+                var tr = construyeFila(response.resource[i], espacioNameArray, categoriaNameArray);
+                $("#datosActividades").append(tr);
+            }
+            
+            setLang(idioma);
+        } else { 
+            $("#mensajeError").removeClass();
+            $("#mensajeError").addClass(response.code);
+            setLang(idioma);
+            document.getElementById("modal").classList.add('modal-open');
+        }              
+        
+        deleteActionController();
+    });
+}
