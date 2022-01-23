@@ -1276,13 +1276,49 @@ function comprobarFechas(idElemento, idElementoError, campo) {
 	var patronFecha = /(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/(19[0-9]{2}|2[0-9]{3})$/;
 
 	if (
-		(decodeDate(document.getElementById(idElemento).value).match(patronFecha))
+		!( decodeDate(document.getElementById(idElemento).value).match(patronFecha))
+		) { 
+		switch(campo) {
+	    	case 'fechaNacimiento' : 
+		  		codigo = "02130";
+			break;
+		}
+		addCodeError(idElementoError, codigo);
+    	return false;
+	}
+	
+	var hoy = new Date();
+	var date = new Date(document.getElementById(idElemento).value);
+
+	if (
+		(hoy >= date)
 		) {
 		return true; 
 	} else {
 		switch(campo) {
-	    	case 'fechaNacimiento' : 
-		  		codigo = "02130";
+	    	case 'fechaSuperiorActual' : 
+		  		codigo = "99999";
+			break;
+		}
+		addCodeError(idElementoError, codigo);
+    	return false;
+	}
+}
+
+/** Función para comprobar que la fecha no es superior a la actual */
+function comprobarFechaAnterior(idElemento, idElementoError, campo) {
+	
+	var codigo = "GENERICO";
+	var hoy = new Date();
+
+	if (
+		(hoy >= document.getElementById(idElemento).value).match(patronFecha)
+		) {
+		return true; 
+	} else {
+		switch(campo) {
+	    	case 'fechaSuperiorActual' : 
+		  		codigo = "99999";
 			break;
 		}
 		addCodeError(idElementoError, codigo);
