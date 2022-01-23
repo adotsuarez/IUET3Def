@@ -478,6 +478,11 @@ arrayGA={
 	'02207' : 'O currículum do responsable non pode ter menos de 5 caracteres',
 	'02208' : 'O número de conta do responsable non pode ter menos de 24 caracteres',
 	'02209' : 'O número de conta debe de seguir o formato IBAN de 2 letras seguidas de 22 números',
+	'02210' : 'A búsqueda da ID non pode ser vacía',
+	'02211' : 'A búsqueda do número de conta só pode conter números e letras',
+	'02212' : 'A búsqueda do teléfono só pode conter números',
+	'02213' : 'A búsqueda da ID só pode conter números',
+	'02214' : 'A búsqueda do prezo da actividade debe conter un decimal',
 
 	//test
 	'PRUEBA' : 'Proba',

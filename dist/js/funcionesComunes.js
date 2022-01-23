@@ -937,7 +937,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02194";
 				break;
 			case "idBuscar":
-				codigo = "99999";
+				codigo = "02210";
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
@@ -1057,7 +1057,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		if (!patron.test(valor)) { 
 			switch(campo) {
 				case 'numCuenta_responsablebuscar' : 
-					codigo = "99999";
+					codigo = "02211";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -1191,10 +1191,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		if(!patron.test(valor)) {
 			switch(campo) {
 				case 'telefonoBuscar' :
-					codigo = "99999";
+					codigo = "02212";
 					break;
 				case 'idBuscar' :
-					codigo = "99999";
+					codigo = "02213";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -1222,7 +1222,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
     	if (!decimal.test(valor)) {
 			switch(campo) {
 				case 'precioactividad' :
-					codigo = "99999";
+					codigo = "02214";
 					break;
 			}
 			addCodeError(idElementoError, codigo);

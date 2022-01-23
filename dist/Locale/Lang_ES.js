@@ -478,6 +478,11 @@ arrayES={
 	'02207' : 'El currículum del responsable no puede tener menos de 5 caracteres',
 	'02208' : 'El número de cuenta del responsable no puede tener menos de 24 caracteres',
 	'02209' : 'El número de cuenta debe de seguir el formato IBAN de 2 letras seguidas de 22 números',
+	'02210' : 'La búsqueda de la ID no puede ser vacía',
+	'02211' : 'La búsqueda del número de cuenta solo puede contener números y letras',
+	'02212' : 'La búsqueda del teléfono solo puede contener números',
+	'02213' : 'La búsqueda de la ID solo puede contener números',
+	'02214' : 'La búsqueda del precio de la actividad debe contener un decimal',
 	
 
 	//test

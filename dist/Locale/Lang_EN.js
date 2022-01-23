@@ -478,6 +478,11 @@ arrayEN={
 	'02207' : 'The manager\'s curriculum cannot have less than 5 characters',
 	'02208' : 'The manager\'s bank account number cannot have less than 24 characters',
 	'02209' : 'The bank account number must follow the IBAN format of 2 letters followed by 22 numbers',
+	'02210' : 'The ID search cannot be empty',
+	'02211' : 'The bank account number search can only contain letters and numbers',
+	'02212' : 'The phone number search can only contain numbers',
+	'02213' : 'The ID search can only contain numbers',
+	'02214' : 'The activity price search must contain a decimal',
 
 	//test
 	'PRUEBA' : 'Test',
