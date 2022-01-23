@@ -37,6 +37,12 @@ arrayGA={
 	'DATOSUSUARIO' : 'Datos usuario',
 	'NOCUENTA' : 'Aínda non teño conta',
 	'YACUENTA' : 'Xa teño unha conta',
+    'BANNERTITULO' : 'Agora mesmo tes centos de actividades esperando por ti.',
+    'BANNERSUBTITULO' : 'Entra e descúbreas!',
+    'OLVIDADO' : 'Esquecín o meu contrasinal',
+    'CAMBIANDOPASS' : 'Actualizando o contrasinal',
+    'RECUPERANDOPASS' : 'Imos recuperar o teu contrasinal',
+    'RECUPERAR' : 'Recuperar',
 	//- botones
 	'LOGIN' : 'Iniciar sesión',
 	'REGISTRAR' : 'Rexistrarme',
@@ -147,23 +153,32 @@ arrayGA={
 	//************************************************************************************************	
 	// usuario	
 	//************************************************************************************************	
-	'ADD_USUARIO_YA_EXISTE' : 'O nome de usuario xa existe',	
-	'DNI_USUARIO_YA_EXISTE' : 'O DNI xa existe',	
+	'NOMBRE_USUARIO_YA_EXISTE' : 'O nome de usuario xa existe',	
+	'DNI_USUARIO_YA_EXISTE' : 'O DNI xa existe',
+	'DNI_USUARIO_YA_EXISTE_EN_USUARIO' : 'O DNI xa existe noutro usuario',	
 	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'O DNI debería estar como persoa primeiro',	
-	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'Non se podee modificar o DNI do administrador',	
-	'ADMIN_NO_SE_PUEDE_BORRAR' : 'O administrador non se pode borrar',	
+	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'Non se pode modificar o DNI do administrador',	
+	'ADMIN_NO_SE_PUEDE_BORRAR' : 'O administrador non se pode borrar',
+	'NO_SE_PUEDE_CAMBIAR_PASSWORD_ADMIN' : 'Non se pode modificar a contrasinal do administrador',
+	'ADMIN_NO_SE_PUEDE_EDITAR' : 'O administrador non se pode editar',	
 			
 	'ERROR_INSERTAR_USUARIO' : 'Erro ao insertar o usuario',	
 	'ERROR_MODIFICAR_USUARIO' : 'Erro ao modificar o usuario',	
 	'ERROR_BORRAR_USUARIO' : 'Erro ao borrar o usuario',	
 	'ERROR_AUTENTICAR_USUARIO' : 'Error de autenticación, inicia sesión de novo',	
 	'USUARIO_BORRAR_NO_EXISTE' : 'O usuario a borrar non existe',	
+	'CORREO_ELECTRONICO_NO_EXISTE' : 'o correo electrónico non existe',
+	'USUARIOYCORREO_NO_COINCIDEN' : 'O correo e o usuario introducidos non coinciden',
+	'CONTRASEÑA_NO_CORRECTA' : 'A contrasinal non é correcta',
+
 	//-exito	
 	'USUARIO_INSERTAR_OK' : 'Usuario insertado correctamente',	
 	'USUARIO_MODIFICADO_OK' : 'Usuario modificado correctamente',	
 	'USUARIO_BORRAR_OK' : 'Usuario borrado correctamente',	
 	'REGISTRO_OK' : 'Usuario rexistrado correctamente',	
 	'USUARIO_LOGUEAR_OK' : 'Sesión iniciada correctamente',	
+	'CONTRASENA_CAMBIADA_EMAILOK' : 'Te hemos enviado un email para resetear a túa contrasinal',	
+	'CONTRASENA_CAMBIADA_EMAILKO' : 'Esta é a túa nova contrasinal!',
 		
 	//************************************************************************************************	
 	// persoa	
@@ -255,7 +270,9 @@ arrayGA={
 
 	//- errores
 	'CATEGORIA_YA_EXISTE' : 'O código da categoría xa existe',
+	'CATEGORIA_NO_EXISTE' : 'A categoría non existe',
 	'CATEGORIA_BORRAR_NO_EXISTE' : 'A categoría a borrar non existe',
+	'CATEGORIA_BORRAR_EXISTE_EN_ACTIVIDAD' : 'Non se pode borrar a categoría, hai actividades nela',
 	'ERROR_INSERTAR_CATEGORIA' : 'Erro ao insertar a categoría',
 	'ERROR_MODIFICAR_CATEGORIA' : 'Erro ao modificar a categoría',
 	'ERROR_BORRAR_CATEGORIA' : 'Erro ao borrar a categoría',
@@ -276,7 +293,9 @@ arrayGA={
 
 	//- errores
 	'ESPACIO_YA_EXISTE' : 'O código de espazo xa existe',
+	'ESPACIO_NO_EXISTE' : 'O espazo non existe',
 	'ESPACIO_BORRAR_NO_EXISTE' : 'O espazo a borrar non existe',
+	'ESPACIO_BORRAR_EXISTE_EN_ACTIVIDAD' : 'Non se pode borrar o espazo, ha unha actividade nel',
 	'ERROR_INSERTAR_ESPACIO' : 'Erro ao insertar o espazo',
 	'ERROR_MODIFICAR_ESPACIO' : 'Erro ao modificar o espazo',
 	'ERROR_BORRAR_ESPACIO' : 'Erro ao borrar o espazo',
@@ -299,6 +318,11 @@ arrayGA={
 
 	// - errores
 	'INSCRIPCION_YA_EXISTE' : 'O código da inscrición xa existe',
+	'INSCRIPCION_ADD_ACTIVIDAD_NO_EXISTE' : 'A actividade a engadir á inscripción non existe',
+	'INSCRIPCION_ADD_USUARIO_NO_EXISTE' : 'O usuario a engadir á inscripción non existe',
+	'INSCRIPCION_EDITAR_INSCRIPCION_NO_EXISTE' : 'A inscripción a editar nob existe',
+	'INSCRIPCION_EDITAR_ACTIVIDAD_NO_EXISTE' : 'A actividade a engadir á inscripción non existe',
+	'INSCRIPCION_EDITAR_USUARIO_NO_EXISTE' : 'O usuario a engadir á inscripción non existe',
 	'INSCRIPCION_BORRAR_NO_EXISTE' : 'A inscrición a borrar non existe',
 	'ERROR_INSERTAR_INSCRIPCION' : 'Error ao insertar a inscrición',
 	'ERROR_MODIFICAR_INSCRIPCION' : 'Error ao modificar a inscrición',

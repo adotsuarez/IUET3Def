@@ -37,6 +37,12 @@ arrayES={
 	'DATOSUSUARIO' : 'Datos usuario',
 	'NOCUENTA' : 'Aún no tengo cuenta',
 	'YACUENTA' : 'Ya tengo una cuenta',
+	'BANNERTITULO' : 'Ahora mismo tienes cientos de actividades esperando por ti.',
+    'BANNERSUBTITULO' : '¡Entra y descúbrelas!',
+    'OLVIDADO' : 'He olvidado mi contraseña',
+    'CAMBIANDOPASS' : 'Actualizando la contraseña',
+    'RECUPERANDOPASS' : 'Vamos a recuperar tu contraseña',
+    'RECUPERAR' : 'Recuperar',
 	//- botones
 	'LOGIN' : 'Iniciar sesión',
 	'REGISTRAR' : 'Registrarme',
@@ -147,23 +153,32 @@ arrayES={
 	//************************************************************************************************	
 	// usuarios	
 	//************************************************************************************************	
-	'ADD_USUARIO_YA_EXISTE' : 'El nombre de usuario ya existe',	
-	'DNI_USUARIO_YA_EXISTE' : 'El DNI de usuario ya existe',	
+	'NOMBRE_USUARIO_YA_EXISTE' : 'El nombre de usuario ya existe',	
+	'DNI_USUARIO_YA_EXISTE' : 'El DNI de usuario ya existe',
+	'DNI_USUARIO_YA_EXISTE_EN_USUARIO' : 'El DNI ya existe en otro usuario',	
 	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'El DNI debería existir como persona antes',	
 	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'No se puede modificar el DNI del administrador',	
 	'ADMIN_NO_SE_PUEDE_BORRAR' : 'El administrador no se puede borrar',	
+	'NO_SE_PUEDE_CAMBIAR_PASSWORD_ADMIN' : 'No se puede modificar la contraseña del administrador',
+	'ADMIN_NO_SE_PUEDE_EDITAR' : 'El administrador no se puede editar',
 			
 	'ERROR_INSERTAR_USUARIO' : 'Error al insertar el usuario',	
 	'ERROR_MODIFICAR_USUARIO' : 'Error al modificar el usuario',	
 	'ERROR_BORRAR_USUARIO' : 'Error al borrar el usuario',	
 	'ERROR_AUTENTICAR_USUARIO' : 'Error de autenticación, inicia sesión de nuevo',	
-	'USUARIO_BORRAR_NO_EXISTE' : 'El usuario a borrar no existe',	
+	'USUARIO_BORRAR_NO_EXISTE' : 'El usuario a borrar no existe',
+	'CORREO_ELECTRONICO_NO_EXISTE' : 'El correo electrónico no existe',
+	'USUARIOYCORREO_NO_COINCIDEN' : 'El correo y el usuario introducidos no coinciden',
+	'CONTRASEÑA_NO_CORRECTA' : 'La contraseña no es correcta',
+
 	//-exito	
 	'USUARIO_INSERTAR_OK' : 'Usuario insertado correctamente',	
 	'USUARIO_MODIFICADO_OK' : 'Usuario modificado correctamente',	
 	'USUARIO_BORRAR_OK' : 'Usuario borrado correctamente',	
 	'REGISTRO_OK' : 'Usuario registrado correctamente',	
-	'USUARIO_LOGUEAR_OK' : 'Sesión iniciada correctamente',	
+	'USUARIO_LOGUEAR_OK' : 'Sesión iniciada correctamente',
+	'CONTRASENA_CAMBIADA_EMAILOK' : 'Te hemos enviado un email para resetear tu contraseña',	
+	'CONTRASENA_CAMBIADA_EMAILKO' : '¡Esta es tu nueva contraseña!',	
 		
 	//************************************************************************************************	
 	// personas
@@ -255,7 +270,9 @@ arrayES={
 
 	//- errores
 	'CATEGORIA_YA_EXISTE' : 'El código de categoría ya existe',
+	'CATEGORIA_NO_EXISTE' : 'La categoría no existe',
 	'CATEGORIA_BORRAR_NO_EXISTE' : 'La categoría a borrar no existe',
+	'CATEGORIA_BORRAR_EXISTE_EN_ACTIVIDAD' : 'No se puede borrar la categoría, hay actividades en ella',
 	'ERROR_INSERTAR_CATEGORIA' : 'Error al insertar la categoría',
 	'ERROR_MODIFICAR_CATEGORIA' : 'Error al modificar la categoría',
 	'ERROR_BORRAR_CATEGORIA' : 'Error al borrar la categoría',
@@ -276,7 +293,9 @@ arrayES={
 
 	//- errores
 	'ESPACIO_YA_EXISTE' : 'El código de espacio ya existe',
+	'ESPACIO_NO_EXISTE' : 'El espacio no existe',
 	'ESPACIO_BORRAR_NO_EXISTE' : 'El espacio a borrar no existe',
+	'ESPACIO_BORRAR_EXISTE_EN_ACTIVIDAD' : 'No se puede borrar el espacio, hay una actividad en el',
 	'ERROR_INSERTAR_ESPACIO' : 'Error al insertar el espacio',
 	'ERROR_MODIFICAR_ESPACIO' : 'Error al modificar el espacio',
 	'ERROR_BORRAR_ESPACIO' : 'Error al borrar el espacio',
@@ -298,7 +317,12 @@ arrayES={
 	'FECHA_ACEPTACION_INSCRIPCION' : 'Fecha de aceptacion de la inscripcion',
 
 	// - errores
-	'INSCRIPCION_YA_EXISTE' : 'El código de inscripción ya existe',
+	'INSCRIPCION_ADD_YA_EXISTE' : 'El código de inscripción ya existe',
+	'INSCRIPCION_ADD_ACTIVIDAD_NO_EXISTE' : 'La actividad a añadir a la inscripción no existe',
+	'INSCRIPCION_ADD_USUARIO_NO_EXISTE' : 'El usuario añadir a la inscripción no existe',
+	'INSCRIPCION_EDITAR_INSCRIPCION_NO_EXISTE' : 'La inscripción a editar no existe',
+	'INSCRIPCION_EDITAR_ACTIVIDAD_NO_EXISTE' : 'La actividad a añadir a la inscripción no existe',
+	'INSCRIPCION_EDITAR_USUARIO_NO_EXISTE' : 'El usuario a añadir a la inscripción no existe',
 	'INSCRIPCION_BORRAR_NO_EXISTE' : 'La inscripción a borrar no existe',
 	'ERROR_INSERTAR_INSCRIPCION' : 'Error al insertar la inscripción',
 	'ERROR_MODIFICAR_INSCRIPCION' : 'Error al modificar la inscripción',

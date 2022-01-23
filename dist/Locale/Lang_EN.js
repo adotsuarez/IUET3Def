@@ -37,6 +37,12 @@ arrayEN={
 	'DATOSUSUARIO' : 'User data',
 	'NOCUENTA' : 'I don\'t have an account yet',
 	'YACUENTA' : 'I already have an account',
+	'BANNERTITULO' : 'You have hundreds of activities waiting for you right now.',
+    'BANNERSUBTITULO' : 'Enter and discover them!',
+    'OLVIDADO' : 'I forgot my password',
+    'CAMBIANDOPASS' : 'Updating password',
+    'RECUPERANDOPASS' : 'Let\'s recover your password',
+    'RECUPERAR' : 'Recover',
 	//- botones
 	'LOGIN' : 'Log-in',
 	'REGISTRAR' : 'Sign-up',
@@ -147,23 +153,32 @@ arrayEN={
 	//************************************************************************************************	
 	// usuario	
 	//************************************************************************************************	
-	'ADD_USUARIO_YA_EXISTE' : 'This username is taken',	
-	'DNI_USUARIO_YA_EXISTE' : 'This ID number already exists',	
+	'NOMBRE_USUARIO_YA_EXISTE' : 'This username is taken',	
+	'DNI_USUARIO_YA_EXISTE' : 'This ID number already exists',
+	'DNI_USUARIO_YA_EXISTE_EN_USUARIO' : 'This ID number already exists in another user',	
 	'DNI_USUARIO_NO_EXISTE_EN_PERSONA' : 'The ID number must be first assigned to a person',	
 	'DNI_ADMIN_NO_SE_PUEDE_MODIFICAR' : 'Admin\'s ID number cannot be modified',	
 	'ADMIN_NO_SE_PUEDE_BORRAR' : 'Admin account cannot be deleted',	
+	'NO_SE_PUEDE_CAMBIAR_PASSWORD_ADMIN' : 'You cannot modify the admin\'s password',
+	'ADMIN_NO_SE_PUEDE_EDITAR' : 'You cannot modify the admin',
 			
 	'ERROR_INSERTAR_USUARIO' : 'Error adding user',	
 	'ERROR_MODIFICAR_USUARIO' : 'Error editing user',	
 	'ERROR_BORRAR_USUARIO' : 'Error deleting user',	
 	'ERROR_AUTENTICAR_USUARIO' : 'Authentication error, please log-in again',	
-	'USUARIO_BORRAR_NO_EXISTE' : 'The user you\'re trying to delete does not exist',	
+	'USUARIO_BORRAR_NO_EXISTE' : 'The user you\'re trying to delete does not exist',
+	'CORREO_ELECTRONICO_NO_EXISTE' : 'The email does not exist',
+	'USUARIOYCORREO_NO_COINCIDEN' : 'The email and the username do not match',
+	'CONTRASEÑA_NO_CORRECTA' : 'The password is incorrect',
+	
 	//-exito	
 	'USUARIO_INSERTAR_OK' : 'User created successfully',	
 	'USUARIO_MODIFICADO_OK' : 'User edited successfully',	
 	'USUARIO_BORRAR_OK' : 'User deleted successfully',	
 	'REGISTRO_OK' : 'User registered successfully',	
-	'USUARIO_LOGUEAR_OK' : 'Logged-in successfully',	
+	'USUARIO_LOGUEAR_OK' : 'Logged-in successfully',
+	'CONTRASENA_CAMBIADA_EMAILOK' : 'We have sent you an email to reset your password',	
+	'CONTRASENA_CAMBIADA_EMAILKO' : 'This is your new password!',	
 		
 	//************************************************************************************************	
 	// persona	
@@ -255,7 +270,9 @@ arrayEN={
 
 	//- errores
 	'CATEGORIA_YA_EXISTE' : 'The category code already exists',
+	'CATEGORIA_NO_EXISTE' : 'The category does not exist',
 	'CATEGORIA_BORRAR_NO_EXISTE' : 'The category to be deleted does not exist',
+	'CATEGORIA_BORRAR_EXISTE_EN_ACTIVIDAD' : 'You cannot delete the category, there are activities in it',
 	'ERROR_INSERTAR_CATEGORIA' : 'Error inserting category',
 	'ERROR_MODIFICAR_CATEGORIA' : 'Error modifying category',
 	'ERROR_BORRAR_CATEGORIA' : 'Error deleting category',
@@ -276,7 +293,9 @@ arrayEN={
 
 	//- errores
 	'ESPACIO_YA_EXISTE' : 'The space code already exists',
+	'ESPACIO_NO_EXISTE' : 'The space does not exist',
 	'ESPACIO_BORRAR_NO_EXISTE' : 'The space to be deleted does not exist',
+	'ESPACIO_BORRAR_EXISTE_EN_ACTIVIDAD' : 'You cannot delete the space, there is an activity in it',
 	'ERROR_INSERTAR_ESPACIO' : 'Error inserting space',
 	'ERROR_MODIFICAR_ESPACIO' : 'Error modifying space',
 	'ERROR_BORRAR_ESPACIO' : 'Error deleting space',
@@ -299,6 +318,11 @@ arrayEN={
 
 	// - errores
 	'INSCRIPCION_YA_EXISTE' : 'The inscription code already exists',
+	'INSCRIPCION_ADD_ACTIVIDAD_NO_EXISTE' : 'The activity to be added to the inscription does not exist',
+	'INSCRIPCION_ADD_USUARIO_NO_EXISTE' : 'The user to be added to the inscription does not exist',
+	'INSCRIPCION_EDITAR_INSCRIPCION_NO_EXISTE' : 'The inscription to be modified does not exist',
+	'INSCRIPCION_EDITAR_ACTIVIDAD_NO_EXISTE' : 'The activity to be added to the inscription does not exist',
+	'INSCRIPCION_EDITAR_USUARIO_NO_EXISTE' : 'The user to be added to the inscription does not exist',
 	'INSCRIPCION_BORRAR_NO_EXISTE' : 'The inscription to be deleted does not exist',
 	'ERROR_INSERTAR_INSCRIPCION' : 'Error inserting inscription',
 	'ERROR_MODIFICAR_INSCRIPCION' : 'Error modifying inscription',
