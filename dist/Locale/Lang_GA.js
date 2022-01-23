@@ -139,6 +139,7 @@ arrayGA={
 	'DETALLESREGISTRO' : 'Precisamos algúns detalles para poder rexistrarte',
 	'CASILISTOS' : 'Estamos casi listos!',
 	'CREDENCIALESREGISTRO' : 'Configura o teu usuario e contrasinal',
+	'VERARCHIVO' : 'Ver arquivo existente',
 	//- errores
 	'USUARIO_NO_AUTENTICADO' : 'Acceso denegado. Precisas iniciar sesión de novo primeiro.',
 	'LOGIN_USUARIO_INCORRECTO' : 'Non existe o usuario',

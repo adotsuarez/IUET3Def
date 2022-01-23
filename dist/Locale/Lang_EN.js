@@ -139,6 +139,7 @@ arrayEN={
 	'DETALLESREGISTRO' : 'We need some details first, in order to sign you up',
 	'CASILISTOS' : 'Almost there!',
 	'CREDENCIALESREGISTRO' : 'Let\'s setup your username and password',
+	'VERARCHIVO' : 'View existing file',
 	//- errores
 	'USUARIO_NO_AUTENTICADO' : 'Access denied. You\'ll need to log in again first.',
 	'LOGIN_USUARIO_INCORRECTO' : 'This user is not registered',
