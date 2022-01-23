@@ -106,7 +106,8 @@ function comprobarFoto() {
 		
 	if (   validaNoVacio("fotoPersona", "errorFormatoFoto", "foto")
 		&& comprobarLetrasNumeros("fotoPersona", 100, 5, "errorFormatoFoto", "foto")
-		&& comprobarExtFoto("fotoPersona", "errorFormatoFoto")) {
+		&& comprobarExtFoto("fotoPersona", "errorFormatoFoto")
+		&& comprobarTamanoArchivo("fotoPersona", 20971520, "errorFormatoFoto")) {
 		validacionOK("fotoPersona", "errorFormatoFoto");
 		return true;
 	} else {
@@ -600,7 +601,8 @@ function buscarNombreColorActividad(){
 function comprobarDocumentoPago(){
 	if (   validaNoVacio("fileDocumentoPago", "errorFormatoDocumentoPago", "documento_pago")
 		&& comprobarLetrasNumeros("fileDocumentoPago", 100, 5, "errorFormatoDocumentoPago", "documento_pago")
-		&& comprobarExtDocumentoPago("fileDocumentoPago","errorFormatoDocumentoPago")) {
+		&& comprobarExtDocumentoPago("fileDocumentoPago","errorFormatoDocumentoPago")
+		&& comprobarTamanoArchivo("fileDocumentoPago", 20971520, "errorFormatoDocumentoPago")) {
 		validacionOK("fileDocumentoPago", "errorFormatoDocumentoPago");
 		return true;
 	} else {
@@ -920,6 +922,18 @@ function comprobarExtCurriculum(idElemento, idElementoError){
 
 }
 
+function comprobarTamanoArchivo(idElemento, filesize, idElementoError) {
+	var codigo = "GENERICO";
+
+	if (elem = document.getElementById(idElemento).files[0].size > filesize) {
+		codigo = "02220";
+		addCodeError(idElementoError, codigo);
+    	return false;
+	} else {
+		return true;
+	}
+}
+
 function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, campo) {
 
 	var codigo = "GENERICO";
@@ -1011,7 +1025,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				codigo = "02194";
 				break;
 			case "fecha":
-				codigo = "99999";
+				codigo = "02215";
 				break;
 			case "idBuscar":
 				codigo = "02210";
@@ -1349,7 +1363,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
     	if (!fecha.test(valor)) {
 			switch(campo) {
 				case 'fecha' :
-					codigo = "99999";
+					codigo = "02216";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -1392,16 +1406,16 @@ function comprobarFechas(idElemento, idElementoError, campo) {
 	} else {
 		switch(campo) {
 	    	case 'fechaNacimiento' : 
-		  		codigo = "99999";
+		  		codigo = "02217";
 			break;
 			case 'fechaSolicitud' : 
-		  		codigo = "99999";
+		  		codigo = "02217";
 			break;
 			case 'fechaPago' : 
-		  		codigo = "99999";
+		  		codigo = "02217";
 			break;
 			case 'fechaAceptacion' : 
-		  		codigo = "99999";
+		  		codigo = "02217";
 			break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -1421,10 +1435,10 @@ function comprobarFechaAnterior(idElemento, idElementoAnterior, idElementoError,
 	} else {
 		switch(campo) {
 			case 'fechaPago' : 
-		  		codigo = "99999";
+		  		codigo = "02218";
 			break;
 	    	case 'fechaAceptacion' : 
-		  		codigo = "99999";
+		  		codigo = "02219";
 			break;
 		}
 		addCodeError(idElementoError, codigo);
