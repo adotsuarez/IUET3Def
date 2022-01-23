@@ -28,7 +28,7 @@ function getListGroups() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistargrupos").serialize(),  
+            data: decodeURIComponent($("#formulariolistargrupos").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosGrupos").html("<thead> <tr> <th class=\"NOMBRE_GRUPO\"></th> <th class=\"DESCRIPCION_GRUPO\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
@@ -60,7 +60,7 @@ function getListGroupsBuscar() {
     $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formBuscar").serialize(),  
+        data: decodeURIComponent($("#formBuscar").serialize()),
     }).done(function( response ) {       
         if (response.ok == true) {
             $("#datosGrupos").html("<thead> <tr> <th class=\"NOMBRE_GRUPO\"></th> <th class=\"DESCRIPCION_GRUPO\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");

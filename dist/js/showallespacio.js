@@ -28,7 +28,7 @@ function getListEspacios() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistarespacios").serialize(),  
+            data: decodeURIComponent($("#formulariolistarespacios").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosEspacios").html("<thead> <tr> <th class=\"NOMBRE_ESPACIO\"></th> <th class=\"DESCRIPCION_ESPACIO\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
@@ -60,7 +60,7 @@ function getListEspaciosBuscar() {
     $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formBuscar").serialize(),  
+        data: decodeURIComponent($("#formBuscar").serialize()),
     }).done(function( response ) {       
         if (response.ok == true) {
             $("#datosEspacios").html("<thead> <tr> <th class=\"NOMBRE_ESPACIO\"></th> <th class=\"DESCRIPCION_ESPACIO\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");

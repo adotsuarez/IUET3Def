@@ -60,7 +60,7 @@ function getListRegistration() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistarinscripciones").serialize(),  
+            data: decodeURIComponent($("#formulariolistarinscripciones").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosInscripciones").html("<thead> <tr> <th class=\"ACTIVIDAD\"></th> <th class=\"PERSONA\"></th> <th class=\"FECHA_SOLICITUD_INSCRIPCION\"></th> <th class=\"FECHA_PAGO_INSCRIPCION\"></th> <th class=\"FECHA_ACEPTACION_INSCRIPCION\"></th> <th class=\"ACCIONES min-w-[190px] \"> </th> </tr> </thead> <tbody></tbody>");
@@ -98,7 +98,7 @@ function getListRegistrationBuscar() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formBuscar").serialize(),  
+            data: decodeURIComponent($("#formBuscar").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosInscripciones").html("<thead> <tr> <th class=\"ACTIVIDAD\"></th> <th class=\"PERSONA\"></th> <th class=\"FECHA_SOLICITUD_INSCRIPCION\"></th> <th class=\"FECHA_PAGO_INSCRIPCION\"></th> <th class=\"FECHA_ACEPTACION_INSCRIPCION\"></th> <th class=\"ACCIONES min-w-[190px] \"> </th> </tr> </thead> <tbody></tbody>");

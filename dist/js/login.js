@@ -22,7 +22,7 @@ function login() {
 		{
 			method: "POST",
 	  		url: urlPeticionesAjax,
-	  		data: $("#formularioLogin").serialize(),  
+	  		data: decodeURIComponent($("#formularioLogin").serialize()),
 		}
 	).done(
 		function(response) {

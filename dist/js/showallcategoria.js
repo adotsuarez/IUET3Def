@@ -28,7 +28,7 @@ function getListCategorias() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistarcategorias").serialize(),  
+            data: decodeURIComponent($("#formulariolistarcategorias").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosCategorias").html("<thead> <tr> <th class=\"NOMBRE_CATEGORIA\"></th> <th class=\"DESCRIPCION_CATEGORIA\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
@@ -60,7 +60,7 @@ function getListCategoriasBuscar() {
     $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formBuscar").serialize(),  
+        data: decodeURIComponent($("#formBuscar").serialize()),
     }).done(function( response ) {       
         if (response.ok == true) {
             $("#datosCategorias").html("<thead> <tr> <th class=\"NOMBRE_CATEGORIA\"></th> <th class=\"DESCRIPCION_CATEGORIA\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");

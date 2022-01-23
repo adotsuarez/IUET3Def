@@ -24,7 +24,7 @@ function registrar() {
 
     var datos = new FormData();
 
-    var formdata = $("#formularioRegistro").serialize();
+    var formdata = decodeURIComponent($("#formularioRegistro").serialize());
     var file = $("#fotoPersona")[0].files[0];
     
     datos.append("upload", file);

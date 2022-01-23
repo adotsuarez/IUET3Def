@@ -1337,7 +1337,7 @@ function estaAutenticado() {
 	    $.ajax({
 	        method: "POST",
 	        url: urlPeticionesAjax,
-	        data: $("#formularioAutenticacion").serialize(),  
+	        data: decodeURIComponent($("#formularioAutenticacion").serialize()),
 	    }).done(function( response ) {       
 	        if (response.ok == true) {
 	            document.getElementById("usuario").innerHTML = response.resource[0].LOGIN_USUARIO;
@@ -1386,7 +1386,7 @@ function desconecta() {
 	    $.ajax({
 	        method: "POST",
 	        url: urlPeticionesAjax,
-	        data: $("#formularioDesconectar").serialize(),  
+	        data: decodeURIComponent($("#formularioDesconectar").serialize()),
 	    }).done(function( response ) {       
 	        if (response.ok == true) {
 	            window.location.href = 'login.html';
@@ -1459,7 +1459,7 @@ function selectid_grupo(id_grupo, idElemento) {
  	$.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formularioobtenergrupo").serialize(),
+        data: decodeURIComponent($("#formularioobtenergrupo").serialize()),
     }).done(function (response) {
         if (response.ok == true) {
 			addOptions(idElemento, response.resource, 'grupo');
@@ -1492,7 +1492,7 @@ function selectid_espacio(id_espacio, idElemento) {
  	$.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formularioobtenerespacio").serialize(),
+        data: decodeURIComponent($("#formularioobtenerespacio").serialize()),
     }).done(function (response) {
         if (response.ok == true) {
 			addOptions(idElemento, response.resource, 'espacio');
@@ -1525,7 +1525,7 @@ function selectid_categoria(id_categoria, idElemento) {
  	$.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formularioobtenercategoria").serialize(),
+        data: decodeURIComponent($("#formularioobtenercategoria").serialize()),
     }).done(function (response) {
         if (response.ok == true) {
 			addOptions(idElemento, response.resource, 'categoria');
@@ -1558,7 +1558,7 @@ function selectid_actividad(id_activdad, idElemento) {
  	$.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formularioobteneractividad").serialize(),
+        data: decodeURIComponent($("#formularioobteneractividad").serialize()),
     }).done(function (response) {
         if (response.ok == true) {
 			addOptions(idElemento, response.resource, 'actividad');
@@ -1591,7 +1591,7 @@ function selectid_usuario(id_usuario, idElemento) {
  	$.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formularioobtenerusuario").serialize(),
+        data: decodeURIComponent($("#formularioobtenerusuario").serialize()),
     }).done(function (response) {
         if (response.ok == true) {
 			addOptions(idElemento, response.resource, 'usuario');
@@ -1624,7 +1624,7 @@ function getNames(entity) {
  	var toret = $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formGetNames").serialize(),
+        data: decodeURIComponent($("#formGetNames").serialize()),
 		async: false
     }).done(function (response) {
         if (response.ok == true) {
@@ -1658,7 +1658,7 @@ function createId(entity) {
 	 $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formGetNames").serialize(),
+        data: decodeURIComponent($("#formGetNames").serialize()),
 		async: false
     }).done(function (response) {
         if (response.ok == true) {
@@ -1688,7 +1688,7 @@ function sendEntity(action, entity, okFunction) {
 	$.ajax({
 			method: 'POST',
 			url: urlPeticionesAjax,
-			data: $('#formGenerico').serialize(),  
+			data: decodeURIComponent($('#formGenerico').serialize()),
 		}).done(
 			function( response ) {
 				if (response.ok == true) {
@@ -1717,7 +1717,7 @@ function sendEntityWithFiles(action, entity, okFunction, formFile) {
 
 	var datos = new FormData();
 
-    var formdata = $('#formGenerico').serialize();
+    var formdata = decodeURIComponent($('#formGenerico').serialize());
     var file = document.getElementById(formFile).files[0];
     
     datos.append("upload", file);

@@ -35,7 +35,7 @@ function getListActivities() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistaractivades").serialize(),  
+            data: decodeURIComponent($("#formulariolistaractivades").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"PLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");
@@ -71,7 +71,7 @@ function getListActivitiesBuscar() {
     $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formBuscar").serialize(),  
+        data: decodeURIComponent($("#formBuscar").serialize()),
     }).done(function( response ) {       
         if (response.ok == true) {
             $("#datosActividades").html("<thead> <tr> <th class=\"NOMBRE_ACTIVIDAD\"></th> <th class=\"DESCRIPCION_ACTIVIDAD\"></th> <th class=\"PRECIO_ACTIVIDAD\"></th> <th class=\"PLAZAS_ACTIVIDAD\"></th> <th class=\"ESPACIO\"></th> <th class=\"CATEGORIA\"> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");

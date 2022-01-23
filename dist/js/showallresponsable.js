@@ -48,7 +48,7 @@ function getListResponsables() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistarresponsables").serialize(),  
+            data: decodeURIComponent($("#formulariolistarresponsables").serialize()),
         }).done(function( response ) {       
             if (response.ok == true) {
 
@@ -85,7 +85,7 @@ function getListResponsablesBuscar() {
     $.ajax({
         method: "POST",
         url: urlPeticionesAjax,
-        data: $("#formBuscar").serialize(),  
+        data: decodeURIComponent($("#formBuscar").serialize()),
     }).done(function( response ) {       
         if (response.ok == true) {
 
