@@ -85,3 +85,41 @@ function getListRegistration() {
             deleteActionController();
         });
 }
+
+function getListRegistrationBuscar() {
+
+        var idioma = getCookie('lang');
+        var idSession = getCookie('sessionId');
+
+
+        addActionControler(document.getElementById('formBuscar'), 'search', 'inscripcion');
+        insertacampo(document.getElementById('formBuscar'),'ID_SESSION', idSession);
+
+        $.ajax({
+            method: "POST",
+            url: urlPeticionesAjax,
+            data: $("#formBuscar").serialize(),  
+        }).done(function( response ) {       
+            if (response.ok == true) {
+                $("#datosInscripciones").html("<thead> <tr> <th class=\"ACTIVIDAD\"></th> <th class=\"PERSONA\"></th> <th class=\"FECHA_SOLICITUD_INSCRIPCION\"></th> <th class=\"FECHA_PAGO_INSCRIPCION\"></th> <th class=\"FECHA_ACEPTACION_INSCRIPCION\"></th> <th class=\"ACCIONES min-w-[190px] \"> </th> </tr> </thead> <tbody></tbody>");
+
+                let actividadNameArray = getNames("actividad").responseJSON.resource;
+                let usuarioNameArray = getNames("usuario").responseJSON.resource;
+                let personaNameArray = getNames("persona").responseJSON.resource;
+
+                for (var i = 0; i < response.resource.length; i++) {
+                    var tr = construyeFila(response.resource[i], actividadNameArray, usuarioNameArray, personaNameArray);
+                    $("#datosInscripciones").append(tr);
+                }
+                
+                setLang(idioma);
+            } else { 
+                $("#mensajeError").removeClass();
+                $("#mensajeError").addClass(response.code);
+                setLang(idioma);
+                document.getElementById("modal").classList.add('modal-open');
+            }              
+            
+            deleteActionController();
+        });
+}

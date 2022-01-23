@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="output.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="js/funcionesComunes.js"></script>
+	<script type="text/javascript" src="js/funcionesFormularios.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+
+	<script type="text/javascript" src="Locale/idioma.js"></script>
+	<script type="text/javascript" src="Locale/Lang_EN.js"></script>
+	<script type="text/javascript" src="Locale/Lang_ES.js"></script>
+	<script type="text/javascript" src="Locale/Lang_GA.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="font-light"
+	data-theme="iuui"
+	onload="setLang(); validaAutenticado(); getListEspacios();">
+
+	<div class="modal" id="modal">
+		<div class="modal-box" id="modalContent">
+			<div class="flex flex-col ml-3 mr-10">
+				<img class="w-10 -ml-3 mb-2"
+					src="img/icons/clearskies/exclam.svg">
+				<p id="mensajeError"></p>
+			</div>
+			<div class="modal-action">
+				<button onclick="document.getElementById('modal').classList.remove('modal-open');" class="btn btn-primary" id="modalOkay">Okay</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="" id="flexLand">
+
+		<div class="basis-full " id="actionArea">
+			<div class="navbar">
+				<div class="px-2 mx-2 navbar-start">
+					<a href="menu.html"><img class="h-9" src="img/logo/gradient.svg"></a>
+				</div> 
+				<div class="navbar-end">
+					<p class="hidden lg:flex font-light mr-4">
+						<span class="HOLA"></span>,&nbsp<span id="usuario"></span>.
+					</p>
+					<div class="dropdown dropdown-left">
+						<div tabindex="0" class="ml-2 btn btn-ghost px-2">
+							<img class="w-10"
+								src="img/icons/clearskies/world.svg"
+								alt="IDIOMA">
+						</div>
+						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-40">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/es.svg">Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/ga.svg">Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/en.svg">English</a></li>
+						</ul>
+					</div>
+					<button class="ml-2 btn btn-ghost px-2"
+						onclick="desconectar();">
+						<img class="w-10"
+							src="img/icons/clearskies/exit.svg"
+							alt="ICONDESCONECTAR">
+					</button>
+				</div>
+			</div>
+
+			<div class="flex min-h-[7px] max-h-[7px] h-full bg-gradient-to-r from-secondary to-primary" id="navbarGradientBar"></div>
+
+            <div class="w-full flex flex-col items-center">
+                <h1 class="font-normal text-4xl text-center my-10 mx-5"><span class="BIENVENIDA"></span></h1>
+            </div>
+			<div class="w-full flex flex-col md:flex-row min-h-[70vh] items-center">
+				<div class="my-auto md:mx-auto">
+                    <a class="btn btn-ghost flex flex-row mb-4" href="usuario.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/at.svg"
+                                    alt="USUARIOS">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case USUARIOS"></h1>
+                    </a>
+                    <a class="btn btn-ghost flex flex-row mb-4" href="persona.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/user.svg"
+                                    alt="PERSONAS">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case PERSONAS"></h1>
+                    </a>
+                    <a class="btn btn-ghost flex flex-row mb-4" href="responsable.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/manager.svg"
+                                    alt="RESPONSABLES">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case RESPONSABLES"></h1>
+                    </a>
+                    <a class="btn btn-ghost flex flex-row mb-4" href="grupo.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/group.svg"
+                                    alt="GRUPOS">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case GRUPOS"></h1>
+                    </a>
+                </div>
+                <div class="my-auto md:mx-auto">
+                    <a class="btn btn-ghost flex flex-row mb-4" href="actividad.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/activity.svg"
+                                    alt="ACTIVIDADES">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case ACTIVIDADES"></h1>
+                    </a>
+                    <a class="btn btn-ghost flex flex-row mb-4" href="categoria.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/tag.svg"
+                                    alt="CATEGORIAS">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case CATEGORIAS"></h1>
+                    </a>
+                    <a class="btn btn-ghost flex flex-row mb-4" href="espacio.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/space.svg"
+                                    alt="ESPACIOS">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case ESPACIOS"></h1>
+                    </a>
+                </div>
+                <div class="my-auto md:mx-auto">
+                    <a class="btn btn-ghost flex flex-row mb-4" href="inscripcion.html">
+                        <img class="w-10"
+                                    src="img/icons/clearskies/registration.svg"
+                                    alt="INSCRIPCIONES">
+                        <h1 class="text-3xl ml-4 mr-2 mt-1 font-light normal-case INSCRIPCIONES"></h1>
+                    </a>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

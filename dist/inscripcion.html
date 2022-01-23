@@ -42,6 +42,82 @@
 		</div>
 	</div>
 
+	<div class="modal" id="formBuscarDiv">
+		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
+			<button class="btn btn-ghost font-light rounded-full max-w-max"
+					onclick="document.getElementById('formBuscarDiv').classList.remove('modal-open');">
+					<img class="rotate-180 w-10"
+						src="img/icons/clearskies/arrow.svg"
+						alt="ICONVOLVER">
+			</button>
+
+			<form
+				name="formBuscar"
+				id="formBuscar"
+				onSubmit="return comprobarBuscar();"
+				action="javascript:buscar();">
+				<div class="flex flex-col mt-4 ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span class="SEARCHREGISTRATION"></span></p>
+
+					<input class="input input-bordered border-2 rounded-full ID_INSCRIPCION"
+						type="text"
+						name="id_inscripcion"
+						id="txtIdBuscar"
+						onchange="return buscarId();">
+					<label class="hidden" id="errorFormatoIdBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full ID_ACTIVIDAD"
+						type="text"
+						name="id_actividad"
+						id="selectIdActividadBuscar"
+						onchange="return buscarIdActividad();">
+					<label class="hidden" id="errorFormatoIdActividadBuscar"></label>
+
+                    <input class="mt-4 input input-bordered border-2 rounded-full ID"
+						type="text"
+						name="id_usuario"
+						id="selectIdUsuarioBuscar"
+						onchange="return buscarIdUsuario();">
+					<label class="hidden" id="errorFormatoIdUsuarioBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full FECHA_SOLICITUD_INSCRIPCION"
+						type="text"
+						name="fecha_solicitud_inscripcion"
+						id="dateFechaSolicitudInscripcionBuscar"
+						onchange="return buscarFechaSolicitudInscripcionBuscar();">
+					<label class="hidden" id="errorFormatoFechaSolicitudInscripcionBuscar"></label>
+					
+					<input class="mt-4 input input-bordered border-2 rounded-full FECHA_PAGO_INSCRIPCION"
+						type="text"
+						name="fecha_pago_inscripcion"
+						id="dateFechaPagoInscripcionBuscar"
+						onchange="return buscarFechaPagoInscripcionBuscar();">
+					<label class="hidden" id="errorFormatoFechaPagoInscripcionBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full FECHA_ACEPTACION_INSCRIPCION"
+						type="text"
+						name="fecha_aceptacion_inscripcion"
+						id="dateFechaAceptacionInscripcionBuscar"
+						onchange="return buscarFechaAceptacionInscripcionBuscar();">
+					<label class="hidden" id="errorFormatoFechaAceptacionInscripcionBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full DOCUMENTO_PAGO"
+						type="text"
+						name="documento_pago"
+						id="fileDocumentoPagoBuscar"
+						onchange="return buscarDocumentoPago();">
+					<label class="hidden" id="errorFormatoDocumentoPagoBuscar"></label>
+				</div>
+
+				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+						<span class="ICONBUSCAR"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<div class="modal" id="formGenericoDiv">
 		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
 			<button class="btn btn-ghost font-light rounded-full max-w-max"
@@ -88,6 +164,11 @@
 
 					<div class="mx-10 my-8 min-h-[2px] max-h-[2px] bg-gradient-to-r from-secondary to-primary rounded-flull"></div> 
 
+					<input class="hidden"
+						type="text"
+						name="fileDocumentoPago"
+						id="oldFile"></input>
+					
 					<label class="ml-3 text-sm font-medium DOCUMENTO_PAGO"></label>
 					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center" id="botonArchivo">
 						<img class="my-3 w-8 rotate-90"
@@ -98,11 +179,11 @@
 							name="documento_pago"
 							id="fileDocumentoPago"
 							accept="application/pdf"
-							onchange="comprobarDocumentoPago();">
+							onchange="changedFile = true; return comprobarDocumentoPago();">
 					</label>
 					<label class="hidden" id="errorFormatoDocumentoPago"></label>
 					<a class="mt-2 btn btn-ghost btn-xs rounded-full font-normal mx-auto VERARCHIVO" id="abrirArchivo"></a>
-
+						
 					<label class="mt-4 ml-3 text-sm font-medium FECHA_PAGO_INSCRIPCION"></label>
                     <input class="mt-2 input input-bordered border-2 rounded-full"
 						type="date"
@@ -134,17 +215,7 @@
 		<div class="basis-full " id="actionArea">
 			<div class="navbar">
 				<div class="px-2 mx-2 navbar-start">
-					<span class="text-lg font-bold">
-						nameless
-					</span>
-				</div> 
-				<div class="hidden px-2 mx-2 navbar-center md:flex">
-				  <div class="flex items-stretch">
-					<a class="btn btn-link btn-sm text-base-content">Home</a> 
-					<a class="btn btn-link btn-sm text-base-content">Portfolio</a> 
-					<a class="btn btn-link btn-sm text-base-content">About</a> 
-					<a class="btn btn-link btn-sm text-base-content">Contact</a>
-				  </div>
+					<a href="menu.html"><img class="h-9" src="img/logo/gradient.svg"></a>
 				</div> 
 				<div class="navbar-end">
 					<p class="hidden lg:flex font-light mr-4">
@@ -156,10 +227,10 @@
 								src="img/icons/clearskies/world.svg"
 								alt="IDIOMA">
 						</div>
-						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-36">
-							<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
-							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
-							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
+						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-40">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/es.svg">Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/ga.svg">Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/en.svg">English</a></li>
 						</ul>
 					</div>
 					<button class="ml-2 btn btn-ghost px-2"
@@ -181,7 +252,18 @@
 									alt="INSCRIPCIONES">
 						<h1 class="text-3xl ml-4 mt-2 INSCRIPCIONES"></h1>
 					</div>
-					<div>
+					<div class="flex flex-row space-x-4">
+						<button class="btn btn-ghost px-2"
+						onclick="getListRegistration()">
+							<img class="w-10 rotate-180"
+								src="img/icons/clearskies/reload.svg">
+						</button>
+						<button class="btn btn-primary px-2"
+						onclick="document.getElementById('formBuscarDiv').classList.add('modal-open');">
+							<img class="w-10"
+								src="img/icons/clearskies/search.svg"
+								alt="ICONBUSCAR">
+						</button>
 						<button class="btn btn-primary px-2"
 						onclick="showNuevaInscripcion();">
 							<img class="w-10"

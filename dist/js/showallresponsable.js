@@ -8,7 +8,7 @@ function construyeFila(fila, personaNameArray) {
     let tempFotoUsuario;
 
 
-    celdaAcciones = '<div class="flex flex-row"><button class="btn btn-ghost btn-sm px-0" onclick="showDetalleResponsable(' + atributosFunciones + ')"> <img class="w-8 ICONDETALLE" src="img/icons/clearskies/view.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEditarResponsable(' + atributosFunciones + ')"> <img class="w-8 ICONEDITAR" src="img/icons/clearskies/pencil.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEliminarResponsable(' + atributosFunciones + ')"> <img class="w-8 ICONELIMINAR" src="img/icons/clearskies/bin.svg"> </button>  <a class="ml-2 btn btn-ghost btn-sm px-0 tooltip" href="' + urlDocumentos + '/' + fila.curriculum_responsable + '" data-tip="' + fila.curriculum_responsable + '"> <img class="w-8" src="img/icons/clearskies/registrationnext.svg"> </a> </div>'
+    celdaAcciones = '<div class="flex flex-row"><button class="btn btn-ghost btn-sm px-0" onclick="showDetalleResponsable(' + atributosFunciones + ')"> <img class="w-8 ICONDETALLE" src="img/icons/clearskies/view.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEditarResponsable(' + atributosFunciones + ')"> <img class="w-8 ICONEDITAR" src="img/icons/clearskies/pencil.svg"> </button> <button class="ml-2 btn btn-ghost btn-sm px-0" onclick="showEliminarResponsable(' + atributosFunciones + ')"> <img class="w-8 ICONELIMINAR" src="img/icons/clearskies/bin.svg"> </button>  <a class="ml-2 btn btn-ghost btn-sm px-0 tooltip" href="' + urlCurriculums + '/' + fila.curriculum_responsable + '" data-tip="' + fila.curriculum_responsable + '"> <img class="w-8" src="img/icons/clearskies/registrationnext.svg"> </a> </div>'
 
     if (fila.borrado_responsable == 0) {
         borrado = "SI";
@@ -71,4 +71,41 @@ function getListResponsables() {
             
             deleteActionController();
         });
+}
+
+function getListResponsablesBuscar() {
+
+    var idioma = getCookie('lang');
+    var idSession = getCookie('sessionId');
+
+
+    addActionControler(document.getElementById('formBuscar'), 'search', 'responsable');
+    insertacampo(document.getElementById('formBuscar'),'ID_SESSION', idSession);
+
+    $.ajax({
+        method: "POST",
+        url: urlPeticionesAjax,
+        data: $("#formBuscar").serialize(),  
+    }).done(function( response ) {       
+        if (response.ok == true) {
+
+            $("#datosResponsables").html("<thead> <tr> <th class=\"PERSONA\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES min-w-[190px] \"></th> </tr> </thead> <tbody></tbody>");
+
+            let personaNameArray = getNames("persona").responseJSON.resource;
+
+            for (var i = 0; i < response.resource.length; i++) {
+                var tr = construyeFila(response.resource[i], personaNameArray);
+                $("#datosResponsables").append(tr);
+            }
+            
+            setLang(idioma);
+        } else { 
+            $("#mensajeError").removeClass();
+            $("#mensajeError").addClass(response.code);
+            setLang(idioma);
+            document.getElementById("modal").classList.add('modal-open');
+        }              
+        
+        deleteActionController();
+    });
 }

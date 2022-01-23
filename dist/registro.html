@@ -41,13 +41,13 @@
 		</div>
 	</div>
 
-	<div class="h-screen flex flex-row justify-end" id="flexLand">
+	<div class="h-screen flex flex-row justify-end sidebgregistro" id="flexLand">
 		<div class="flex min-w-[7px] max-w-[7px] h-full bg-gradient-to-t from-secondary to-primary" id="leftGradientBar"></div>
 		
 		<div class="hidden md:flex relative flex-col justify-center grow" id="leftSidePanel">
 			<div class="ml-24" id="highlights">
-				<p class="text-5xl leading-tight max-w-[70%] mb-6">Ahora mismo tienes 1.457 actividades esperando por ti.</p>
-				<p class="text-2xl leading-tight max-w-[70%] ">¡Entra y descúbrelas!</p>
+				<p class="text-5xl leading-tight max-w-[70%] mb-6 BANNERTITULO"></p>
+				<p class="text-2xl leading-tight max-w-[70%] BANNERSUBTITULO"></p>
 			</div>
 			<ul class="p-10 absolute bottom-0 left-0 flex flex-wrap" id="links">
 				<li>Autores</li>
@@ -55,19 +55,19 @@
 			</ul>
 		</div>
 
-		<div class="basis-full lg:basis-1/3 xl:basis-1/4" id="rightSidePanel">
-			<div class="p-10 h-full relative flex flex-col justify-center lg:rounded-tl-3xl bg-neutral text-neutral-content" id="contentRightSidePanel">
+		<div class="basis-full lg:basis-2/5 xl:basis-1/4" id="rightSidePanel">
+			<div class="p-10 h-full relative flex flex-col justify-center lg:rounded-tl-4xl bg-neutral text-neutral-content" id="contentRightSidePanel">
 				<div class="absolute top-3 right-3 dropdown dropdown-left">
 					<div tabindex="0" class="ml-2 btn btn-neutral px-2">
 						<img class="w-10"
 							src="img/icons/darknights/world.svg"
 							alt="IDIOMA">
 					</div> 
-					<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-100 text-neutral rounded-box w-36">
-						<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
-						<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
-						<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
-					</ul>
+					<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-100 text-neutral rounded-box w-40">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/es.svg">Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/ga.svg">Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/en.svg">English</a></li>
+						</ul>
 				</div>
 				<div class="flex justify-center" id="loginArea">
 					<div class="w-5/6" id="innerLoginArea">
@@ -103,14 +103,16 @@
 								onchange="return comprobarEmail();">
 							<label class="hidden" id="errorFormatoEmail"></label>
 							
-							<label class="mt-4 ml-auto px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full REGISTRAR"
+							<label class="mt-4 ml-auto px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full "
 								onclick="if (comprobarNombre()
 										&& comprobarApellidos()
 										&& comprobarEmail()) {
 									
 										document.getElementById('nombreInput').textContent = document.getElementById('txtNombrePersona').value;
 										document.getElementById('modalRegistro').classList.add('modal-open');
-									}"></label>
+									}">
+								<img class="w-8" src="img/icons/clearskies/useradd.svg" alt="REGISTRAR">
+							</label>
 							
 							<div class="modal" id="modalRegistro">
 								<div class="modal-box bg-neutral text-neutral-content overflow-auto max-h-[500px] lg:max-h-max" id="modalRegistroContent">
@@ -123,7 +125,7 @@
 										<p class="text-3xl mb-4 font-medium"><span class="UNPLACER"></span>, <span id="nombreInput"></span>.</p>
 										<p class="mb-4"><span class="DETALLESREGISTRO"></span>.</p>
 
-										<input class="input input-bordered border-2 input-ghost rounded-full DNI_PERSONA"
+										<input class="input input-bordered border-2 input-ghost rounded-full DNI_USUARIO"
 											type="text"
 											name="dni_persona"
 											id="txtDni"
@@ -164,7 +166,7 @@
 												name="foto_persona"
 												id="fotoPersona"
 												accept="image/png, image/jpeg"
-												onchange="comprobarFoto();">
+												onchange="return comprobarFoto();">
 										</label>
 										<label class="hidden" id="errorFormatoFoto"></label>
 
@@ -189,7 +191,7 @@
 												alt="ICONVOLVER">
 										</label>
 										
-										<label class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full ICONOK"
+										<label class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full "
 											onclick="if (	comprobarDni()
 													&& comprobarFechaNacimiento()
 													&& comprobarDireccion()
@@ -197,7 +199,9 @@
 													&& comprobarFoto()) {
 													document.getElementById('modalRegistro').classList.remove('modal-open');
 													document.getElementById('modalCredenciales').classList.add('modal-open');
-												}"></label>
+												}">
+											<img class="w-10" src="img/icons/clearskies/arrow.svg" alt="ICONOK">
+										</label>
 									</div>
 								</div>
 							</div>

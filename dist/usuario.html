@@ -180,17 +180,7 @@
 		<div class="basis-full " id="actionArea">
 			<div class="navbar">
 				<div class="px-2 mx-2 navbar-start">
-					<span class="text-lg font-bold">
-						nameless
-					</span>
-				</div> 
-				<div class="hidden px-2 mx-2 navbar-center md:flex">
-				  <div class="flex items-stretch">
-					<a class="btn btn-link btn-sm text-base-content">Home</a> 
-					<a class="btn btn-link btn-sm text-base-content">Portfolio</a> 
-					<a class="btn btn-link btn-sm text-base-content">About</a> 
-					<a class="btn btn-link btn-sm text-base-content">Contact</a>
-				  </div>
+					<a href="menu.html"><img class="h-9" src="img/logo/gradient.svg"></a>
 				</div> 
 				<div class="navbar-end">
 					<p class="hidden lg:flex font-light mr-4">
@@ -202,10 +192,10 @@
 								src="img/icons/clearskies/world.svg"
 								alt="IDIOMA">
 						</div>
-						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-36">
-							<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
-							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
-							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
+						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-40">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/es.svg">Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/ga.svg">Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/en.svg">English</a></li>
 						</ul>
 					</div>
 					<button class="ml-2 btn btn-ghost px-2"
@@ -230,10 +220,10 @@
 					<div class="flex flex-row space-x-4">
 						<button class="btn btn-ghost px-2"
 						onclick="getListUsers()">
-							<img class="w-10 rotate-45"
-								src="img/icons/clearskies/plus.svg">
+							<img class="w-10 rotate-180"
+								src="img/icons/clearskies/reload.svg">
 						</button>
-						<button class="btn btn-ghost px-2"
+						<button class="btn btn-primary px-2"
 						onclick="document.getElementById('formBuscarDiv').classList.add('modal-open');">
 							<img class="w-10"
 								src="img/icons/clearskies/search.svg"

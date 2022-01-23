@@ -41,13 +41,13 @@
 		</div>
 	</div>
 
-	<div class="h-screen flex flex-row justify-end" id="flexLand">
+	<div class="h-screen flex flex-row justify-end sidebglogin" id="flexLand">
 		<div class="flex min-w-[7px] max-w-[7px] h-full bg-gradient-to-t from-secondary to-primary" id="leftGradientBar"></div>
 		
 		<div class="hidden md:flex relative flex-col justify-center grow" id="leftSidePanel">
 			<div class="ml-24" id="highlights">
-				<p class="text-5xl leading-tight max-w-[70%] mb-6">Ahora mismo tienes 1.457 actividades esperando por ti.</p>
-				<p class="text-2xl leading-tight max-w-[70%] ">¡Entra y descúbrelas!</p>
+				<p class="text-5xl leading-tight max-w-[70%] mb-6 BANNERTITULO"></p>
+				<p class="text-2xl leading-tight max-w-[70%] BANNERSUBTITULO"></p>
 			</div>
 			<ul class="p-10 absolute bottom-0 left-0 flex flex-wrap" id="links">
 				<li>Autores</li>
@@ -63,11 +63,11 @@
 							src="img/icons/darknights/world.svg"
 							alt="IDIOMA">
 					</div>
-					<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-100 text-neutral rounded-box w-36">
-						<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
-						<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
-						<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
-					</ul>
+					<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-100 text-neutral rounded-box w-40">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/es.svg">Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/ga.svg">Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/en.svg">English</a></li>
+						</ul>
 				</div>
 				<div class="flex justify-center" id="loginArea">
 					<div class="w-5/6" id="innerLoginArea">
@@ -95,11 +95,14 @@
 								onchange="return comprobarPass();">
 							<label class="hidden" id="errorFormatoPass"></label>
 							
-							<button class="mt-4 ml-auto px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full LOGIN" type="submit"></button>
+							<button class="mt-4 ml-auto px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+								<img class="w-8 -mt-[2px] mr-2" src="img/icons/clearskies/login.svg" alt="LOGIN">
+							</button>
 						</form>
 					</div>
 				</div>
 				<div class="absolute bottom-0 left-0 right-0 justify-center mb-16 text-center font-medium">
+					<p class="mb-2 font-light"><a class="OLVIDADO" onclick="">I forgot my password</a>.</p>
 					<p><a class="NOCUENTA" href="registro.html"></a>.</p>
 				</div>
 			</div>

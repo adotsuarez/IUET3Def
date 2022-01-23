@@ -42,6 +42,54 @@
 		</div>
 	</div>
 
+	<div class="modal" id="formBuscarDiv">
+		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
+			<button class="btn btn-ghost font-light rounded-full max-w-max"
+					onclick="document.getElementById('formBuscarDiv').classList.remove('modal-open');">
+					<img class="rotate-180 w-10"
+						src="img/icons/clearskies/arrow.svg"
+						alt="ICONVOLVER">
+			</button>
+
+			<form
+				name="formBuscar"
+				id="formBuscar"
+				onSubmit="return comprobarBuscar();"
+				action="javascript:buscar();">
+				<div class="flex flex-col mt-4 ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span class="SEARCHMANAGER"></span></p>
+
+					<input class="input input-bordered border-2 rounded-full DNI_USUARIO"
+						type="text"
+						name="dni_responsable"
+						id="txtDniBuscar"
+						onchange="return buscarDni();">
+					<label class="hidden" id="errorFormatoDniBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full NUMCUENTA_RESPONSABLE"
+						type="text"
+						name="numCuenta_responsable"
+						id="txtNumCuentaResponsableBuscar"
+						onchange="return buscarNumCuenta();">
+					<label class="hidden" id="errorFormatoNumCuentaBuscar"></label>
+
+					<input class="mt-4 input input-bordered border-2 rounded-full CURRICULUM"
+						type="text"
+						name="curriculum_responsable"
+						id="curriculumResponsableBuscar"
+						onchange="return buscarCurriculum();">
+					<label class="hidden" id="errorFormatoCurriculumBuscar"></label>
+				</div>
+
+				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full" type="submit">
+						<span class="ICONBUSCAR"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<div class="modal" id="formGenericoDiv">
 		<div class="modal-box max-h-[500px] md:max-h-[700px] overflow-auto" id="modalContent">
 			<button class="btn btn-ghost font-light rounded-full max-w-max"
@@ -57,7 +105,7 @@
 				<div class="flex flex-col mt-4 ml-3 mr-10">
 					<p class="text-3xl mb-4 font-medium"><span id="formGenericoTitle"></span></p>
 					
-					<input class="mt-4 input input-bordered border-2 rounded-full DNI_RESPONSABLE"
+					<input class="mt-4 input input-bordered border-2 rounded-full DNI_USUARIO"
 						type="text"
 						name="dni_responsable"
 						id="txtDni"
@@ -71,6 +119,11 @@
 						onchange="return comprobarNumCuenta();">
 					<label class="hidden" id="errorFormatoNumCuenta"></label>
 
+					<input class="hidden"
+						type="text"
+						name="curriculum_responsable"
+						id="oldFile"></input>
+						
 					<label class="mt-4 ml-3 text-sm font-medium CURRICULUM"></label>
 					<label class="mt-2 btn btn-ghost h-auto rounded-[22px] flex flex-col content-center" id="botonArchivo">
 						<img class="my-3 w-8 rotate-90"
@@ -81,7 +134,7 @@
 							name="curriculum_responsable"
 							id="curriculumResponsable"
 							accept="application/pdf"
-							onchange="comprobarCurriculum();">
+							onchange="changedFile = true; return comprobarCurriculum();">
 					</label>
 					<label class="hidden" id="errorFormatoCurriculum"></label>
                     <a class="mt-2 btn btn-ghost btn-xs rounded-full font-normal mx-auto VERARCHIVO" id="abrirArchivo"></a>
@@ -111,17 +164,7 @@
 		<div class="basis-full " id="actionArea">
 			<div class="navbar">
 				<div class="px-2 mx-2 navbar-start">
-					<span class="text-lg font-bold">
-						nameless
-					</span>
-				</div> 
-				<div class="hidden px-2 mx-2 navbar-center md:flex">
-				  <div class="flex items-stretch">
-					<a class="btn btn-link btn-sm text-base-content">Home</a> 
-					<a class="btn btn-link btn-sm text-base-content">Portfolio</a> 
-					<a class="btn btn-link btn-sm text-base-content">About</a> 
-					<a class="btn btn-link btn-sm text-base-content">Contact</a>
-				  </div>
+					<a href="menu.html"><img class="h-9" src="img/logo/gradient.svg"></a>
 				</div> 
 				<div class="navbar-end">
 					<p class="hidden lg:flex font-light mr-4">
@@ -133,10 +176,10 @@
 								src="img/icons/clearskies/world.svg"
 								alt="IDIOMA">
 						</div>
-						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-36">
-							<li class="" id="langDropdownES" onclick="setLang('ES')"><a>🇪🇸 Español</a></li>
-							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a>🛰 Galego</a></li>
-							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a>🇬🇧 English</a></li>
+						<ul tabindex="0" class="py-4 menu shadow dropdown-content bg-base-200 text-neutral rounded-box w-40">
+							<li class="" id="langDropdownES" onclick="setLang('ES')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/es.svg">Español</a></li>
+							<li class="" id="langDropdownGA" onclick="setLang('GA')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/ga.svg">Galego</a></li>
+							<li class="" id="langDropdownEN" onclick="setLang('EN')"><a><img class="w-8 -ml-1 mr-2" src="img/flags/en.svg">English</a></li>
 						</ul>
 					</div>
 					<button class="ml-2 btn btn-ghost px-2"
@@ -158,7 +201,18 @@
 									alt="RESPONSABLES">
 						<h1 class="text-3xl ml-4 mt-2 RESPONSABLES"></h1>
 					</div>
-					<div>
+					<div class="flex flex-row space-x-4">
+						<button class="btn btn-ghost px-2"
+						onclick="getListResponsables()">
+							<img class="w-10 rotate-180"
+								src="img/icons/clearskies/reload.svg">
+						</button>
+						<button class="btn btn-primary px-2"
+						onclick="document.getElementById('formBuscarDiv').classList.add('modal-open');">
+							<img class="w-10"
+								src="img/icons/clearskies/search.svg"
+								alt="ICONBUSCAR">
+						</button>
 						<button class="btn btn-primary px-2"
 						onclick="showNuevoResponsable();">
 							<img class="w-10"

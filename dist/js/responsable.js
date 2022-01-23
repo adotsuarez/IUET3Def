@@ -1,3 +1,5 @@
+changedFile = false;
+
 // RESETEAR
 function resetearFormularioResponsable () {
 	let idElementoList = ['txtDni',
@@ -29,6 +31,9 @@ function resetearFormularioResponsable () {
 
 	document.getElementById('abrirArchivo').classList.remove('hidden');
 	document.getElementById('botonArchivo').classList.remove('hidden');
+
+	document.getElementById('modalActionsArea').classList.remove('hidden');
+	document.getElementById('oldFile').setAttribute("disabled",true);
 }
 
 // NUEVO
@@ -50,8 +55,8 @@ function showNuevoResponsable() {
 
 function comprobarNuevoResponsable() {
 	if(		comprobarDni()
-		//&& comprobarNumCuenta()
-		//&& comprobarCurriculum()
+		&& comprobarNumCuenta()
+		&& comprobarCurriculum()
 		) {
         if (document.getElementById('chkBorradoResponsable').checked == true) {
             document.getElementById('hiddenBorradoResponsable').value = 0;
@@ -98,7 +103,7 @@ function showEditarResponsable(dni_responsable, curriculum_responsable, numCuent
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarResponsable();');
-	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntityWithFiles('edit','responsable', getListResponsables, 'curriculumResponsable');");
+	document.getElementById('formGenerico').setAttribute('action', 'javascript:send("'+ curriculum_responsable + '");');
 
 
 	document.getElementById('txtDni').setAttribute("readonly", true);
@@ -106,6 +111,7 @@ function showEditarResponsable(dni_responsable, curriculum_responsable, numCuent
     document.getElementById('txtDni').value = dni_responsable;
     document.getElementById('txtNumCuentaResponsable').value = numCuenta_responsable;
 	document.getElementById('abrirArchivo').href = urlCurriculums + '/' + curriculum_responsable;
+	document.getElementById('oldFile').value = curriculum_responsable;
 
 	if (borrado_responsable == 0) {
 		document.getElementById('chkBorradoResponsable').checked = true;
@@ -126,6 +132,15 @@ function comprobarEditarResponsable() {
 		return true;
 	} else {
 		return false;
+	}
+}
+
+function send() {
+	if (changedFile == true) {
+		sendEntityWithFiles('edit','responsable', getListResponsables,'curriculumResponsable');
+	} else {
+		document.getElementById('oldFile').removeAttribute("disabled");
+		sendEntity('edit','responsable', getListResponsables);
 	}
 }
 
@@ -157,4 +172,20 @@ function showEliminarResponsable(dni_responsable, curriculum_responsable, numCue
 	setLang(getCookie('lang'));
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarDni()
+		&& buscarNumCuenta()
+		&& buscarCurriculum()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListResponsablesBuscar();
 }

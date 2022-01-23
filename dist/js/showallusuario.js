@@ -45,7 +45,7 @@ function getListUsers() {
         $.ajax({
             method: "POST",
             url: urlPeticionesAjax,
-            data: $("#formulariolistarusuarios").serialize(),  
+            data: $("#formulariolistarusuarios").serialize(),
         }).done(function( response ) {       
             if (response.ok == true) {
                 $("#datosUsuarios").html("<thead> <tr> <th class=\"USUARIO\"></th> <th class=\"DNI_USUARIO\"></th> <th class=\"GRUPO\"></th> <th class=\"BORRADO_USUARIO\"></th> <th class=\"ACCIONES min-w-[150px]\"> </th> </tr> </thead> <tbody></tbody>");

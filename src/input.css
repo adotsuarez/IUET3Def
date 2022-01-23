@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sidebglogin {
+    background: linear-gradient(225deg, #23231a, #434332);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimacionFondos 20s ease infinite;
+    -moz-animation: AnimacionFondos 20s ease infinite;
+    -o-animation: AnimacionFondos 20s ease infinite;
+    animation: AnimacionFondos 20s ease infinite;
+}
+
+.sidebgregistro {
+    background: linear-gradient(225deg, #f61067, #782cc9);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimacionFondos 30s ease infinite;
+    -moz-animation: AnimacionFondos 30s ease infinite;
+    -o-animation: AnimacionFondos 30s ease infinite;
+    animation: AnimacionFondos 30s ease infinite;
+}
+
+
+@-webkit-keyframes AnimacionFondos {
+    0%{background-position:100% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:100% 0%}
+}
+@-moz-keyframes AnimacionFondos {
+    0%{background-position:100% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:100% 0%}
+}
+@-o-keyframes AnimacionFondos {
+    0%{background-position:100% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:100% 0%}
+}
+@keyframes AnimacionFondos {
+    0%{background-position:100% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:100% 0%}
+}

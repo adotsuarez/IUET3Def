@@ -1,3 +1,5 @@
+changedFile = false;
+
 //RESETEAR
 function resetearFormularioInscripcion () {
     let idElementoList = ['txtIdInscripcion',
@@ -44,6 +46,7 @@ function resetearFormularioInscripcion () {
 	document.getElementById('botonArchivo').classList.remove('hidden');
 
 	document.getElementById('modalActionsArea').classList.remove('hidden');
+	document.getElementById('oldFile').setAttribute("disabled",true);
 }
 
 // NUEVO
@@ -119,7 +122,7 @@ function showEditarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, docu
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarInscripcion();');
-	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntityWithFiles('edit','inscripcion', getListRegistration,'fileDocumentoPago');");
+	document.getElementById('formGenerico').setAttribute('action', 'javascript:send("'+ documento_pago + '");');
 
 	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("readonly", true);
 	document.getElementById('dateFechaPagoInscripcion').setAttribute("readonly", true);
@@ -132,6 +135,7 @@ function showEditarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, docu
 	document.getElementById('abrirArchivo').href = urlDocumentos + '/' + documento_pago;
 	document.getElementById('dateFechaPagoInscripcion').value = fecha_pago_inscripcion;
 	document.getElementById('dateFechaAceptacionInscripcion').value = fecha_aceptacion_inscripcion;
+	document.getElementById('oldFile').value = documento_pago;
 
 	selectid_actividad(id_actividad,'selectIdActividad');
 	selectid_usuario(id_usuario,'selectIdUsuario');
@@ -149,6 +153,15 @@ function comprobarEditarInscripcion() {
 		return true;
 	} else {
 		return false;
+	}
+}
+
+function send() {
+	if (changedFile == true) {
+		sendEntityWithFiles('edit','inscripcion', getListRegistration,'fileDocumentoPago');
+	} else {
+		document.getElementById('oldFile').removeAttribute("disabled");
+		sendEntity('edit','inscripcion', getListRegistration);
 	}
 }
 
@@ -183,4 +196,20 @@ function showEliminarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, do
 	setLang(getCookie('lang'));
 	
 	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+// BUSCAR
+function comprobarBuscar() {
+	if (	buscarDni()
+		&& buscarNumCuenta()
+		&& buscarCurriculum()) {
+			return true;
+		} else {
+			return false;
+		}
+}
+
+function buscar() {
+	document.getElementById('formBuscarDiv').classList.remove('modal-open');
+	getListRegistrationBuscar();
 }

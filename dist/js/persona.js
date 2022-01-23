@@ -1,5 +1,9 @@
+changedFile = false;
+
 // RESETEAR
 function resetearFormularioPersona () {
+	changedFile = false;
+
 	let idElementoList = ['txtNombrePersona',
 							'txtApellidosPersona',
 							'txtDni',
@@ -41,6 +45,9 @@ function resetearFormularioPersona () {
 
 	document.getElementById('abrirArchivo').classList.remove('hidden');
 	document.getElementById('botonArchivo').classList.remove('hidden');
+
+	document.getElementById('modalActionsArea').classList.remove('hidden');
+	document.getElementById('oldFile').setAttribute("disabled",true);
 }
 
 // NUEVO
@@ -130,7 +137,7 @@ function showEditarPersona(dni_persona, nombre_persona, apellidos_persona, fecha
 	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
 
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarPersona();');
-	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntityWithFiles('edit','persona', getListPersonas,'fotoPersona');");
+	document.getElementById('formGenerico').setAttribute('action', 'javascript:send("'+ foto_persona + '");');
 
 	document.getElementById('txtDni').setAttribute("readonly", true);
 	document.getElementById('txtNombrePersona').setAttribute("readonly", true);
@@ -141,7 +148,6 @@ function showEditarPersona(dni_persona, nombre_persona, apellidos_persona, fecha
 	document.getElementById('txtEmailPersona').setAttribute("readonly", true);
 	
     document.getElementById('txtDni').value = dni_persona;
-	console.log(dni_persona);
     document.getElementById('txtNombrePersona').value = nombre_persona;
     document.getElementById('txtApellidosPersona').value = apellidos_persona;
     document.getElementById('txtFechaNacimientoPersona').value = fechaNacimiento_persona;
@@ -149,6 +155,7 @@ function showEditarPersona(dni_persona, nombre_persona, apellidos_persona, fecha
     document.getElementById('txtTelefonoPersona').value = telefono_persona;
     document.getElementById('txtEmailPersona').value = email_persona;
 	document.getElementById('abrirArchivo').href = urlImagenes + '/' + foto_persona;
+	document.getElementById('oldFile').value = foto_persona;
 
 	if (esCeliaco_persona == 1) {
 		document.getElementById('chkEsCeliacoPersona').checked = true;
@@ -180,6 +187,15 @@ function comprobarEditarPersona() {
 		return true;
 	} else {
 		return false;
+	}
+}
+
+function send() {
+	if (changedFile == true) {
+		sendEntityWithFiles('edit','persona', getListPersonas,'fotoPersona');
+	} else {
+		document.getElementById('oldFile').removeAttribute("disabled");
+		sendEntity('edit','persona', getListPersonas);
 	}
 }
 
