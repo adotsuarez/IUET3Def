@@ -918,6 +918,8 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "colornombreactividadBuscar":
 				codigo = "02194";
 				break;
+			case "idBuscar":
+				codigo = "99999";
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
@@ -1164,12 +1166,16 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
-	if(campo == 'telefonoBuscar') {
+	if(campo == 'telefonoBuscar'
+		|| campo == 'idBuscar') {
 		var patron = /^[0-9]*$/;
 
 		if(!patron.test(valor)) {
 			switch(campo) {
 				case 'telefonoBuscar' :
+					codigo = "99999";
+					break;
+				case 'idBuscar' :
 					codigo = "99999";
 					break;
 			}
