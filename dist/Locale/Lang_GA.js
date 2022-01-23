@@ -483,6 +483,12 @@ arrayGA={
 	'02212' : 'A búsqueda do teléfono só pode conter números',
 	'02213' : 'A búsqueda da ID só pode conter números',
 	'02214' : 'A búsqueda do prezo da actividade debe conter un decimal',
+	'02215' : 'A fecha non pode ter máis de 10 caracteres',
+	'02216' : 'A fecha só pode conter números e barras diagonais',
+	'02217' : 'A fecha non pode ser superior ao día de hoxe',
+	'02218' : 'A fecha de pago debe ser superior á fecha de solicitud',
+	'02219' : 'A fecha de aceptación debe ser superior á fecha de pago',
+
 
 	//test
 	'PRUEBA' : 'Proba',

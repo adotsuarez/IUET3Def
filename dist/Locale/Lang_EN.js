@@ -483,6 +483,12 @@ arrayEN={
 	'02212' : 'The phone number search can only contain numbers',
 	'02213' : 'The ID search can only contain numbers',
 	'02214' : 'The activity price search must contain a decimal',
+	'02215' : 'The date cannot have more than 10 characters',
+	'02216' : 'The date can only contain numbers and diagonal slashes',
+	'02217' : 'The date cannot be superior to today',
+	'02218' : 'The payment date must be superior to the request date',
+	'02219' : 'The acceptance date must be superior to the payment date',
+
 
 	//test
 	'PRUEBA' : 'Test',

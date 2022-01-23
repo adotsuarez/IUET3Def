@@ -139,6 +139,7 @@ arrayES={
 	'DETALLESREGISTRO' : 'Necesitamos algunos detalles para poder registrarte',
 	'CASILISTOS' : '¡Estamos casi listos!',
 	'CREDENCIALESREGISTRO' : 'Configura tu usuario y contraseña',
+	'VERARCHIVO' : 'Ver archivo existente',
 	//- errores
 	'USUARIO_NO_AUTENTICADO' : 'Acceso denegado. Necesitas iniciar sesión de nuevo primero.',
 	'LOGIN_USUARIO_INCORRECTO' : 'No existe el usuario',
@@ -483,6 +484,12 @@ arrayES={
 	'02212' : 'La búsqueda del teléfono solo puede contener números',
 	'02213' : 'La búsqueda de la ID solo puede contener números',
 	'02214' : 'La búsqueda del precio de la actividad debe contener un decimal',
+	'02215' : 'La fecha no puede tener más de 10 caracteres',
+	'02216' : 'La fecha solo puede contener números y barras diagonales',
+	'02217' : 'La fecha no puede ser superior al día de hoy',
+	'02218' : 'La fecha de pago debe ser superior a la fecha de solicitud',
+	'02219' : 'La fecha de aceptación debe ser superior a la fecha de pago',
+
 	
 
 	//test
