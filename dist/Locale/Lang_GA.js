@@ -488,6 +488,7 @@ arrayGA={
 	'02217' : 'A fecha non pode ser superior ao día de hoxe',
 	'02218' : 'A fecha de pago debe ser superior á fecha de solicitud',
 	'02219' : 'A fecha de aceptación debe ser superior á fecha de pago',
+	'02220' : 'O ficheiro non pode superar os 20MBs',
 
 
 	//test

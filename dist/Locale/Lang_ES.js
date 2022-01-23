@@ -489,6 +489,7 @@ arrayES={
 	'02217' : 'La fecha no puede ser superior al día de hoy',
 	'02218' : 'La fecha de pago debe ser superior a la fecha de solicitud',
 	'02219' : 'La fecha de aceptación debe ser superior a la fecha de pago',
+	'02220' : 'El fichero no puede superar los 20MBs',
 
 	
 

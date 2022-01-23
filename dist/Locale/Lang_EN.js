@@ -488,6 +488,7 @@ arrayEN={
 	'02217' : 'The date cannot be superior to today',
 	'02218' : 'The payment date must be superior to the request date',
 	'02219' : 'The acceptance date must be superior to the payment date',
+	'02220' : 'The file cannot be over 20MBs',
 
 
 	//test
