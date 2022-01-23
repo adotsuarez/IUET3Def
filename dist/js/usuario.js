@@ -244,6 +244,8 @@ function showEditarPass(id, dni_usuario, usuario, contrasena, id_grupo, borrado_
 function comprobarEditarPass() {
 	if(    comprobarPass()
 		&& comprobarNewPass()) {
+		encriptar('txtPassword');
+		encriptar('txtNewPassword');
 		return true;
 	} else {
 		return false;

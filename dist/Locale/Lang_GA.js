@@ -179,7 +179,7 @@ arrayGA={
 	'REGISTRO_OK' : 'Usuario rexistrado correctamente',	
 	'USUARIO_LOGUEAR_OK' : 'Sesión iniciada correctamente',	
 	'CONTRASENA_CAMBIADA_EMAILOK' : 'Te hemos enviado un email para resetear a túa contrasinal',	
-	'CONTRASENA_CAMBIADA_EMAILKO' : 'Esta é a túa nova contrasinal!',
+	'CONTRASENA_CAMBIADA_EMAILKO' : 'Esta é o teu novo contrasinal:',
 		
 	//************************************************************************************************	
 	// persoa	
@@ -411,7 +411,7 @@ arrayGA={
 	'02140' : 'O usuario non debe ser vacío',
 	'02141' : 'O contrasinal non debe ser vacío',
 	'02142' : 'A dirección de correo electrónico é incorrecto',
-	'02143' : 'A dirección de correo non pode estar valeiro',
+	'02143' : 'A dirección de correo non pode esta baleira',
 	'02144' : "A dirección non pode estar baleiro",
 	'02145' : "A dirección non pode ser menor que 3 caracteres",
 	'02146' : "A dirección non pode ser maior que 200 caracteres",

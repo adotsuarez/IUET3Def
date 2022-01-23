@@ -41,6 +41,46 @@
 		</div>
 	</div>
 
+	<form class="form-control"
+	name="formularioRecuperarPass"
+	id="formularioRecuperarPass"
+	method="post"
+	action="javascript:recuperarPass();"
+	onsubmit="return comprobarRecoverPass();">		
+		<div class="modal" id="modalRecoverPass">
+			<div class="modal-box bg-neutral text-neutral-content" id="modalRecoverPassContent">
+				<div class="flex flex-col ml-3 mr-10">
+					<p class="text-3xl mb-4 font-medium"><span class="RECUPERANDOPASS"></span></p>
+
+					<input class="input input-bordered border-2 input-ghost rounded-full USUARIO"
+						type="text"
+						name="usuario"
+						id="txtRecoverUsuario"
+						onchange="return comprobarRecoverUser();">
+					<label class="hidden" id="errorFormatoRecoverUser"></label>
+
+					<input class="mt-4 input input-bordered border-2 input-ghost rounded-full EMAIL"
+						type="email"
+						name="email_persona"
+						id="txtEmailPersona"
+						onchange="return comprobarEmail();">
+					<label class="hidden" id="errorFormatoEmail"></label>
+
+				</div>
+				<div class="modal-action mt-4 flex flex-row justify-end items-center">
+						<label class="px-2 btn btn-ghost font-light rounded-full"
+						onclick="document.getElementById('modalRecoverPass').classList.remove('modal-open');">
+							<img class="rotate-180 w-10"
+								src="img/icons/darknights/arrow.svg"
+								alt="ICONVOLVER">
+					</label>
+					
+					<button class="px-6 btn btn-ghost border-0 text-base-content bg-gradient-to-tr from-secondary to-primary rounded-full RECUPERAR" type="submit"></button>
+				</div>
+			</div>
+		</div>
+	</form>
+
 	<div class="h-screen flex flex-row justify-end sidebglogin" id="flexLand">
 		<div class="flex min-w-[7px] max-w-[7px] h-full bg-gradient-to-t from-secondary to-primary" id="leftGradientBar"></div>
 		
@@ -102,7 +142,7 @@
 					</div>
 				</div>
 				<div class="absolute bottom-0 left-0 right-0 justify-center mb-16 text-center font-medium">
-					<p class="mb-2 font-light"><a class="OLVIDADO" onclick="">I forgot my password</a>.</p>
+					<p class="mb-2 font-light cursor-help"><a class="OLVIDADO" onclick="document.getElementById('modalRecoverPass').classList.add('modal-open');"></a>.</p>
 					<p><a class="NOCUENTA" href="registro.html"></a>.</p>
 				</div>
 			</div>

@@ -179,7 +179,7 @@ arrayEN={
 	'REGISTRO_OK' : 'User registered successfully',	
 	'USUARIO_LOGUEAR_OK' : 'Logged-in successfully',
 	'CONTRASENA_CAMBIADA_EMAILOK' : 'We have sent you an email to reset your password',	
-	'CONTRASENA_CAMBIADA_EMAILKO' : 'This is your new password!',	
+	'CONTRASENA_CAMBIADA_EMAILKO' : 'Here is your new password:',	
 		
 	//************************************************************************************************	
 	// persona	

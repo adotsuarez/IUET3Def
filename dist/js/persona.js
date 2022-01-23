@@ -140,12 +140,6 @@ function showEditarPersona(dni_persona, nombre_persona, apellidos_persona, fecha
 	document.getElementById('formGenerico').setAttribute('action', 'javascript:send("'+ foto_persona + '");');
 
 	document.getElementById('txtDni').setAttribute("readonly", true);
-	document.getElementById('txtNombrePersona').setAttribute("readonly", true);
-	document.getElementById('txtApellidosPersona').setAttribute("readonly", true);
-	document.getElementById('txtFechaNacimientoPersona').setAttribute("readonly", true);
-	document.getElementById('txtDireccionPersona').setAttribute("readonly", true);
-	document.getElementById('txtTelefonoPersona').setAttribute("readonly", true);
-	document.getElementById('txtEmailPersona').setAttribute("readonly", true);
 	
     document.getElementById('txtDni').value = dni_persona;
     document.getElementById('txtNombrePersona').value = nombre_persona;

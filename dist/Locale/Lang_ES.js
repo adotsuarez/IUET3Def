@@ -179,7 +179,7 @@ arrayES={
 	'REGISTRO_OK' : 'Usuario registrado correctamente',	
 	'USUARIO_LOGUEAR_OK' : 'Sesión iniciada correctamente',
 	'CONTRASENA_CAMBIADA_EMAILOK' : 'Te hemos enviado un email para resetear tu contraseña',	
-	'CONTRASENA_CAMBIADA_EMAILKO' : '¡Esta es tu nueva contraseña!',	
+	'CONTRASENA_CAMBIADA_EMAILKO' : 'Esta es tu nueva contraseña:',	
 		
 	//************************************************************************************************	
 	// personas
@@ -411,7 +411,7 @@ arrayES={
 	'02140' : 'El usuario no debe ser vacío',
 	'02141' : 'La contraseña no debe ser vacía',
 	'02142' : 'La dirección de correo electrónico es incorrecto',
-	'02143' : 'La dirección de correo no puede ser vacío',
+	'02143' : 'La dirección de correo no puede ser vacía',
 	'02144' : "La dirección no puede ser vacía",
 	'02145' : "La direccion no puede ser menor que 3 caracteres",
 	'02146' : "La direccion no puede ser mayor que 200 caractres",

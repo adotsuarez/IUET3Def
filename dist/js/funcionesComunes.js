@@ -13,7 +13,6 @@ function includeUserDesconectar() {
 
 /**Función que valida el usuario*/
 function comprobarUser() {
-		
 	if (   validaNoVacio("txtUsuario", "errorFormatoUser", "usuario")
 		&& comprobarLetrasNumeros("txtUsuario", 45, 3, "errorFormatoUser", "usuario")) {
 		validacionOK("txtUsuario", "errorFormatoUser");
@@ -22,7 +21,17 @@ function comprobarUser() {
 		validacionKO("txtUsuario", "errorFormatoUser");		
 		return false;
 	}
+}
 
+function comprobarRecoverUser() {
+	if (   validaNoVacio("txtRecoverUsuario", "errorFormatoRecoverUser", "usuario")
+		&& comprobarLetrasNumeros("txtRecoverUsuario", 45, 3, "errorFormatoRecoverUser", "usuario")) {
+		validacionOK("txtRecoverUsuario", "errorFormatoRecoverUser");
+		return true;
+	} else {
+		validacionKO("txtRecoverUsuario", "errorFormatoRecoverUser");		
+		return false;
+	}
 }
 
 function buscarUser() {
@@ -45,6 +54,17 @@ function comprobarPass() {
 		return true;
 	} else {
 		validacionKO("txtPassword", "errorFormatoPass");		
+		return false;
+	}
+}
+
+function comprobarNewPass() {
+	if (   validaNoVacio("txtNewPassword", "errorFormatoNewPass", "pass")
+		&& comprobarLetrasNumeros("txtNewPassword", 45, 3, "errorFormatoNewPass", "pass")) {
+		validacionOK("txtNewPassword", "errorFormatoNewPass");
+		return true;
+	} else {
+		validacionKO("txtNewPassword", "errorFormatoNewPass");		
 		return false;
 	}
 }
@@ -1136,7 +1156,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if (campo == 'direccion') {
-		var patron = /^[0-9a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ]*$/;
+		var patron = /^[0-9a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*$/;
 			
 		if (!patron.test(valor)) {
 			switch(campo) {
