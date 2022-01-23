@@ -139,6 +139,15 @@
 						onchange="return comprobarPass();"
 						onfocus="passShow('txtPassword','show')">
 					<label class="hidden" id="errorFormatoPass"></label>
+
+					<input class="hidden mt-4 input input-bordered border-2 rounded-full NUEVACONTRASENA"
+						type="password"
+						name="contrasenanueva"
+						id="txtNewPassword"
+						onblur="passShow('txtNewPassword','close');"
+						onchange="return comprobarNewPass();"
+						onfocus="passShow('txtNewPassword','show')">
+					<label class="hidden" id="errorFormatoNewPass"></label>
 					
 					<input class="mt-4 input input-bordered border-2 rounded-full DNI_USUARIO"
 						type="text"
@@ -156,7 +165,7 @@
 					</select>
 
 					<input type="hidden" name="borrado_usuario" id="hiddenBorradoUsuario" value=1>
-					<label class="mt-4 cursor-pointer label">
+					<label class="mt-4 cursor-pointer label" id="borradoArea">
 						<span class="ml-3 label-text font-medium"><span class="BORRADO_USUARIO"></span></span>
 						<input class="toggle toggle-primary"
 							type="checkbox"

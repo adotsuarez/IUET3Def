@@ -40,7 +40,8 @@ arrayEN={
 	'BANNERTITULO' : 'You have hundreds of activities waiting for you right now.',
     'BANNERSUBTITULO' : 'Enter and discover them!',
     'OLVIDADO' : 'I forgot my password',
-    'CAMBIANDOPASS' : 'Updating password',
+    'CAMBIANDOPASS' : 'Updating password of',
+	'NUEVACONTRASENA' : 'New password',
     'RECUPERANDOPASS' : 'Let\'s recover your password',
     'RECUPERAR' : 'Recover',
 	//- botones
@@ -123,11 +124,11 @@ arrayEN={
 	'EDITACTIVITY' : 'Editing activity',
 	'DELETEACTIVITY' : 'Deleting activity',
 
-	'ADDREGISTRATION' : 'Adding inscription',
-	'SEARCHREGISTRATION' : 'Searching for inscriptions',
-	'DETAILREGISTRATION' : 'Inscription details',
-	'EDITREGISTRATION' : 'Editing inscription',
-	'DELETEREGISTRATION' : 'Deleting inscription',
+	'ADDREGISTRATION' : 'Adding registration',
+	'SEARCHREGISTRATION' : 'Searching for registrations',
+	'DETAILREGISTRATION' : 'Registration details',
+	'EDITREGISTRATION' : 'Editing registration',
+	'DELETEREGISTRATION' : 'Deleting registration',
 
 	'ICONHIDESHOW' : 'Show/Hide Columns',
 	'ICONREFRESH' : 'Table Refresh',
@@ -185,7 +186,7 @@ arrayEN={
 	//************************************************************************************************	
 	//- atributos persona	
 	'PERSONA' : 'Person',
-	'PERSONAS' : 'People',
+	'PERSONAS' : 'Persons',
 	'ID_PERSONA' : 'Person ID',
 	'DNI_PERSONA' : 'ID Number',	
 	'NOMBRE_PERSONA' : 'Name',	
@@ -308,30 +309,30 @@ arrayEN={
 	// inscripciones	
 	//************************************************************************************************	
 	//- atributos
-	'INSCRIPCION' : 'Inscription',
-	'INSCRIPCIONES' : 'Inscriptions',
-	'ID_INSCRIPCION' : 'Inscription ID',
-	'FECHA_SOLICITUD_INSCRIPCION' : 'Inscription request date',
+	'INSCRIPCION' : 'Registration',
+	'INSCRIPCIONES' : 'Registrations',
+	'ID_INSCRIPCION' : 'Registration ID',
+	'FECHA_SOLICITUD_INSCRIPCION' : 'Registration request date',
 	'DOCUMENTO_PAGO' : 'Payment document',
-	'FECHA_PAGO_INSCRIPCION' : 'Inscription payment date',
-	'FECHA_ACEPTACION_INSCRIPCION' : 'Inscription acceptance date',
+	'FECHA_PAGO_INSCRIPCION' : 'Registration payment date',
+	'FECHA_ACEPTACION_INSCRIPCION' : 'Registration acceptance date',
 
 	// - errores
-	'INSCRIPCION_YA_EXISTE' : 'The inscription code already exists',
-	'INSCRIPCION_ADD_ACTIVIDAD_NO_EXISTE' : 'The activity to be added to the inscription does not exist',
-	'INSCRIPCION_ADD_USUARIO_NO_EXISTE' : 'The user to be added to the inscription does not exist',
-	'INSCRIPCION_EDITAR_INSCRIPCION_NO_EXISTE' : 'The inscription to be modified does not exist',
-	'INSCRIPCION_EDITAR_ACTIVIDAD_NO_EXISTE' : 'The activity to be added to the inscription does not exist',
-	'INSCRIPCION_EDITAR_USUARIO_NO_EXISTE' : 'The user to be added to the inscription does not exist',
-	'INSCRIPCION_BORRAR_NO_EXISTE' : 'The inscription to be deleted does not exist',
-	'ERROR_INSERTAR_INSCRIPCION' : 'Error inserting inscription',
-	'ERROR_MODIFICAR_INSCRIPCION' : 'Error modifying inscription',
-	'ERROR_BORRAR_INSCRIPCION' : 'Error erasing inscription',
+	'INSCRIPCION_YA_EXISTE' : 'The registration code already exists',
+	'INSCRIPCION_ADD_ACTIVIDAD_NO_EXISTE' : 'The activity to be added to the registration does not exist',
+	'INSCRIPCION_ADD_USUARIO_NO_EXISTE' : 'The user to be added to the registration does not exist',
+	'INSCRIPCION_EDITAR_INSCRIPCION_NO_EXISTE' : 'The registration to be modified does not exist',
+	'INSCRIPCION_EDITAR_ACTIVIDAD_NO_EXISTE' : 'The activity to be added to the registration does not exist',
+	'INSCRIPCION_EDITAR_USUARIO_NO_EXISTE' : 'The user to be added to the registration does not exist',
+	'INSCRIPCION_BORRAR_NO_EXISTE' : 'The registration to be deleted does not exist',
+	'ERROR_INSERTAR_INSCRIPCION' : 'Error inserting registration',
+	'ERROR_MODIFICAR_INSCRIPCION' : 'Error modifying registration',
+	'ERROR_BORRAR_INSCRIPCION' : 'Error erasing registration',
 
 	//- exito
-	'INSCRIPCION_INSERTAR_OK' : 'Inscription inserted correctly',
-	'INSCRIPCION_MODIFICAR_OK' : 'Inscription modified correctly',
-	'INSCRIPCION_BORRAR_OK' : 'Inscription deleted correctly',
+	'INSCRIPCION_INSERTAR_OK' : 'Registration inserted correctly',
+	'INSCRIPCION_MODIFICAR_OK' : 'Registration modified correctly',
+	'INSCRIPCION_BORRAR_OK' : 'Registration deleted correctly',
 
 	//************************************************************************************************	
 	// responsables	

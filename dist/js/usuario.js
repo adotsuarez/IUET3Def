@@ -3,9 +3,11 @@ function resetearFormularioUsuario () {
 	let idElementoList = ['txtIdUsuario',
 							'txtUsuario',
 							'txtPassword',
+							'txtNewPassword',
 							'txtDni',
 							'selectIdGrupo',
-							'chkBorradoUsuario'];
+							'chkBorradoUsuario',
+							'borradoArea'];
 	resetearFormulario('formGenerico', idElementoList);
 
 	idElementoList.forEach( function (idElemento) {
@@ -16,6 +18,7 @@ function resetearFormularioUsuario () {
 
 	idErrorList = ['errorFormatoUser',
 					'errorFormatoPass',
+					'errorFormatoNewPass',
 					'errorFormatoDni'];
 
 	idErrorList.forEach( function (idElemento) {
@@ -38,6 +41,9 @@ function resetearFormularioUsuario () {
 	document.getElementById('chkBorradoUsuario').checked = false;
 
 	document.getElementById('hiddenBorradoUsuario').value = 1;
+
+	document.getElementById('txtNewPassword').setAttribute("disabled", true);
+	document.getElementById('txtNewPassword').classList.add("hidden");
 
 	document.getElementById('modalActionsArea').classList.remove('hidden');
 }
@@ -200,4 +206,46 @@ function comprobarBuscar() {
 function buscar() {
 	document.getElementById('formBuscarDiv').classList.remove('modal-open');
 	getListUsersBuscar();
+}
+
+// CAMBIAR PASS
+function showEditarPass(id, dni_usuario, usuario, contrasena, id_grupo, borrado_usuario) {
+
+	resetearFormularioUsuario();
+
+	document.getElementById('formGenericoTitle').innerHTML = "<span class='CAMBIANDOPASS'></span>&nbsp<span class='font-light'>" + usuario + "</span>";
+	document.getElementById('formGenericoTitleSubmit').classList.add('ICONEDITAR');
+
+	document.getElementById('txtDni').classList.add('hidden');
+	document.getElementById('txtUsuario').classList.add('hidden');
+	document.getElementById('borradoArea').classList.add('hidden');
+	document.getElementById('selectIdGrupo').classList.add('hidden');
+
+	document.getElementById('txtUsuario').setAttribute("readonly", true);
+
+	document.getElementById('chkBorradoUsuario').setAttribute("disabled", true);
+	document.getElementById('selectIdGrupo').setAttribute("disabled", true);
+
+	document.getElementById('txtNewPassword').removeAttribute("disabled");
+	document.getElementById('txtNewPassword').classList.remove("hidden");
+
+	document.getElementById('txtIdUsuario').value = id;
+	document.getElementById('txtDni').value = dni_usuario;
+	document.getElementById('txtUsuario').value = usuario;
+
+	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarPass();');
+	document.getElementById('formGenerico').setAttribute('action', "javascript:sendEntity('changepass','usuario', getListUsers);");
+
+	setLang(getCookie('lang'));
+	
+	document.getElementById('formGenericoDiv').classList.add('modal-open');
+}
+
+function comprobarEditarPass() {
+	if(    comprobarPass()
+		&& comprobarNewPass()) {
+		return true;
+	} else {
+		return false;
+	}
 }

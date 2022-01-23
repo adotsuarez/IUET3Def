@@ -40,7 +40,8 @@ arrayES={
 	'BANNERTITULO' : 'Ahora mismo tienes cientos de actividades esperando por ti.',
     'BANNERSUBTITULO' : '¡Entra y descúbrelas!',
     'OLVIDADO' : 'He olvidado mi contraseña',
-    'CAMBIANDOPASS' : 'Actualizando la contraseña',
+    'CAMBIANDOPASS' : 'Actualizando la contraseña de',
+	'NUEVACONTRASENA' : 'Contraseña nueva',
     'RECUPERANDOPASS' : 'Vamos a recuperar tu contraseña',
     'RECUPERAR' : 'Recuperar',
 	//- botones

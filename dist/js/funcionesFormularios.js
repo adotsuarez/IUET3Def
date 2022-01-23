@@ -85,6 +85,12 @@ function addActionControler(form, action, controller) {
         case 'registrar' :
         	accion = 'registrar';
         break;
+        case 'changepass' :
+        	accion = 'cambiar_contrasena';
+        break;
+        case 'recoverpass' :
+        	accion = 'recuperar_contrasena';
+        break;
         case 'test' :
         	accion = 'test';
         break;

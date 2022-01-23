@@ -39,7 +39,6 @@ function buscarUser() {
 
 /**Función que valida la contraseña*/
 function comprobarPass() {
-	
 	if (   validaNoVacio("txtPassword", "errorFormatoPass", "pass")
 		&& comprobarLetrasNumeros("txtPassword", 45, 3, "errorFormatoPass", "pass")) {
 		validacionOK("txtPassword", "errorFormatoPass");
@@ -48,7 +47,6 @@ function comprobarPass() {
 		validacionKO("txtPassword", "errorFormatoPass");		
 		return false;
 	}
-
 }
 
 function buscarPass() {

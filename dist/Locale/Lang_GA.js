@@ -40,7 +40,8 @@ arrayGA={
     'BANNERTITULO' : 'Agora mesmo tes centos de actividades esperando por ti.',
     'BANNERSUBTITULO' : 'Entra e descúbreas!',
     'OLVIDADO' : 'Esquecín o meu contrasinal',
-    'CAMBIANDOPASS' : 'Actualizando o contrasinal',
+    'CAMBIANDOPASS' : 'Actualizando o contrasinal de',
+	'NUEVACONTRASENA' : 'Contrasinal novo',
     'RECUPERANDOPASS' : 'Imos recuperar o teu contrasinal',
     'RECUPERAR' : 'Recuperar',
 	//- botones
