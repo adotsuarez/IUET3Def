@@ -124,11 +124,13 @@ function showEditarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, docu
 	document.getElementById('formGenerico').setAttribute('onSubmit', 'return comprobarEditarInscripcion();');
 	document.getElementById('formGenerico').setAttribute('action', 'javascript:send("'+ documento_pago + '");');
 
+	/*
 	document.getElementById('dateFechaSolicitudInscripcion').setAttribute("readonly", true);
 	document.getElementById('dateFechaPagoInscripcion').setAttribute("readonly", true);
 	document.getElementById('dateFechaAceptacionInscripcion').setAttribute("readonly", true);
 	document.getElementById('selectIdActividad').setAttribute("disabled", true);
 	document.getElementById('selectIdUsuario').setAttribute("disabled", true);
+	*/
 
     document.getElementById('txtIdInscripcion').value = id_inscripcion;
 	document.getElementById('dateFechaSolicitudInscripcion').value = fecha_solicitud_inscripcion;
@@ -147,7 +149,7 @@ function showEditarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, docu
 
 function comprobarEditarInscripcion() {
 	if	   (comprobarFechaSolicitudInscripcion()
-		&& comprobarDocumentoPago()
+		// && comprobarDocumentoPago()
 		&& comprobarFechaPagoInscripcion()
 		&& comprobarFechaAceptacionInscripcion()) {
 		return true;
@@ -200,9 +202,13 @@ function showEliminarInscripcion(id_inscripcion, fecha_solicitud_inscripcion, do
 
 // BUSCAR
 function comprobarBuscar() {
-	if (	buscarDni()
-		&& buscarNumCuenta()
-		&& buscarCurriculum()) {
+	if (	buscarId()
+		&& buscarIdActividad()
+		&& buscarIdUsuario()
+		&& buscarFechaSolicitudInscripcion()
+		&& buscarFechaPagoInscripcion()
+		&& buscarFechaAceptacionInscripcion()
+		&& buscarDocumentoPago()) {
 			return true;
 		} else {
 			return false;

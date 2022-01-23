@@ -7,7 +7,7 @@ function resetearFormularioPersona () {
 	let idElementoList = ['txtNombrePersona',
 							'txtApellidosPersona',
 							'txtDni',
-							'txtFechaNacimientoPersona',
+							'dateFechaNacimientoPersona',
 							'txtDireccionPersona',
 							'txtTelefonoPersona',
 							'txtEmailPersona',
@@ -100,7 +100,7 @@ function showDetallePersona(dni_persona, nombre_persona, apellidos_persona, fech
 	document.getElementById('txtDni').setAttribute("readonly", true);
 	document.getElementById('txtNombrePersona').setAttribute("readonly", true);
 	document.getElementById('txtApellidosPersona').setAttribute("readonly", true);
-	document.getElementById('txtFechaNacimientoPersona').setAttribute("readonly", true);
+	document.getElementById('dateFechaNacimientoPersona').setAttribute("readonly", true);
 	document.getElementById('txtDireccionPersona').setAttribute("readonly", true);
 	document.getElementById('txtTelefonoPersona').setAttribute("readonly", true);
 	document.getElementById('txtEmailPersona').setAttribute("readonly", true);
@@ -110,7 +110,7 @@ function showDetallePersona(dni_persona, nombre_persona, apellidos_persona, fech
     document.getElementById('txtDni').value = dni_persona;
     document.getElementById('txtNombrePersona').value = nombre_persona;
     document.getElementById('txtApellidosPersona').value = apellidos_persona;
-    document.getElementById('txtFechaNacimientoPersona').value = fechaNacimiento_persona;
+    document.getElementById('dateFechaNacimientoPersona').value = fechaNacimiento_persona;
     document.getElementById('txtDireccionPersona').value = direccion_persona;
     document.getElementById('txtTelefonoPersona').value = telefono_persona;
     document.getElementById('txtEmailPersona').value = email_persona;
@@ -144,7 +144,7 @@ function showEditarPersona(dni_persona, nombre_persona, apellidos_persona, fecha
     document.getElementById('txtDni').value = dni_persona;
     document.getElementById('txtNombrePersona').value = nombre_persona;
     document.getElementById('txtApellidosPersona').value = apellidos_persona;
-    document.getElementById('txtFechaNacimientoPersona').value = fechaNacimiento_persona;
+    document.getElementById('dateFechaNacimientoPersona').value = fechaNacimiento_persona;
     document.getElementById('txtDireccionPersona').value = direccion_persona;
     document.getElementById('txtTelefonoPersona').value = telefono_persona;
     document.getElementById('txtEmailPersona').value = email_persona;
@@ -208,7 +208,7 @@ function showEliminarPersona(dni_persona, nombre_persona, apellidos_persona, fec
 	document.getElementById('txtDni').setAttribute("readonly", true);
 	document.getElementById('txtNombrePersona').setAttribute("readonly", true);
 	document.getElementById('txtApellidosPersona').setAttribute("readonly", true);
-	document.getElementById('txtFechaNacimientoPersona').setAttribute("readonly", true);
+	document.getElementById('dateFechaNacimientoPersona').setAttribute("readonly", true);
 	document.getElementById('txtDireccionPersona').setAttribute("readonly", true);
 	document.getElementById('txtTelefonoPersona').setAttribute("readonly", true);
 	document.getElementById('txtEmailPersona').setAttribute("readonly", true);
@@ -218,7 +218,7 @@ function showEliminarPersona(dni_persona, nombre_persona, apellidos_persona, fec
     document.getElementById('txtDni').value = dni_persona;
     document.getElementById('txtNombrePersona').value = nombre_persona;
     document.getElementById('txtApellidosPersona').value = apellidos_persona;
-    document.getElementById('txtFechaNacimientoPersona').value = fechaNacimiento_persona;
+    document.getElementById('dateFechaNacimientoPersona').value = fechaNacimiento_persona;
     document.getElementById('txtDireccionPersona').value = direccion_persona;
     document.getElementById('txtTelefonoPersona').value = telefono_persona;
     document.getElementById('txtEmailPersona').value = email_persona;

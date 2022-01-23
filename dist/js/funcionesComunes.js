@@ -202,22 +202,87 @@ function buscarApellidos(){
 
 /** Función que valida la fecha de nacimiento*/
 function comprobarFechaNacimiento(){
-	if (   validaNoVacio("txtFechaNacimientoPersona", "errorFormatoFechaNacimiento", "fechaNacimiento")
-		&& comprobarFechas("txtFechaNacimientoPersona","errorFormatoFechaNacimiento", "fechaNacimiento")) {
-		validacionOK("txtFechaNacimientoPersona", "errorFormatoFechaNacimiento");
+	if (   validaNoVacio("dateFechaNacimientoPersona", "errorFormatoFechaNacimiento", "fechaNacimiento")
+		&& comprobarFechas("dateFechaNacimientoPersona","errorFormatoFechaNacimiento", "fechaNacimiento")) {
+		validacionOK("dateFechaNacimientoPersona", "errorFormatoFechaNacimiento");
 		return true;
 	} else {
-		validacionKO("txtFechaNacimientoPersona", "errorFormatoFechaNacimiento");
+		validacionKO("dateFechaNacimientoPersona", "errorFormatoFechaNacimiento");
 		return false;
 	}
 }
 
 function buscarFechaNacimiento(){
-	if (   comprobarLetrasNumeros("txtFechaNacimientoPersonaBuscar", 10, 0, "errorFormatoFechaNacimientoBuscar", "fechaNacimiento")) {
-		validacionOK("txtFechaNacimientoPersonaBuscar", "errorFormatoFechaNacimientoBuscar");
+	if (   comprobarLetrasNumeros("dateFechaNacimientoPersonaBuscar", 10, 0, "errorFormatoFechaNacimientoBuscar", "fechaNacimiento")) {
+		validacionOK("dateFechaNacimientoPersonaBuscar", "errorFormatoFechaNacimientoBuscar");
 		return true;
 	} else {
-		validacionKO("txtFechaNacimientoPersonaBuscar", "errorFormatoFechaNacimientoBuscar");
+		validacionKO("dateFechaNacimientoPersonaBuscar", "errorFormatoFechaNacimientoBuscar");
+		return false;
+	}
+}
+
+function comprobarFechaSolicitudInscripcion(){
+	if (   validaNoVacio("dateFechaSolicitudInscripcion", "errorFormatoFechaSolicitudInscripcion", "fechaSolicitud")
+		&& comprobarFechas("dateFechaSolicitudInscripcion","errorFormatoFechaSolicitudInscripcion", "fechaSolicitud")) {
+		validacionOK("dateFechaSolicitudInscripcion", "errorFormatoFechaSolicitudInscripcion");
+		return true;
+	} else {
+		validacionKO("dateFechaSolicitudInscripcion", "errorFormatoFechaSolicitudInscripcion");
+		return false;
+	}
+}
+
+function buscarFechaSolicitudInscripcion(){
+	if (   comprobarLetrasNumeros("dateFechaSolicitudInscripcionBuscar", 10, 0, "errorFormatoFechaSolicitudInscripcionBuscar", "fecha")) {
+		validacionOK("dateFechaSolicitudInscripcionBuscar", "errorFormatoFechaSolicitudInscripcionBuscar");
+		return true;
+	} else {
+		validacionKO("dateFechaSolicitudInscripcionBuscar", "errorFormatoFechaSolicitudInscripcionBuscar");
+		return false;
+	}
+}
+
+function comprobarFechaPagoInscripcion(){
+	if (   validaNoVacio("dateFechaPagoInscripcion", "errorFormatoFechaPagoInscripcion", "fechaPago")
+		&& comprobarFechas("dateFechaPagoInscripcion","errorFormatoFechaPagoInscripcion", "fechaPago")
+		&& comprobarFechaAnterior("dateFechaPagoInscripcion","dateFechaSolicitudInscripcion","errorFormatoFechaPagoInscripcion", "fechaPago")) {
+		validacionOK("dateFechaPagoInscripcion", "errorFormatoFechaPagoInscripcion");
+		return true;
+	} else {
+		validacionKO("dateFechaPagoInscripcion", "errorFormatoFechaPagoInscripcion");
+		return false;
+	}
+}
+
+function buscarFechaPagoInscripcion(){
+	if (   comprobarLetrasNumeros("dateFechaPagoInscripcionBuscar", 10, 0, "errorFormatoFechaPagoInscripcionBuscar", "fecha")) {
+		validacionOK("dateFechaPagoInscripcionBuscar", "errorFormatoFechaPagoInscripcionBuscar");
+		return true;
+	} else {
+		validacionKO("dateFechaPagoInscripcionBuscar", "errorFormatoFechaPagoInscripcionBuscar");
+		return false;
+	}
+}
+
+function comprobarFechaAceptacionInscripcion(){
+	if (   validaNoVacio("dateFechaAceptacionInscripcion", "errorFormatoFechaAceptacionInscripcion", "fechaAceptacion")
+		&& comprobarFechas("dateFechaAceptacionInscripcion","errorFormatoFechaAceptacionInscripcion", "fechaAceptacion")
+		&& comprobarFechaAnterior("dateFechaAceptacionInscripcion","dateFechaPagoInscripcion","errorFormatoFechaAceptacionInscripcion", "fechaAceptacion")) {
+		validacionOK("dateFechaAceptacionInscripcion", "errorFormatoFechaAceptacionInscripcion");
+		return true;
+	} else {
+		validacionKO("dateFechaAceptacionInscripcion", "errorFormatoFechaAceptacionInscripcion");
+		return false;
+	}
+}
+
+function buscarFechaAceptacionInscripcion(){
+	if (   comprobarLetrasNumeros("dateFechaAceptacionInscripcionBuscar", 10, 0, "errorFormatoFechaAceptacionInscripcionBuscar", "fecha")) {
+		validacionOK("dateFechaAceptacionInscripcionBuscar", "errorFormatoFechaAceptacionInscripcionBuscar");
+		return true;
+	} else {
+		validacionKO("dateFechaAceptacionInscripcionBuscar", "errorFormatoFechaAceptacionInscripcionBuscar");
 		return false;
 	}
 }
@@ -534,8 +599,8 @@ function buscarNombreColorActividad(){
 /** Función que valida el nombre y tipo de archivo del documento de pago */
 function comprobarDocumentoPago(){
 	if (   validaNoVacio("fileDocumentoPago", "errorFormatoDocumentoPago", "documento_pago")
-		&& comprobarLetrasNumeros("fileDocumentoPago", 100, 5, "errorFormatoDocumentoPago", "documento_pago"
-		&& comprobarExtDocumentoPago("fileDocumentoPago","errorFormatoDocumentoPago"))) {
+		&& comprobarLetrasNumeros("fileDocumentoPago", 100, 5, "errorFormatoDocumentoPago", "documento_pago")
+		&& comprobarExtDocumentoPago("fileDocumentoPago","errorFormatoDocumentoPago")) {
 		validacionOK("fileDocumentoPago", "errorFormatoDocumentoPago");
 		return true;
 	} else {
@@ -545,7 +610,7 @@ function comprobarDocumentoPago(){
 }
 
 function buscarDocumentoPago(){
-	if (   comprobarLetrasNumeros("fileDocumentoPagBuscar", 100, 0, "errorFormatoDocumentoPagoBuscar", "documento_pago")) {
+	if (   comprobarLetrasNumeros("fileDocumentoPagoBuscar", 100, 0, "errorFormatoDocumentoPagoBuscar", "documento_pago")) {
 		validacionOK("fileDocumentoPagoBuscar", "errorFormatoDocumentoPagoBuscar");
 		return true;
 	} else {
@@ -579,8 +644,8 @@ function buscarNumCuenta() {
 /** Función que valida el curriculum del responsable de centro */
 function comprobarCurriculum(){
 	if (   validaNoVacio("fileCurriculumResponsable", "errorFormatoCurriculum", "curriculum_responsable")
-		&& comprobarLetrasNumeros("fileCurriculumResponsable", 100, 5, "errorFormatoCurriculum", "curriculum_responsable"
-		&& comprobarExtCurriculum("fileCurriculumResponsable","errorFormatoCurriculum"))) {
+		&& comprobarLetrasNumeros("fileCurriculumResponsable", 100, 5, "errorFormatoCurriculum", "curriculum_responsable")
+		&& comprobarExtCurriculum("fileCurriculumResponsable","errorFormatoCurriculum")) {
 		validacionOK("fileCurriculumResponsable", "errorFormatoCurriculum");
 		return true;
 	} else {
@@ -685,6 +750,15 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 				codigo = "02128"
 			break;
 			case 'fechaNacimiento' :
+				codigo = "02129"
+			break;
+			case 'fechaSolicitud' :
+				codigo = "02129"
+			break;
+			case 'fechaPago' :
+				codigo = "02129"
+			break;
+			case 'fechaAceptacion' :
 				codigo = "02129"
 			break;
 			case 'foto' :
@@ -935,6 +1009,9 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 				break;
 			case "colornombreactividadBuscar":
 				codigo = "02194";
+				break;
+			case "fecha":
+				codigo = "99999";
 				break;
 			case "idBuscar":
 				codigo = "02210";
@@ -1266,20 +1343,40 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
+	if(campo == 'fecha') {
+		var fecha = /^[0-9\/]*$/;
+
+    	if (!fecha.test(valor)) {
+			switch(campo) {
+				case 'fecha' :
+					codigo = "99999";
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
 	return true;
 }
 
-/** Función para comprobar que la fecha es correcta */
 function comprobarFechas(idElemento, idElementoError, campo) {
 	
 	var codigo = "GENERICO";
 	var patronFecha = /(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/(19[0-9]{2}|2[0-9]{3})$/;
 
-	if (
-		!( decodeDate(document.getElementById(idElemento).value).match(patronFecha))
-		) { 
+	if (!( decodeDate(document.getElementById(idElemento).value).match(patronFecha))) { 
 		switch(campo) {
 	    	case 'fechaNacimiento' : 
+		  		codigo = "02130";
+			break;
+			case 'fechaSolicitud' : 
+		  		codigo = "02130";
+			break;
+			case 'fechaPago' : 
+		  		codigo = "02130";
+			break;
+			case 'fechaAceptacion' : 
 		  		codigo = "02130";
 			break;
 		}
@@ -1290,13 +1387,20 @@ function comprobarFechas(idElemento, idElementoError, campo) {
 	var hoy = new Date();
 	var date = new Date(document.getElementById(idElemento).value);
 
-	if (
-		(hoy >= date)
-		) {
+	if (hoy >= date) {
 		return true; 
 	} else {
 		switch(campo) {
-	    	case 'fechaSuperiorActual' : 
+	    	case 'fechaNacimiento' : 
+		  		codigo = "99999";
+			break;
+			case 'fechaSolicitud' : 
+		  		codigo = "99999";
+			break;
+			case 'fechaPago' : 
+		  		codigo = "99999";
+			break;
+			case 'fechaAceptacion' : 
 		  		codigo = "99999";
 			break;
 		}
@@ -1305,19 +1409,21 @@ function comprobarFechas(idElemento, idElementoError, campo) {
 	}
 }
 
-/** Función para comprobar que la fecha no es superior a la actual */
-function comprobarFechaAnterior(idElemento, idElementoError, campo) {
+function comprobarFechaAnterior(idElemento, idElementoAnterior, idElementoError, campo) {
 	
 	var codigo = "GENERICO";
-	var hoy = new Date();
 
-	if (
-		(hoy >= document.getElementById(idElemento).value).match(patronFecha)
-		) {
+	var prev = new Date(document.getElementById(idElementoAnterior).value);
+	var element = new Date(document.getElementById(idElemento).value);
+
+	if (element > prev) {
 		return true; 
 	} else {
 		switch(campo) {
-	    	case 'fechaSuperiorActual' : 
+			case 'fechaPago' : 
+		  		codigo = "99999";
+			break;
+	    	case 'fechaAceptacion' : 
 		  		codigo = "99999";
 			break;
 		}

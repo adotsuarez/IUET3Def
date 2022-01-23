@@ -48,7 +48,7 @@ function registrar() {
                 let idElementoList = ["txtDni",
                                       "txtNombrePersona",
                                       "txtApellidosPersona",
-                                      "txtFechaNacimientoPersona",
+                                      "dateFechaNacimientoPersona",
                                       "txtDireccionPersona",
                                       "txtEmailPersona",
                                       "txtTelefonoPersona",
