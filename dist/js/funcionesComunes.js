@@ -634,7 +634,7 @@ function comprobarNumCuenta() {
 }
 
 function buscarNumCuenta() {
-	if (   comprobarLetrasNumeros("txtNumCuentaResponsableBuscar", 24, 0, "errorFormatoNumCuentaBuscar", "numCuenta_responsable")) {
+	if (   comprobarLetrasNumeros("txtNumCuentaResponsableBuscar", 24, 0, "errorFormatoNumCuentaBuscar", "numCuenta_responsableBuscar")) {
 		validacionOK("txtNumCuentaResponsableBuscar", "errorFormatoNumCuentaBuscar");
 		return true;
 	} else {
@@ -811,7 +811,7 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 			case "documento_pago":
 				codigo = "02202"
 				break;
-			case "numCuenta_resposable":
+			case "numCuenta_responsable":
 				codigo = "02204";
 				break;
 			case "fileCurriculumResponsable":
@@ -1003,7 +1003,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "documento_pago":
 				codigo = "02195"
 				break;
-			case "numCuenta_resposable":
+			case "numCuenta_responsable":
+				codigo = "02206";
+				break;
+			case "numCuenta_responsableBuscar":
 				codigo = "02206";
 				break;
 			case "fileCurriculumResponsable":
@@ -1095,7 +1098,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "documento_pago":
 				codigo = "02198"
 				break;
-			case "numCuenta_resposable":
+			case "numCuenta_responsable":
 				codigo = "02208";
 				break;
 			case "fileCurriculumResponsable":
@@ -1129,7 +1132,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if (campo == 'numCuenta_responsable') {
-		var patron = /[a-zA-Z]{2}[0-9]{20}$/;
+		var patron = /[a-zA-Z]{2}[0-9]{22}$/;
 			
 		if (!patron.test(valor)) { 
 			switch(campo) {
@@ -1143,7 +1146,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	}
 
 	if (campo == 'numCuenta_responsableBuscar') {
-		var patron = /[a-zA-Z][0-9]$/;
+		var patron = /^[A-Z0-9]*$/;
 			
 		if (!patron.test(valor)) { 
 			switch(campo) {
