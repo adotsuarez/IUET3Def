@@ -25,6 +25,18 @@ function comprobarUser() {
 
 }
 
+function buscarUser() {
+		
+	if (   comprobarLetrasNumeros("txtUsuarioBuscar", 45, 0, "errorFormatoUserBuscar", "usuario")) {
+		validacionOK("txtUsuarioBuscar", "errorFormatoUserBuscar");
+		return true;
+	} else {
+		validacionKO("txtUsuarioBuscar", "errorFormatoUserBuscar");		
+		return false;
+	}
+
+}
+
 /**Función que valida la contraseña*/
 function comprobarPass() {
 	
@@ -34,6 +46,18 @@ function comprobarPass() {
 		return true;
 	} else {
 		validacionKO("txtPassword", "errorFormatoPass");		
+		return false;
+	}
+
+}
+
+function buscarPass() {
+	
+	if (   comprobarLetrasNumeros("txtPasswordBuscar", 45, 0, "errorFormatoPassBuscar", "pass")) {
+		validacionOK("txtPasswordBuscar", "errorFormatoPassBuscar");
+		return true;
+	} else {
+		validacionKO("txtPasswordBuscar", "errorFormatoPassBuscar");		
 		return false;
 	}
 
@@ -50,6 +74,15 @@ function comprobarDireccion() {
 		}
 }
 
+function buscarDireccion() {
+	if(	   comprobarLetrasNumeros("txtDireccionPersonaBuscar", 200, 0, "errorFormatoDireccionBuscar", "direccion")) {
+			validacionOK("txtDireccionPersonaBuscar", "errorFormatoDireccionBuscar");
+			return true;
+		} else {
+			validacionKO("txtDireccionPersonaBuscar", "errorFormatoDireccionBuscar");
+		}
+}
+
 /**Función que válida 	la foto*/
 function comprobarFoto() {
 		
@@ -62,7 +95,17 @@ function comprobarFoto() {
 		validacionKO("fotoPersona", "errorFormatoFoto");	
 		return false;
 	}
+}
+
+function buscarFoto() {
 		
+	if (   comprobarLetrasNumeros("fotoPersonaBuscar", 100, 0, "errorFormatoFotoBuscar", "foto")) {
+		validacionOK("fotoPersonaBuscar", "errorFormatoFotoBuscar");
+		return true;
+	} else {
+		validacionKO("fotoPersonaBuscar", "errorFormatoFotoBuscar");	
+		return false;
+	}
 }
 
 /**Función que valida el DNI*/
@@ -82,6 +125,19 @@ function comprobarDni() {
 
 }
 
+function buscarDni() {
+		
+	if (   comprobarLetrasNumeros("txtDniBuscar", 9, 0, "errorFormatoDniBuscar", "dni"))
+	{
+		validacionOK("txtDniBuscar", "errorFormatoDniBuscar");
+		return true;
+	} else {
+		validacionKO("txtDniBuscar", "errorFormatoDniBuscar");		
+		return false;
+	}
+
+}
+
 /** Función que valida el nombre */
 function comprobarNombre(){
 	if (   validaNoVacio("txtNombrePersona", "errorFormatoNombre", "nombre")
@@ -94,14 +150,34 @@ function comprobarNombre(){
 	}
 }
 
+function buscarNombre(){
+	if (   comprobarLetrasNumeros("txtNombrePersonaBuscar", 45, 0, "errorFormatoNombreBuscar", "nombre")) {
+		validacionOK("txtNombrePersonaBuscar", "errorFormatoNombreBuscar");
+		return true;
+	} else {
+		validacionKO("txtNombrePersonaBuscar", "errorFormatoNombreBuscar");		
+		return false;
+	}
+}
+
 /** Función que valida los apellidos */
 function comprobarApellidos(){
 	if (   validaNoVacio("txtApellidosPersona", "errorFormatoApellidos", "apellidos")
-		&& comprobarLetrasNumeros("txtApellidosPersona", 45, 3, "errorFormatoApellidos", "nombre")) {
+		&& comprobarLetrasNumeros("txtApellidosPersona", 45, 3, "errorFormatoApellidos", "apellidos")) {
 		validacionOK("txtApellidosPersona", "errorFormatoApellidos");
 		return true;
 	} else {
 		validacionKO("txtApellidosPersona", "errorFormatoApellidos");		
+		return false;
+	}
+}
+
+function buscarApellidos(){
+	if (   comprobarLetrasNumeros("txtApellidosPersonaBuscar", 45, 0, "errorFormatoApellidosBuscar", "apellidos")) {
+		validacionOK("txtApellidosPersonaBuscar", "errorFormatoApellidosBuscar");
+		return true;
+	} else {
+		validacionKO("txtApellidosPersonaBuscar", "errorFormatoApellidosBuscar");		
 		return false;
 	}
 }
@@ -118,6 +194,16 @@ function comprobarFechaNacimiento(){
 	}
 }
 
+function buscarFechaNacimiento(){
+	if (   comprobarLetrasNumeros("txtFechaNacimientoPersonaBuscar", 10, 0, "errorFormatoFechaNacimientoBuscar", "fechaNacimiento")) {
+		validacionOK("txtFechaNacimientoPersonaBuscar", "errorFormatoFechaNacimientoBuscar");
+		return true;
+	} else {
+		validacionKO("txtFechaNacimientoPersonaBuscar", "errorFormatoFechaNacimientoBuscar");
+		return false;
+	}
+}
+
 /**Función que valida el número de teléfono */
 function comprobarTelefono(){
 	if (   validaNoVacio("txtTelefonoPersona", "errorFormatoTelefono", "telefono")
@@ -130,7 +216,17 @@ function comprobarTelefono(){
 	}
 }
 
+function buscarTelefono(){
+	if (   comprobarLetrasNumeros("txtTelefonoPersonaBuscar", 9, 0, "errorFormatoTelefonoBuscar", "telefonoBuscar")) {
+		validacionOK("txtTelefonoPersonaBuscar", "errorFormatoTelefono");
+		return true;
+	} else {
+		validacionKO("txtTelefonoPersonaBuscar", "errorFormatoTelefonoBuscar");
+		return false;
+	}
+}
 
+/** Función que comprueba el formato del email */
 function comprobarEmail(){
 	if (   validaNoVacio("txtEmailPersona", "errorFormatoEmail", "correo")
 		&& comprobarLetrasNumeros("txtEmailPersona", 45, 11, "errorFormatoEmail", "correo")) {
@@ -138,6 +234,16 @@ function comprobarEmail(){
 		return true;
 	} else {
 		validacionKO("txtEmailPersona", "errorFormatoEmail");		
+		return false;
+	}
+}
+
+function buscarEmail(){
+	if (   comprobarLetrasNumeros("txtEmailPersonaBuscar", 45, 0, "errorFormatoEmailBuscar", "correoBuscar")) {
+		validacionOK("txtEmailPersonaBuscar", "errorFormatoEmailBuscar");
+		return true;
+	} else {
+		validacionKO("txtEmailPersonaBuscar", "errorFormatoEmailBuscar");		
 		return false;
 	}
 }
@@ -150,6 +256,16 @@ function comprobarNombreGrupo(){
 		return true;
 	} else {
 		validacionKO("txtNombreGrupo", "errorFormatoNombreGrupo");		
+		return false;
+	}
+}
+
+function buscarNombreGrupo(){
+	if (   comprobarLetrasNumeros("txtNombreGrupoBuscar", 45, 0, "errorFormatoNombreGrupoBuscar", "nombregrupo")) {
+		validacionOK("txtNombreGrupoBuscar", "errorFormatoNombreGrupoBuscar");
+		return true;
+	} else {
+		validacionKO("txtNombreGrupoBuscar", "errorFormatoNombreGrupoBuscar");		
 		return false;
 	}
 }
@@ -167,6 +283,16 @@ function comprobarDescripcionGrupo(){
 	}
 }
 
+function buscarDescripcionGrupo(){
+	if (   comprobarLetrasNumeros("txtDescripcionGrupoBuscar", 200, 0, "errorFormatoDescripcionGrupoBuscar", "descripcion")) {
+		validacionOK("txtDescripcionGrupoBuscar", "errorFormatoDescripcionGrupoBuscar");
+		return true;
+	} else {
+		validacionKO("txtDescripcionGrupoBuscar", "errorFormatoDescripcionGrupoBuscar");		
+		return false;
+	}
+}
+
 /** Función que valida el nombre de un espacio*/
 function comprobarNombreEspacio(){
 	if (   validaNoVacio("txtNombreEspacio", "errorFormatoNombreEspacio", "nombreespacio")
@@ -175,6 +301,16 @@ function comprobarNombreEspacio(){
 		return true;
 	} else {
 		validacionKO("txtNombreEspacio", "errorFormatoNombreEspacio");		
+		return false;
+	}
+}
+
+function buscarNombreEspacio(){
+	if (   comprobarLetrasNumeros("txtNombreEspacioBuscar", 45, 0, "errorFormatoNombreEspacioBuscar", "nombreespacio")) {
+		validacionOK("txtNombreEspacioBuscar", "errorFormatoNombreEspacioBuscar");
+		return true;
+	} else {
+		validacionKO("txtNombreEspacioBuscar", "errorFormatoNombreEspacioBuscar");		
 		return false;
 	}
 }
@@ -191,6 +327,16 @@ function comprobarDescripcionEspacio(){
 	}
 }
 
+function buscarDescripcionEspacio(){
+	if (   comprobarLetrasNumeros("txtDescripcionEspacioBuscar", 200, 0, "errorFormatoDescripcionEspacioBuscar", "descripcionespacio")) {
+		validacionOK("txtDescripcionEspacioBuscar", "errorFormatoDescripcionEspacioBuscar");
+		return true;
+	} else {
+		validacionKO("txtDescripcionEspacioBuscar", "errorFormatoDescripcionEspacioBuscar");		
+		return false;
+	}
+}
+
 /** Función que valida el nombre de una categoria*/
 function comprobarNombreCategoria(){
 	if (   validaNoVacio("txtNombreCategoria", "errorFormatoNombreCategoria", "nombrecategoria")
@@ -199,6 +345,16 @@ function comprobarNombreCategoria(){
 		return true;
 	} else {
 		validacionKO("txtNombreCategoria", "errorFormatoNombreCategoria");		
+		return false;
+	}
+}
+
+function buscarNombreCategoria(){
+	if (   comprobarLetrasNumeros("txtNombreCategoriaBuscar", 45, 0, "errorFormatoNombreCategoriaBuscar", "nombrecategoria")) {
+		validacionOK("txtNombreCategoriaBuscar", "errorFormatoNombreCategoriaBuscar");
+		return true;
+	} else {
+		validacionKO("txtNombreCategoriaBuscar", "errorFormatoNombreCategoriaBuscar");		
 		return false;
 	}
 }
@@ -215,6 +371,16 @@ function comprobarDescripcionCategoria(){
 	}
 }
 
+function buscarDescripcionCategoria(){
+	if (   comprobarLetrasNumeros("txtDescripcionCategoriaBuscar", 200, 0, "errorFormatoDescripcionCategoriaBuscar", "descripcioncategoria")) {
+		validacionOK("txtDescripcionCategoriaBuscar", "errorFormatoDescripcionCategoriaBuscar");
+		return true;
+	} else {
+		validacionKO("txtDescripcionCategoriaBuscar", "errorFormatoDescripcionCategoriaBuscar");		
+		return false;
+	}
+}
+
 /** Función que valida el nombre de una actividad*/
 function comprobarNombreActividad(){
 	if (   validaNoVacio("txtNombreActividad", "errorFormatoNombreActividad", "nombreactividad")
@@ -223,6 +389,16 @@ function comprobarNombreActividad(){
 		return true;
 	} else {
 		validacionKO("txtNombreActividad", "errorFormatoNombreActividad");		
+		return false;
+	}
+}
+
+function buscarNombreActividad(){
+	if (   comprobarLetrasNumeros("txtNombreActividadBuscar", 45, 0, "errorFormatoNombreActividadBuscar", "nombreactividad")) {
+		validacionOK("txtNombreActividadBuscar", "errorFormatoNombreActividadBuscar");
+		return true;
+	} else {
+		validacionKO("txtNombreActividadBuscar", "errorFormatoNombreActividadBuscar");		
 		return false;
 	}
 }
@@ -239,6 +415,16 @@ function comprobarDescripcionActividad(){
 	}
 }
 
+function buscarDescripcionActividad(){
+	if (   comprobarLetrasNumeros("txtDescripcionActividadBuscar", 200, 0, "errorFormatoDescripcionActividadBuscar", "descripcionactividad")) {
+		validacionOK("txtDescripcionActividadBuscar", "errorFormatoDescripcionActividadBuscar");
+		return true;
+	} else {
+		validacionKO("txtDescripcionActividadBuscar", "errorFormatoDescripcionActividadBuscar");		
+		return false;
+	}
+}
+
 /** Función que valida el precio de una actividad */
 function comprobarPrecioActividad(){
     	if (   validaNoVacio("numPrecioActividad", "errorFormatoPrecioActividad", "precioactividad")
@@ -251,6 +437,16 @@ function comprobarPrecioActividad(){
     	}
 }
 
+function buscarPrecioActividad(){
+	if ( comprobarLetrasNumeros ("numPrecioActividadBuscar", 6, 0, "errorFormatoPrecioActividadBuscar", "precioactividadBuscar")) {
+		validacionOK("numPrecioActividadBuscar", "errorFormatoPrecioActividadBuscar");
+		return true;
+	} else {
+		validacionKO("numPrecioActividadBuscar", "errorFormatoPrecioActividadBuscar");
+		return false;
+	}
+}
+
 /** Función que valida las plazas de una actividad */
 function comprobarPlazasActividad(){
 	if (   validaNoVacio("numPlazasActividad", "errorFormatoPlazasActividad", "plazasactividad")
@@ -259,6 +455,16 @@ function comprobarPlazasActividad(){
 		return true;
 	} else {
 		validacionKO("numPlazasActividad", "errorFormatoPlazasActividad");
+		return false;
+	}
+}
+
+function buscarPlazasActividad(){
+	if (   comprobarLetrasNumeros("numPlazasActividadBuscar", 40, 0, "errorFormatoPlazasActividadBuscar", "plazasactividad")) {
+		validacionOK("numPlazasActividadBuscar", "errorFormatoPlazasActividadBuscar");
+		return true;
+	} else {
+		validacionKO("numPlazasActividadBuscar", "errorFormatoPlazasActividadBuscar");
 		return false;
 	}
 }
@@ -275,6 +481,16 @@ function comprobarColorActividad(){
 	}
 }
 
+function buscarColorActividad(){
+	if (   comprobarLetrasNumeros("txtColorActividadBuscar", 7, 0, "errorFormatoColorActividadBuscar", "coloractividadBuscar")) {
+		validacionOK("txtColorActividadBuscar", "errorFormatoColorActividadBuscar");
+		return true;
+	} else {
+		validacionKO("txtColorActividadBuscar", "errorFormatoColorActividadBuscar");
+		return false;
+	}
+}
+
 /** Función que valida el color del nombre de una actividad */
 function comprobarNombreColorActividad(){
 	if (   validaNoVacio("txtColorNombreActividad", "errorFormatoNombreColorActividad", "colornombreactividad")
@@ -283,6 +499,16 @@ function comprobarNombreColorActividad(){
 		return true;
 	} else {
 		validacionKO("txtColorNombreActividad", "errorFormatoNombreColorActividad");
+		return false;
+	}
+}
+
+function buscarNombreColorActividad(){
+	if (   comprobarLetrasNumeros("txtColorNombreActividadBuscar", 7, 0, "errorFormatoNombreColorActividadBuscar", "colornombreactividadBuscar")) {
+		validacionOK("txtColorNombreActividadBuscar", "errorFormatoNombreColorActividadBuscar");
+		return true;
+	} else {
+		validacionKO("txtColorNombreActividadBuscar", "errorFormatoNombreColorActividadBuscar");
 		return false;
 	}
 }
@@ -298,7 +524,122 @@ function comprobarDocumentoPago(){
 		validacionKO("fileDocumentoPago", "errorFormatoDocumentoPago");
 		return false;
 	}
-} 
+}
+
+function buscarDocumentoPago(){
+	if (   comprobarLetrasNumeros("fileDocumentoPagBuscar", 100, 0, "errorFormatoDocumentoPagoBuscar", "documento_pago")) {
+		validacionOK("fileDocumentoPagoBuscar", "errorFormatoDocumentoPagoBuscar");
+		return true;
+	} else {
+		validacionKO("fileDocumentoPagoBuscar", "errorFormatoDocumentoPago");
+		return false;
+	}
+}
+
+/** Función que valida el número cuenta del responsable con formato IBAN */
+function comprobarNumCuenta() {
+	if (   validaNoVacio("txtNumCuentaResponsable", "errorFormatoNumCuenta", "numCuenta_responsable")
+		&& comprobarLetrasNumeros("txtNumCuentaResponsable", 24, 24, "errorFormatoNumCuenta", "numCuenta_responsable")) {
+		validacionOK("txtNumCuentaResponsable", "errorFormatoNumCuenta");
+		return true;
+	} else {
+		validacionKO("txtNumCuentaResponsable", "errorFormatoNumCuenta");
+		return false;
+	}
+}
+
+function buscarNumCuenta() {
+	if (   comprobarLetrasNumeros("txtNumCuentaResponsableBuscar", 24, 0, "errorFormatoNumCuentaBuscar", "numCuenta_responsable")) {
+		validacionOK("txtNumCuentaResponsableBuscar", "errorFormatoNumCuentaBuscar");
+		return true;
+	} else {
+		validacionKO("txtNumCuentaResponsableBuscar", "errorFormatoNumCuentaBuscar");
+		return false;
+	}
+}
+
+/** Función que valida el curriculum del responsable de centro */
+function comprobarCurriculum(){
+	if (   validaNoVacio("fileCurriculumResponsable", "errorFormatoCurriculum", "curriculum_responsable")
+		&& comprobarLetrasNumeros("fileCurriculumResponsable", 100, 5, "errorFormatoCurriculum", "curriculum_responsable"
+		&& comprobarExtCurriculum("fileCurriculumResponsable","errorFormatoCurriculum"))) {
+		validacionOK("fileCurriculumResponsable", "errorFormatoCurriculum");
+		return true;
+	} else {
+		validacionKO("fileCurriculumResponsable", "errorFormatoCurriculum");
+		return false;
+	}
+}
+
+function buscarCurriculum(){
+	if (   comprobarLetrasNumeros("fileCurriculumResponsableBuscar", 100, 0, "errorFormatoCurriculumBuscar", "curriculum_responsable")) {
+		validacionOK("fileCurriculumResponsableBuscar", "errorFormatoCurriculumBuscar");
+		return true;
+	} else {
+		validacionKO("fileCurriculumResponsableBuscar", "errorFormatoCurriculumBuscar");
+		return false;
+	}
+}
+
+function buscarId(){
+	if(   comprobarLetrasNumeros("txtIdBuscar", 11, 0, "errorFormatoIdBuscar", "idBuscar")) {
+		validacionOK("txtIdBuscar", "errorFormatoIdBuscar");
+		return true;
+	} else {
+		validacionKO("txtIdBuscar", "errorFormatoIdBuscar");
+		return false;
+	}
+}
+
+function buscarIdActividad(){
+	if(   comprobarLetrasNumeros("selectIdActividadBuscar", 11, 0, "errorFormatoIdActividadBuscar", "idBuscar")) {
+		validacionOK("selectIdActividadBuscar", "errorFormatoIdActividadBuscar");
+		return true;
+	} else {
+		validacionKO("selectIdActividadBuscar", "errorFormatoIdActividadBuscar");
+		return false;
+	}
+}
+
+function buscarIdUsuario(){
+	if(   comprobarLetrasNumeros("selectIdUsuarioBuscar", 11, 0, "errorFormatoIdUsuarioBuscar", "idBuscar")) {
+		validacionOK("selectIdUsuarioBuscar", "errorFormatoIdUsuarioBuscar");
+		return true;
+	} else {
+		validacionKO("selectIdUsuarioBuscar", "errorFormatoIdUsuarioBuscar");
+		return false;
+	}
+}
+
+function buscarIdGrupo(){
+	if(   comprobarLetrasNumeros("selectIdGrupoBuscar", 11, 0, "errorFormatoIdGrupoBuscar", "idBuscar")) {
+		validacionOK("selectIdGrupoBuscar", "errorFormatoIdGrupoBuscar");
+		return true;
+	} else {
+		validacionKO("selectIdGrupoBuscar", "errorFormatoIdGrupoBuscar");
+		return false;
+	}
+}
+
+function buscarIdEspacio(){
+	if(   comprobarLetrasNumeros("selectIdEspacioBuscar", 11, 0, "errorFormatoIdEspacioBuscar", "idBuscar")) {
+		validacionOK("selectIdEspacioBuscar", "errorFormatoIdEspacioBuscar");
+		return true;
+	} else {
+		validacionKO("selectIdEspacioBuscar", "errorFormatoIdEspacioBuscar");
+		return false;
+	}
+}
+
+function buscarIdCategoria(){
+	if(   comprobarLetrasNumeros("selectIdCategoriaBuscar", 11, 0, "errorFormatoIdCategoriaBuscar", "idBuscar")) {
+		validacionOK("selectIdCategoriaBuscar", "errorFormatoIdCategoriaBuscar");
+		return true;
+	} else {
+		validacionKO("selectIdCategoriaBuscar", "errorFormatoIdCategoriaBuscar");
+		return false;
+	}
+}
 
 /**Función que valida si un campo está vacío*/
 function validaNoVacio(idElemento, idElementoError, campo) {
@@ -372,6 +713,15 @@ function validaNoVacio(idElemento, idElementoError, campo) {
 				break;
 			case "colornombreactividad":
 				codigo = "02191";
+				break;
+			case "documento_pago":
+				codigo = "02202"
+				break;
+			case "numCuenta_resposable":
+				codigo = "02204";
+				break;
+			case "fileCurriculumResponsable":
+				codigo = "02203";
 				break;
 		}
 		addCodeError(idElementoError, codigo);
@@ -455,6 +805,29 @@ function comprobarExtDocumentoPago(idElemento, idElementoError){
 
 }
 
+/** Función que valida la extensión del documento .pdf subido */
+function comprobarExtCurriculum(idElemento, idElementoError){
+	
+	var codigo = "GENERICO"; //se define la variable codigo en la que se guardara el codigo del error
+
+	let extPdf = ".pdf"; //variable de text con el string de la extensión .pdf
+
+	var nombreArchivo = document.getElementById(idElemento).value.replace("C: \\fakepath\\", ""); //obtiene el nombre del archivo
+	
+	tamNombreArchivo = nombreArchivo.length; //guarda en una variable el tamaño del spring del archivo 
+
+	let extArchivo = nombreArchivo.slice(tamNombreArchivo-4, tamNombreArchivo); //almacena en una variable de la extensión del archivo
+
+	if(extArchivo != extPdf) {
+		codigo = "02192"; //código de error de que el archivo no corresponde al tipo de archivo permitido
+		addCodeError(idElementoError, codigo); //añade el código para mostrarse por consola???
+		return false; //devuelve un false en el comprobarCurriculum	
+	} else {
+		return true;
+	}
+
+}
+
 function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, campo) {
 
 	var codigo = "GENERICO";
@@ -524,6 +897,27 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "documento_pago":
 				codigo = "02195"
 				break;
+			case "numCuenta_resposable":
+				codigo = "02206";
+				break;
+			case "fileCurriculumResponsable":
+				codigo = "02205";
+				break;
+			case "correoBuscar":
+				codigo = "02120";
+				break;
+			case "telefonoBuscar":
+				codigo = "02149";
+				break;
+			case "precioactividadBuscar":
+				codigo = "02167";
+				break;
+			case "coloractividadBuscar":
+				codigo = "02193";
+				break;
+			case "colornombreactividadBuscar":
+				codigo = "02194";
+				break;
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
@@ -590,6 +984,12 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 			case "documento_pago":
 				codigo = "02198"
 				break;
+			case "numCuenta_resposable":
+				codigo = "02208";
+				break;
+			case "fileCurriculumResponsable":
+				codigo = "02207";
+				break;
 		}
 		addCodeError(idElementoError, codigo);
     	return false;
@@ -597,7 +997,7 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 	
 	if (campo == 'usuario' ||
 		campo == 'pass' ||
-		campo == 'dni') {
+		campo == 'dni' ) {
 		var patron = /^[a-zA-Z0-9]*$/;
 			
 		if (!patron.test(valor)) { 
@@ -610,6 +1010,34 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 					break;
 				case 'dni' :
 					codigo = "02138"
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
+	if (campo == 'numCuenta_responsable') {
+		var patron = /[a-zA-Z]{2}[0-9]{20}$/;
+			
+		if (!patron.test(valor)) { 
+			switch(campo) {
+				case 'numCuenta_responsable' : 
+					codigo = "02209";
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
+	if (campo == 'numCuenta_responsableBuscar') {
+		var patron = /[a-zA-Z][0-9]$/;
+			
+		if (!patron.test(valor)) { 
+			switch(campo) {
+				case 'numCuenta_responsablebuscar' : 
+					codigo = "99999";
 					break;
 			}
 			addCodeError(idElementoError, codigo);
@@ -659,9 +1087,10 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
-	if (campo == 'foto'
-		&& campo == 'documento_pago') {
-		var patron = /^[a-zA-Z0-9\u00f1\u00d1.]*$/;
+	if (campo == 'foto' ||
+		campo == 'documento_pago' ||
+		campo == 'fileCurriculumResponsable') {
+		var patron = /^[a-zA-Z0-9\.]*$/;
 			
 		if (!patron.test(valor)) { 
 			switch(campo) {
@@ -691,8 +1120,23 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
+
+	if(campo == "correoBuscar") {
+		var patron =  /^[a-zA-Z0-9\.\-\+@]*$/;
+
+		if (!patron.test(valor)) {
+			switch(campo) {
+				case "correoBuscar" :
+					codigo = "02121";
+				break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
 	if (campo == 'direccion') {
-		var patron = /^[0-9a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ ]*$/;
+		var patron = /^[0-9a-zA-ZáéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇüñÜÑ]*$/;
 			
 		if (!patron.test(valor)) {
 			switch(campo) {
@@ -720,10 +1164,24 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
+	if(campo == 'telefonoBuscar') {
+		var patron = /^[0-9]*$/;
+
+		if(!patron.test(valor)) {
+			switch(campo) {
+				case 'telefonoBuscar' :
+					codigo = "99999";
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
 	if(campo == 'precioactividad') {
 		var decimal = /^\d{1,4}\.\d{0,2}$/;
 
-    	if (!decimal.test(valor)) {
+    	if (!decimal.test(valor02199)) {
 			switch(campo) {
 				case 'precioactividad' :
 					codigo = "02199";
@@ -734,9 +1192,23 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 		}
 	}
 
+	if(campo == 'precioactividadBuscar') {
+		var decimal = /^[\d\.]*$/;
+
+    	if (!decimal.test(valor)) {
+			switch(campo) {
+				case 'precioactividad' :
+					codigo = "99999";
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
 	if(campo == 'coloractividad' ||
 		campo == 'colornombreactividad') {
-		var colour = /^#[0-9A-F]{6}$/;
+		var colour = /^#[0-9a-fA-F]{6}$/;
 
     	if (!colour.test(valor)) {
 			switch(campo) {
@@ -744,6 +1216,24 @@ function comprobarLetrasNumeros(idElemento, sizeMax, sizeMin, idElementoError, c
 					codigo = "02200";
 					break;
 				case 'colornombreactividad' :
+					codigo = '02201';
+					break;
+			}
+			addCodeError(idElementoError, codigo);
+			return false;
+		}
+	}
+
+	if(campo == 'coloractividadBuscar' ||
+		campo == 'colornombreactividadBuscar') {
+		var colour = /^[#0-9a-fA-F]*$/;
+
+    	if (!colour.test(valor)) {
+			switch(campo) {
+				case 'coloractividadBuscar' :
+					codigo = "02200";
+					break;
+				case 'colornombreactividadBuscar' :
 					codigo = '02201';
 					break;
 			}
